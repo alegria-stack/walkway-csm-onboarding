@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walkway H2 2026 — Sales & CS Execution Plan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;background:#FAFAF9;color:#1a1a1a;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{max-width:1040px;margin:0 auto;padding:48px 40px 64px}
+  /* Header */
+  .doc-header{margin-bottom:40px;padding-bottom:24px;border-bottom:2px solid #7F77DD}
+  .doc-tag{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#7F77DD;margin-bottom:8px}
+  .doc-title{font-size:30px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:8px}
+  .doc-meta{font-size:13px;color:#888}
+  /* Section */
+  .section{margin-bottom:48px}
+  .sec-hdr{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #EEE}
+  .sec-num{width:28px;height:28px;border-radius:8px;background:#7F77DD;color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .sec-title{font-size:18px;font-weight:600;letter-spacing:-.02em}
+  /* Cards */
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+  .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+  .cards-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+  .card{background:#fff;border:1px solid #EEE;border-radius:10px;padding:16px}
+  .card-lbl{font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+  .card-val{font-size:22px;font-weight:600;letter-spacing:-.02em}
+  .card-sub{font-size:11px;color:#999;margin-top:4px}
+  /* Tables */
+  .tbl-wrap{background:#fff;border:1px solid #EEE;border-radius:10px;overflow:hidden;margin-bottom:20px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  thead th{padding:9px 12px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+  tbody td{padding:10px 12px;border-top:1px solid #F5F5F5;vertical-align:top;line-height:1.45}
+  tbody tr:hover td{background:#FAFAF9}
+  /* Badges */
+  .bdg{display:inline-block;font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px}
+  /* Callout */
+  .callout{border-radius:8px;padding:14px 16px;margin-bottom:16px;font-size:13px;line-height:1.55}
+  .callout strong{font-weight:600}
+  /* Month card */
+  .month-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+  .month-card{background:#fff;border:1px solid #EEE;border-radius:10px;padding:16px}
+  .month-tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 10px;border-radius:20px;color:#fff;margin-bottom:8px}
+  .month-title{font-size:14px;font-weight:600;margin-bottom:4px}
+  .month-target{font-size:12px;color:#999;margin-bottom:10px}
+  .month-item{font-size:12px;color:#444;padding:3px 0;display:flex;gap:6px;line-height:1.4}
+  .month-item span:first-child{color:#7F77DD;flex-shrink:0}
+  .month-kpis{background:#F7F6FE;border-radius:6px;padding:8px 10px;margin-top:10px}
+  .month-kpi-title{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#888;margin-bottom:4px}
+  .month-kpi-item{font-size:11px;color:#555;padding:1px 0}
+  .flag-box{border-radius:6px;padding:6px 10px;font-size:11px;margin-top:8px;line-height:1.4}
+  /* Subheading */
+  .sub-hdr{font-size:14px;font-weight:600;margin:20px 0 10px;letter-spacing:-.01em}
+  /* Divider */
+  .divider{border:none;border-top:1px solid #EEE;margin:24px 0}
+  /* Platform cards */
+  .plat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .plat-card{background:#fff;border:1px solid #EEE;border-radius:10px;padding:16px}
+  .plat-hdr{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .plat-name{font-size:15px;font-weight:600}
+  .plat-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}
+  .plat-stat{background:#F9F9F9;border-radius:6px;padding:7px 9px}
+  .plat-stat-val{font-size:12px;font-weight:600;color:#1a1a1a}
+  .plat-stat-lbl{font-size:10px;color:#999;margin-top:1px}
+  .plat-desc{font-size:12px;color:#555;margin-bottom:8px;line-height:1.5}
+  .stuck-box{background:#F5F4FF;border-radius:6px;padding:8px 10px;font-size:12px;color:#3C3489;line-height:1.45;margin-bottom:6px}
+  .stuck-box strong{font-weight:600}
+  /* Amigo steps */
+  .amigo-steps{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .amigo-step{background:#fff;border:1px solid #EEE;border-radius:8px;padding:14px}
+  .amigo-step-num{font-size:11px;font-weight:600;margin-bottom:4px}
+  .amigo-step-detail{font-size:12px;color:#555;line-height:1.5}
+  /* KPI table */
+  .kpi-scroll{overflow-x:auto;margin-bottom:20px}
+  /* Footer */
+  .doc-footer{margin-top:48px;padding-top:20px;border-top:1px solid #EEE;display:flex;justify-content:space-between;font-size:11px;color:#BBB}
+  @media print{body{background:#fff}.page{padding:24px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="doc-tag">Walkway &nbsp;·&nbsp; H2 2026 &nbsp;·&nbsp; Confidential</div>
+  <div class="doc-title">Sales &amp; Customer Success<br>Execution Plan</div>
+  <div class="doc-meta">Owners: Alegria (Sales &amp; CS) + Terry (GTM &amp; Partner Co-Sell) &nbsp;·&nbsp; June 8, 2026</div>
+</div>
+
+<!-- SECTION 1: WHERE WE STAND -->
+<div class="section">
+  <div class="sec-hdr">
+    <div class="sec-num">1</div>
+    <div class="sec-title">Where we stand — Q3 2026 baseline</div>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="card-lbl">WAAP — north star</div><div class="card-val" style="color:#7F77DD">49</div><div class="card-sub">Q3 exit target: 200 (+151 net new)</div></div>
+    <div class="card"><div class="card-lbl">Total MRR</div><div class="card-val" style="color:#7F77DD">$23K</div><div class="card-sub">Q3 exit target: $70K</div></div>
+    <div class="card"><div class="card-lbl">NRR</div><div class="card-val">100%</div><div class="card-sub">Q3 target: 130%</div></div>
+    <div class="card"><div class="card-lbl">Live DP customers</div><div class="card-val">10</div><div class="card-sub">Q3 target: 40 (+30)</div></div>
+    <div class="card"><div class="card-lbl">Customer share owned</div><div class="card-val">10%</div><div class="card-sub">Q3 target: 40%</div></div>
+  </div>
+
+  <!-- Going live soon -->
+  <div style="background:#EAF7F2;border:1px solid #A8E6CE;border-radius:8px;padding:12px 16px;margin-bottom:16px">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#085041;margin-bottom:8px">⚡ Going live in June — WAAP about to move</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+      <div style="background:#FFF;border-radius:6px;padding:8px 10px;font-size:11px"><div style="font-weight:600;color:#085041">Urban Saunters</div><div style="color:#1D9E75">Just went live ✓</div></div>
+      <div style="background:#FFF;border-radius:6px;padding:8px 10px;font-size:11px"><div style="font-weight:600;color:#085041">Best of Switzerland</div><div style="color:#BA7517">Going live this week</div></div>
+      <div style="background:#FFF;border-radius:6px;padding:8px 10px;font-size:11px"><div style="font-weight:600;color:#085041">Tours for Today</div><div style="color:#BA7517">Going live this week</div></div>
+      <div style="background:#FFF;border-radius:6px;padding:8px 10px;font-size:11px"><div style="font-weight:600;color:#085041">Carrani Tours</div><div style="color:#BA7517">Going live in June</div></div>
+    </div>
+  </div>
+  <div class="callout" style="background:#F5F4FF;border-left:3px solid #7F77DD">
+    H1 proved the core works: every pilot expanded, zero churn, revenue lift we can point to. <strong>Q3 has one priority: make growth repeatable.</strong> The system is a loop, not a funnel. A loop compounds — the output of every cycle (happy, expanded, referenceable customer) becomes the input to the next. Activate and Expand sit above Acquire in priority. WAAP is won in the middle and bottom of the loop, not just the top. <em style="color:#888">Viator is a parallel bet outside the loop. $70K includes Viator.</em>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EEEDFE"><th style="color:#3C3489">Month</th><th style="color:#3C3489">MRR target</th><th style="color:#3C3489">WAAP target</th><th style="color:#3C3489">Net new customers</th><th style="color:#3C3489">Key milestone</th></tr></thead>
+      <tbody>
+        <tr style="background:#F7F6F4"><td><em style="color:#888">Today (baseline)</em></td><td style="color:#888">$23K</td><td style="color:#888">49</td><td style="color:#888">10 live</td><td style="color:#888">Starting point</td></tr>
+        <tr><td>Jul 2026</td><td style="color:#7F77DD;font-weight:600">~$35K</td><td style="color:#7F77DD;font-weight:600">~90</td><td>~18 total</td><td>Expansion push live · Amigo Mexico Batch 1 · CSM hired Jun 30 (2-week ramp)</td></tr>
+        <tr><td>Aug 2026</td><td style="color:#7F77DD;font-weight:600">~$50K</td><td style="color:#7F77DD;font-weight:600">~145</td><td>~30 total</td><td>CSM fully ramped · Xola outreach converting · Ventrata partner campaign</td></tr>
+        <tr><td><strong>Sep 2026 (exit)</strong></td><td style="color:#1D9E75;font-weight:600"><strong>$70K</strong></td><td style="color:#1D9E75;font-weight:600"><strong>200</strong></td><td><strong>40 total</strong></td><td>Ventrata Partner Event sprint · AE hire decision · NRR 130%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECTION 2: Q3 GROWTH LOOP + TARGETS -->
+<div class="section">
+  <div class="sec-hdr">
+    <div class="sec-num">2</div>
+    <div class="sec-title">The Q3 growth loop</div>
+  </div>
+
+  <!-- Growth loop visual -->
+  <div style="margin-bottom:20px">
+    <div style="display:flex;gap:3px;align-items:stretch;margin-bottom:6px">
+      <div style="flex:1;background:#EAF7F2;border:1px solid #A8E6CE;border-radius:8px;padding:12px 8px;text-align:center">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#085041;margin-bottom:2px">Distribution</div>
+        <div style="font-size:10px;color:#1D9E75;margin-bottom:4px">Terry (Marketing &amp; partners)</div>
+        <div style="font-size:11px;font-weight:600;color:#085041">Co-sell 5%→30%</div>
+      </div>
+      <div style="display:flex;align-items:center;color:#CCC;font-size:18px;flex-shrink:0">›</div>
+      <div style="flex:1;background:#EEEDFE;border:1px solid #C4C0F5;border-radius:8px;padding:12px 8px;text-align:center">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#3C3489;margin-bottom:2px">Acquire</div>
+        <div style="font-size:10px;color:#7F77DD;margin-bottom:4px">Terry → Brent + Alegria</div>
+        <div style="font-size:11px;font-weight:600;color:#3C3489">Demos 4→8/wk · 35%</div>
+      </div>
+      <div style="display:flex;align-items:center;color:#CCC;font-size:18px;flex-shrink:0">›</div>
+      <div style="flex:1;background:#FFF8ED;border:1px solid #F0D9B0;border-radius:8px;padding:12px 8px;text-align:center">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#633806;margin-bottom:2px">Activate ★</div>
+        <div style="font-size:10px;color:#BA7517;margin-bottom:4px">Alegria + CSM</div>
+        <div style="font-size:11px;font-weight:600;color:#633806">Autopilot D30: 100%</div>
+      </div>
+      <div style="display:flex;align-items:center;color:#CCC;font-size:18px;flex-shrink:0">›</div>
+      <div style="flex:1;background:#FFF8ED;border:1px solid #F0D9B0;border-radius:8px;padding:12px 8px;text-align:center">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#633806;margin-bottom:2px">Expand ★</div>
+        <div style="font-size:10px;color:#BA7517;margin-bottom:4px">Alegria + CSM</div>
+        <div style="font-size:11px;font-weight:600;color:#633806">NRR 100%→130%</div>
+      </div>
+      <div style="display:flex;align-items:center;color:#CCC;font-size:18px;flex-shrink:0">›</div>
+      <div style="flex:1;background:#EAF7F2;border:1px solid #A8E6CE;border-radius:8px;padding:12px 8px;text-align:center">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#085041;margin-bottom:2px">Refer ★</div>
+        <div style="font-size:10px;color:#1D9E75;margin-bottom:4px">Alegria → Terry → Loop</div>
+        <div style="font-size:11px;font-weight:600;color:#085041">Refs 2→8</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:3px;align-items:center;justify-content:space-around;margin-bottom:6px">
+      <div style="flex:1"></div>
+      <div style="background:#444;color:#FFF;border-radius:10px;padding:3px 9px;font-size:10px;white-space:nowrap">Marketing→Sales · demo booked</div>
+      <div style="flex:1"></div>
+      <div style="background:#444;color:#FFF;border-radius:10px;padding:3px 9px;font-size:10px;white-space:nowrap">Sales→CS · closed-won + kickoff</div>
+      <div style="flex:1"></div>
+      <div style="background:#BA7517;color:#FFF;border-radius:10px;padding:3px 9px;font-size:10px;white-space:nowrap">expansion trigger fires · stays in CS</div>
+      <div style="flex:1"></div>
+      <div style="background:#1D9E75;color:#FFF;border-radius:10px;padding:3px 9px;font-size:10px;white-space:nowrap">CS→Marketing · lift milestone</div>
+      <div style="flex:1"></div>
+    </div>
+    <div style="text-align:right;font-size:10px;color:#1D9E75;font-style:italic">↩ case study feeds back into Distribution — the loop compounds</div>
+  </div>
+
+  <div class="callout" style="background:#F7F6F4;border-left:3px solid #888">
+    ★ Alegria owns Activate + Expand + Refer and co-owns Acquire. All five stages run on the same fuel: a referenceable win/case study. One win powers the whole loop.
+  </div>
+
+  <!-- H2 closed won definition -->
+  <div style="background:#FFF8ED;border:1px solid #F0D9B0;border-radius:8px;padding:14px 16px;margin-bottom:20px">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#633806;margin-bottom:10px">H2 — What "Closed Won" means in this plan</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+      <div style="background:#FFF;border-radius:6px;padding:10px 12px">
+        <div style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">H1 — Marketing → Sales</div>
+        <div style="font-size:12px;color:#444">Trigger: <strong>demo booked</strong><br>Terry hands to Brent + Alegria</div>
+      </div>
+      <div style="background:#FFF8ED;border:1.5px solid #F0D9B0;border-radius:6px;padding:10px 12px">
+        <div style="font-size:10px;font-weight:700;color:#633806;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">H2 — Sales → CS ← this one</div>
+        <div style="font-size:12px;color:#444"><strong>Closed Won = Contract Signed.</strong> Sales deal closes. Kickoff scheduled. CSM assigned. CS pipeline deal created. See Section 7 for full pipeline stages.</div>
+      </div>
+      <div style="background:#FFF;border-radius:6px;padding:10px 12px">
+        <div style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">H3 — CS → Marketing</div>
+        <div style="font-size:12px;color:#444">Trigger: <strong>lift milestone hit</strong><br>Case study created → feeds back into Distribution</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q3 Targets -->
+  <div class="sub-hdr">Q3 topline targets</div>
+  <div class="cards" style="grid-template-columns:repeat(4,1fr)">
+    <div class="card"><div class="card-lbl">WAAP — north star</div><div class="card-val" style="color:#7F77DD">49→200</div><div class="card-sub">+151 net new autopilot products</div></div>
+    <div class="card"><div class="card-lbl">MRR exit</div><div class="card-val" style="color:#7F77DD">$70K</div><div class="card-sub">$23K today · $47K net new needed</div></div>
+    <div class="card"><div class="card-lbl">NRR</div><div class="card-val" style="color:#1D9E75">130%</div><div class="card-sub">100% today · every account expands</div></div>
+    <div class="card"><div class="card-lbl">New live customers</div><div class="card-val">+30</div><div class="card-sub">10 live today · target 40 total</div></div>
+  </div>
+
+  <!-- $47K bridge -->
+  <div class="sub-hdr">The $47K net new MRR bridge</div>
+  <div class="tbl-wrap" style="margin-bottom:20px">
+    <table>
+      <thead><tr style="background:#EAF7F2"><th style="color:#085041">Source</th><th style="color:#085041;text-align:right">Volume</th><th style="color:#085041;text-align:right">Rate</th><th style="color:#085041;text-align:right">Net new MRR</th></tr></thead>
+      <tbody>
+        <tr><td><strong>New customers</strong></td><td style="text-align:right">30 new operators</td><td style="text-align:right">2 products avg × $315</td><td style="text-align:right;color:#1D9E75;font-weight:600">~$18,900</td></tr>
+        <tr><td><strong>Expansion (existing accounts)</strong></td><td style="text-align:right">~94 net new products</td><td style="text-align:right">$310/product avg</td><td style="text-align:right;color:#1D9E75;font-weight:600">~$29,140</td></tr>
+        <tr style="background:#F7F6F4"><td><strong>Total net new</strong></td><td style="text-align:right;font-weight:600">151 net new WAAP products</td><td style="text-align:right"></td><td style="text-align:right;color:#7F77DD;font-weight:600"><strong>~$47,000</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- WAAP + MRR + NRR progress trackers -->
+  <div class="sub-hdr">Q3 progress trackers — pacing vs. goal</div>
+  <div style="background:#fff;border:1px solid #EEE;border-radius:10px;padding:20px;margin-bottom:16px">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:16px">
+      <div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span style="font-size:12px;font-weight:600">WAAP (north star)</span>
+          <span style="font-size:12px;color:#7F77DD;font-weight:600">49 / 200</span>
+        </div>
+        <div style="background:#F0F0F0;border-radius:20px;height:8px;overflow:hidden;position:relative">
+          <div style="background:#7F77DD;height:100%;width:24.5%;border-radius:20px"></div>
+          <div style="position:absolute;top:0;left:45%;width:2px;height:100%;background:#BA7517;opacity:0.7"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:4px">
+          <span style="font-size:11px;color:#999">Today: 49</span>
+          <span style="font-size:11px;color:#BA7517;font-weight:600">Jul: ~90</span>
+          <span style="font-size:11px;color:#7F77DD;font-weight:600">Sep: 200</span>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span style="font-size:12px;font-weight:600">MRR exit</span>
+          <span style="font-size:12px;color:#BA7517;font-weight:600">$23K / $70K</span>
+        </div>
+        <div style="background:#F0F0F0;border-radius:20px;height:8px;overflow:hidden;position:relative">
+          <div style="background:#BA7517;height:100%;width:33%;border-radius:20px"></div>
+          <div style="position:absolute;top:0;left:51%;width:2px;height:100%;background:#7F77DD;opacity:0.7"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:4px">
+          <span style="font-size:11px;color:#999">Today: $23K</span>
+          <span style="font-size:11px;color:#7F77DD;font-weight:600">Jul: ~$35.8K</span>
+          <span style="font-size:11px;color:#BA7517;font-weight:600">Sep: $70K</span>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span style="font-size:12px;font-weight:600">NRR</span>
+          <span style="font-size:12px;color:#1D9E75;font-weight:600">100% → 130%</span>
+        </div>
+        <div style="background:#F0F0F0;border-radius:20px;height:8px;overflow:hidden;position:relative">
+          <div style="background:#1D9E75;height:100%;width:77%;border-radius:20px"></div>
+          <div style="position:absolute;top:0;left:77%;width:2px;height:100%;background:#BA7517;opacity:0.7"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:4px">
+          <span style="font-size:11px;color:#999">Today: 100%</span>
+          <span style="font-size:11px;color:#BA7517;font-weight:600">Jul: hold 100%</span>
+          <span style="font-size:11px;color:#1D9E75;font-weight:600">Sep: 130%</span>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:12px;border-top:1px solid #F0F0F0;display:flex;align-items:center;gap:16px;font-size:11px;color:#888">
+      <span>Legend:</span>
+      <span><span style="display:inline-block;width:20px;height:3px;background:#7F77DD;vertical-align:middle;margin-right:4px;border-radius:2px"></span>Current</span>
+      <span><span style="display:inline-block;width:2px;height:12px;background:#BA7517;vertical-align:middle;margin-right:4px;opacity:0.7"></span>July checkpoint</span>
+    </div>
+  </div>
+
+  <!-- Monthly build table — from revenue bridge -->
+  <div style="background:#fff;border:1px solid #EEE;border-radius:10px;padding:0;margin-bottom:20px;overflow:hidden">
+    <div style="background:#EEEDFE;padding:10px 16px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#3C3489">Monthly MRR build — how $47K gets added (source: revenue bridge)</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px">
+      <thead>
+        <tr style="background:#F7F6F4">
+          <th style="padding:8px 12px;text-align:left;color:#444;font-weight:600;border-bottom:1px solid #EEE">Motion</th>
+          <th style="padding:8px 12px;text-align:right;color:#888;font-weight:600;border-bottom:1px solid #EEE">Baseline</th>
+          <th style="padding:8px 12px;text-align:right;color:#BA7517;font-weight:600;border-bottom:1px solid #EEE">+ July</th>
+          <th style="padding:8px 12px;text-align:right;color:#7F77DD;font-weight:600;border-bottom:1px solid #EEE">+ August</th>
+          <th style="padding:8px 12px;text-align:right;color:#1D9E75;font-weight:600;border-bottom:1px solid #EEE">+ September</th>
+          <th style="padding:8px 12px;text-align:right;color:#1D9E75;font-weight:600;border-bottom:1px solid #EEE">Q3 total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#FFF8ED">
+          <td style="padding:8px 12px;color:#633806;font-weight:600;border-bottom:1px solid #F5F5F5">Expansion adds</td>
+          <td style="padding:8px 12px;text-align:right;color:#888;border-bottom:1px solid #F5F5F5">—</td>
+          <td style="padding:8px 12px;text-align:right;color:#BA7517;font-weight:600;border-bottom:1px solid #F5F5F5">+$7,790</td>
+          <td style="padding:8px 12px;text-align:right;color:#7F77DD;font-weight:600;border-bottom:1px solid #F5F5F5">+$17,690</td>
+          <td style="padding:8px 12px;text-align:right;color:#1D9E75;font-weight:600;border-bottom:1px solid #F5F5F5">+$3,660</td>
+          <td style="padding:8px 12px;text-align:right;color:#BA7517;font-weight:600;border-bottom:1px solid #F5F5F5">$29,140</td>
+        </tr>
+        <tr style="background:#EAF7F2">
+          <td style="padding:8px 12px;color:#085041;font-weight:600;border-bottom:1px solid #F5F5F5">New customer adds</td>
+          <td style="padding:8px 12px;text-align:right;color:#888;border-bottom:1px solid #F5F5F5">—</td>
+          <td style="padding:8px 12px;text-align:right;color:#BA7517;font-weight:600;border-bottom:1px solid #F5F5F5">+$5,040</td>
+          <td style="padding:8px 12px;text-align:right;color:#7F77DD;font-weight:600;border-bottom:1px solid #F5F5F5">+$7,560</td>
+          <td style="padding:8px 12px;text-align:right;color:#1D9E75;font-weight:600;border-bottom:1px solid #F5F5F5">+$6,300</td>
+          <td style="padding:8px 12px;text-align:right;color:#1D9E75;font-weight:600;border-bottom:1px solid #F5F5F5">$18,900</td>
+        </tr>
+        <tr style="background:#F7F6F4">
+          <td style="padding:8px 12px;color:#444;font-weight:600;border-bottom:1px solid #EEE">Total adds this month</td>
+          <td style="padding:8px 12px;text-align:right;color:#888;border-bottom:1px solid #EEE">—</td>
+          <td style="padding:8px 12px;text-align:right;font-weight:700;color:#BA7517;border-bottom:1px solid #EEE">$12,830</td>
+          <td style="padding:8px 12px;text-align:right;font-weight:700;color:#7F77DD;border-bottom:1px solid #EEE">$25,250</td>
+          <td style="padding:8px 12px;text-align:right;font-weight:700;color:#1D9E75;border-bottom:1px solid #EEE">$9,960</td>
+          <td style="padding:8px 12px;text-align:right;font-weight:700;color:#3C3489;border-bottom:1px solid #EEE">$47,040</td>
+        </tr>
+        <tr style="background:#EEEDFE">
+          <td style="padding:8px 12px;color:#3C3489;font-weight:700;border-bottom:1px solid #DDD">MRR (cumulative)</td>
+          <td style="padding:8px 12px;text-align:right;color:#888;font-weight:600;border-bottom:1px solid #DDD">$23K</td>
+          <td style="padding:8px 12px;text-align:right;color:#BA7517;font-weight:700;border-bottom:1px solid #DDD">~$35.8K</td>
+          <td style="padding:8px 12px;text-align:right;color:#7F77DD;font-weight:700;border-bottom:1px solid #DDD">~$61K</td>
+          <td style="padding:8px 12px;text-align:right;color:#1D9E75;font-weight:700;border-bottom:1px solid #DDD">~$71K ✓</td>
+          <td style="padding:8px 12px;text-align:right;color:#1D9E75;font-weight:700;border-bottom:1px solid #DDD">$70K target</td>
+        </tr>
+        <tr style="background:#F5F4FF">
+          <td style="padding:8px 12px;color:#3C3489;font-weight:700">WAAP (cumulative)</td>
+          <td style="padding:8px 12px;text-align:right;color:#888;font-weight:600">49</td>
+          <td style="padding:8px 12px;text-align:right;color:#BA7517;font-weight:700">~90</td>
+          <td style="padding:8px 12px;text-align:right;color:#7F77DD;font-weight:700">~145</td>
+          <td style="padding:8px 12px;text-align:right;color:#1D9E75;font-weight:700">200 ✓</td>
+          <td style="padding:8px 12px;text-align:right;color:#1D9E75;font-weight:700">200 target</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Expansion surface — Option A consolidated table -->
+  <div class="sub-hdr">Expansion surface — committed path vs. full potential</div>
+  <div style="font-size:12px;color:#888;margin-bottom:14px">Realistic Q3 = what we can deliver this quarter. Full potential = total TAM ceiling per account.</div>
+  <div class="tbl-wrap" style="margin-bottom:12px;overflow-x:auto">
+    <table style="min-width:700px">
+      <thead>
+        <tr>
+          <th style="background:#F7F6F4;color:#444;text-align:left">Account</th>
+          <th style="background:#F7F6F4;color:#888;text-align:right;font-size:11px">Product TAM</th>
+          <th style="background:#F7F6F4;color:#888;text-align:right;font-size:11px">Live now</th>
+          <th style="background:#F7F6F4;color:#888;text-align:right;font-size:11px">$/product</th>
+          <th style="background:#FFF8ED;color:#633806;text-align:center" colspan="2">Realistic Q3</th>
+          <th style="background:#EEEDFE;color:#3C3489;text-align:center" colspan="2">Full portfolio potential</th>
+        </tr>
+        <tr style="font-size:11px">
+          <th style="background:#F7F6F4"></th>
+          <th style="background:#F7F6F4"></th>
+          <th style="background:#F7F6F4"></th>
+          <th style="background:#F7F6F4"></th>
+          <th style="background:#FFF3E0;color:#888;text-align:right">Products</th>
+          <th style="background:#FFF3E0;color:#888;text-align:right">MRR</th>
+          <th style="background:#F5F4FF;color:#888;text-align:right">Products</th>
+          <th style="background:#F5F4FF;color:#888;text-align:right">MRR ceiling</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Historic Tours of America</strong></td><td style="text-align:right;color:#888">40</td><td style="text-align:right;color:#888">17</td><td style="text-align:right;color:#888;font-size:11px">$100</td><td style="text-align:right;background:#FFFBF5;font-weight:600;color:#BA7517">+9</td><td style="text-align:right;background:#FFFBF5;color:#BA7517">$900</td><td style="text-align:right;background:#F8F7FF;font-weight:600;color:#534AB7">23</td><td style="text-align:right;background:#F8F7FF;color:#534AB7">$2,300</td></tr>
+        <tr><td><strong>Amigo Tours</strong></td><td style="text-align:right;color:#888">200</td><td style="text-align:right;color:#888">16</td><td style="text-align:right;color:#888;font-size:11px">$156</td><td style="text-align:right;background:#FFFBF5;font-weight:600;color:#BA7517">+25</td><td style="text-align:right;background:#FFFBF5;color:#BA7517">$3,900</td><td style="text-align:right;background:#F8F7FF;font-weight:600;color:#534AB7">184</td><td style="text-align:right;background:#F8F7FF;color:#534AB7">$28,704</td></tr>
+        <tr><td><strong>Best of Switzerland</strong> <span style="font-size:11px;color:#888">(3 signed)</span></td><td style="text-align:right;color:#888">26</td><td style="text-align:right;color:#888">3</td><td style="text-align:right;color:#888;font-size:11px">$150</td><td style="text-align:right;background:#FFFBF5;font-weight:600;color:#BA7517">+10</td><td style="text-align:right;background:#FFFBF5;color:#BA7517">$1,050</td><td style="text-align:right;background:#F8F7FF;font-weight:600;color:#534AB7">23</td><td style="text-align:right;background:#F8F7FF;color:#534AB7">$3,450</td></tr>
+        <tr><td><strong>Tours for Today</strong></td><td style="text-align:right;color:#888">~15</td><td style="text-align:right;color:#888">1</td><td style="text-align:right;color:#888;font-size:11px">$150</td><td style="text-align:right;background:#FFFBF5;font-weight:600;color:#BA7517">+2</td><td style="text-align:right;background:#FFFBF5;color:#BA7517">$300</td><td style="text-align:right;background:#F8F7FF;font-weight:600;color:#534AB7">~14</td><td style="text-align:right;background:#F8F7FF;color:#534AB7">$2,100</td></tr>
+        <tr><td><strong>Venice City Tours</strong> <span style="font-size:10px;color:#BA7517">⚠ cautious — max 5 this Q3</span></td><td style="text-align:right;color:#888">70</td><td style="text-align:right;color:#888">4</td><td style="text-align:right;color:#888;font-size:11px">$150</td><td style="text-align:right;background:#FFFBF5;font-weight:600;color:#BA7517">+5</td><td style="text-align:right;background:#FFFBF5;color:#BA7517">$750</td><td style="text-align:right;background:#F8F7FF;font-weight:600;color:#534AB7">66</td><td style="text-align:right;background:#F8F7FF;color:#534AB7">$9,900</td></tr>
+        <tr><td><strong>Ciao Florence</strong></td><td style="text-align:right;color:#888">100</td><td style="text-align:right;color:#888">4</td><td style="text-align:right;color:#888;font-size:11px">$150</td><td style="text-align:right;background:#FFFBF5;font-weight:600;color:#BA7517">+10</td><td style="text-align:right;background:#FFFBF5;color:#BA7517">$1,500</td><td style="text-align:right;background:#F8F7FF;font-weight:600;color:#534AB7">96</td><td style="text-align:right;background:#F8F7FF;color:#534AB7">$14,400</td></tr>
+        <tr><td><strong>Boost Portugal</strong></td><td style="text-align:right;color:#888">~35–40</td><td style="text-align:right;color:#888">3</td><td style="text-align:right;color:#888;font-size:11px">$175</td><td style="text-align:right;background:#FFFBF5;font-weight:600;color:#BA7517">+10</td><td style="text-align:right;background:#FFFBF5;color:#BA7517">$1,750</td><td style="text-align:right;background:#F8F7FF;font-weight:600;color:#534AB7">~32–37</td><td style="text-align:right;background:#F8F7FF;color:#534AB7">$4,800–5,550</td></tr>
+        <tr><td><strong>Everyday California</strong> <span style="font-size:11px;color:#888">(Xola)</span></td><td style="text-align:right;color:#888">—</td><td style="text-align:right;color:#888">Live</td><td style="text-align:right;color:#888;font-size:11px">$315</td><td style="text-align:right;background:#FFFBF5;font-weight:600;color:#BA7517">+2</td><td style="text-align:right;background:#FFFBF5;color:#BA7517">$630</td><td style="text-align:right;background:#F8F7FF;font-weight:600;color:#534AB7">—</td><td style="text-align:right;background:#F8F7FF;color:#534AB7">—</td></tr>
+        <tr><td><strong>Empire Tours</strong> <span style="font-size:11px;color:#888">(Ventrata)</span></td><td style="text-align:right;color:#888">—</td><td style="text-align:right;color:#888">Live</td><td style="text-align:right;color:#888;font-size:11px">$315</td><td style="text-align:right;background:#FFFBF5;font-weight:600;color:#BA7517">+5</td><td style="text-align:right;background:#FFFBF5;color:#BA7517">$1,575</td><td style="text-align:right;background:#F8F7FF;font-weight:600;color:#534AB7">—</td><td style="text-align:right;background:#F8F7FF;color:#534AB7">—</td></tr>
+        <tr style="border-top:2px solid #DDD">
+          <td><strong>Total</strong></td>
+          <td style="text-align:right;font-weight:600;color:#888">~490+</td>
+          <td style="text-align:right;font-weight:600;color:#888">48+</td>
+          <td style="text-align:right;color:#888;font-size:11px">—</td>
+          <td style="text-align:right;background:#FFF8ED;font-weight:600;color:#BA7517">+78 prods</td>
+          <td style="text-align:right;background:#FFF8ED;font-weight:600;color:#BA7517">~$12,355</td>
+          <td style="text-align:right;background:#EEEDFE;font-weight:600;color:#3C3489">~430+ prods</td>
+          <td style="text-align:right;background:#EEEDFE;font-weight:600;color:#3C3489">~$65,654+</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="background:#FFF8ED;border:1px solid #F0D9B0;border-radius:6px;padding:12px 16px;margin-bottom:20px">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#633806;margin-bottom:10px">Expansion pacing vs. $29K target</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center">
+      <div><div style="font-size:20px;font-weight:700;color:#BA7517">$12,355</div><div style="font-size:11px;color:#633806">Named accounts (9)</div><div style="font-size:11px;color:#888">42% of $29K target</div></div>
+      <div><div style="font-size:20px;font-weight:700;color:#7F77DD">$16,785</div><div style="font-size:11px;color:#534AB7">Other existing accounts</div><div style="font-size:11px;color:#888">CSM-driven Q3 motion</div></div>
+      <div><div style="font-size:20px;font-weight:700;color:#1D9E75">$29,140</div><div style="font-size:11px;color:#085041">Total expansion target</div><div style="font-size:11px;color:#1D9E75;font-weight:600">✓ On track</div></div>
+    </div>
+  </div>
+
+  <!-- NET NEW PIPELINE — moved inline so both motions visible together -->
+  <div class="sub-hdr">Net new pipeline — 30 customers · $18K MRR</div>
+  <div class="callout" style="background:#F5F4FF;border-left:3px solid #7F77DD">
+    Goal: 30 new customers by Q3 exit → $18K net new MRR. Each entry has a specific close week, expected products, and revenue contribution toward goal.
+  </div>
+
+  <div class="sub-hdr" style="font-size:12px;color:#085041;border-bottom:none;padding-bottom:4px;margin-bottom:6px">Ventrata — warm pipeline (partner co-sell + 1-month free offer)</div>
+  <div class="tbl-wrap" style="margin-bottom:8px">
+    <table>
+      <thead><tr style="background:#EAF7F2"><th style="color:#085041">Account</th><th style="color:#085041">Stage</th><th style="color:#085041">Locations</th><th style="color:#085041">Products</th><th style="color:#085041">MRR</th><th style="color:#085041">Close target</th><th style="color:#085041">How to close</th></tr></thead>
+      <tbody>
+        <tr><td><strong>City Sightseeing New Orleans</strong></td><td><span class="bdg" style="background:#EAF7F2;color:#085041">Trial committed</span></td><td>2</td><td>2</td><td style="color:#1D9E75;font-weight:600">$300</td><td style="font-weight:600;color:#1D9E75">Jul wk 1</td><td>Call done Jun 10. Waiting on API token + product ID. Kick off setup on receipt.</td></tr>
+        <tr><td><strong>Intrepid Urban Adventures</strong></td><td><span class="bdg" style="background:#FFF8ED;color:#633806">Proposal</span></td><td>46</td><td>2</td><td style="color:#1D9E75;font-weight:600">$400</td><td style="font-weight:600;color:#1D9E75">Jul wk 2</td><td>Entry point to 46-location portfolio. Use Boost Portugal lift as proof.</td></tr>
+        <tr><td><strong>Golden Tours</strong></td><td><span class="bdg" style="background:#EEEDFE;color:#3C3489">Demo Sched</span></td><td>4</td><td>2</td><td style="color:#1D9E75;font-weight:600">$630</td><td style="font-weight:600;color:#1D9E75">Jul wk 2</td><td>London-based. Show London weekend competitor premium data.</td></tr>
+        <tr><td><strong>Mountain Goat</strong></td><td><span class="bdg" style="background:#EAF7F2;color:#085041">CI Live → DP</span></td><td>4</td><td>2</td><td style="color:#1D9E75;font-weight:600">$315</td><td style="font-weight:600;color:#1D9E75">Jul wk 3</td><td>Already live on CI. CI data = the pitch. Book DP expansion call this week.</td></tr>
+        <tr><td><strong>Grand Canyon Group</strong></td><td><span class="bdg" style="background:#FFF8ED;color:#633806">Proposal</span></td><td>7</td><td>2</td><td style="color:#1D9E75;font-weight:600">$630</td><td style="font-weight:600;color:#1D9E75">Jul wk 3</td><td>Peak season urgency. Offer onboarding call as next step.</td></tr>
+        <tr><td><strong>Timberbush Tours</strong></td><td><span class="bdg" style="background:#EEEDFE;color:#3C3489">Demo Sched</span></td><td>5</td><td>2</td><td style="color:#1D9E75;font-weight:600">$630</td><td style="font-weight:600;color:#BA7517">Aug wk 1</td><td>Scottish tours. Peak season data hook — city competitor data for Edinburgh.</td></tr>
+        <tr><td><strong>Big Bus</strong></td><td><span class="bdg" style="background:#EEEDFE;color:#3C3489">Prospecting</span></td><td>20+</td><td>2</td><td style="color:#1D9E75;font-weight:600">$630</td><td style="font-weight:600;color:#BA7517">Aug wk 2</td><td>Global hop-on hop-off. HTA as reference. Terry intro via Ventrata.</td></tr>
+        <tr style="background:#EAF7F2"><td><strong>Ventrata subtotal</strong></td><td></td><td></td><td style="font-weight:600">14</td><td style="color:#1D9E75;font-weight:600"><strong>$3,535</strong></td><td colspan="2" style="font-size:11px;color:#085041">7 operators · Jul wk 1 → Aug wk 2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-hdr" style="font-size:12px;color:#633806;border-bottom:none;padding-bottom:4px;margin-bottom:6px">Xola — cold outreach (152 unworked operators)</div>
+  <div class="tbl-wrap" style="margin-bottom:8px">
+    <table>
+      <thead><tr style="background:#FFF8ED"><th style="color:#633806">Month</th><th style="color:#633806">Outreach volume</th><th style="color:#633806">Expected closes</th><th style="color:#633806">Products</th><th style="color:#633806">Net new MRR</th><th style="color:#633806">Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>July</strong></td><td>60 operators contacted</td><td>0 — pipeline building</td><td>—</td><td style="color:#888">—</td><td>Launch 2-email sequence. Cities: NYC, LA, SF, Chicago, Denver</td></tr>
+        <tr><td><strong>August</strong></td><td>Follow-up + 40 new</td><td style="color:#1D9E75;font-weight:600">6 closes</td><td>12</td><td style="color:#1D9E75;font-weight:600">$3,780</td><td>Closes from July outreach. 4–5 demos/week with CSM in place.</td></tr>
+        <tr><td><strong>September</strong></td><td>Close pipeline</td><td style="color:#1D9E75;font-weight:600">9 closes</td><td>18</td><td style="color:#1D9E75;font-weight:600">$5,670</td><td>Xola becomes the volume engine in September.</td></tr>
+        <tr style="background:#FFF8ED"><td><strong>Xola subtotal</strong></td><td></td><td style="font-weight:600">15 operators</td><td style="font-weight:600">30</td><td style="color:#BA7517;font-weight:600"><strong>$9,450</strong></td><td>15 × 2 prods × $315 avg</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-hdr" style="font-size:12px;color:#3C3489;border-bottom:none;padding-bottom:4px;margin-bottom:6px">PrioTicket — partner-led (pilot June)</div>
+  <div class="tbl-wrap" style="margin-bottom:16px">
+    <table>
+      <thead><tr style="background:#EEEDFE"><th style="color:#3C3489">Account</th><th style="color:#3C3489">Stage</th><th style="color:#3C3489">Products</th><th style="color:#3C3489">MRR</th><th style="color:#3C3489">Close target</th><th style="color:#3C3489">Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Evan Evans</strong></td><td><span class="bdg" style="background:#FFF8ED;color:#633806">Proposal</span></td><td>2</td><td style="color:#1D9E75;font-weight:600">$600</td><td style="font-weight:600;color:#1D9E75">Jul wk 1</td><td>In proposal. Follow up this week.</td></tr>
+        <tr><td><strong>Blue Boat</strong></td><td><span class="bdg" style="background:#EEEDFE;color:#3C3489">Demo</span></td><td>2</td><td style="color:#1D9E75;font-weight:600">$400</td><td style="font-weight:600;color:#1D9E75">Jul wk 2</td><td>Demo in progress. Partner intro.</td></tr>
+        <tr><td><strong>3 more via Prio co-sell</strong></td><td><span class="bdg" style="background:#EEE;color:#555">TBD</span></td><td>6</td><td style="color:#1D9E75;font-weight:600">$1,890</td><td style="font-weight:600;color:#BA7517">Aug–Sep</td><td>Partner-led introductions from Prio team</td></tr>
+        <tr style="background:#EEEDFE"><td><strong>Prio subtotal</strong></td><td></td><td style="font-weight:600">10</td><td style="color:#7F77DD;font-weight:600"><strong>$2,890</strong></td><td colspan="2">5 operators · pilot → full motion by Q3 exit</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Combined $47K goal summary — both motions -->
+  <div style="background:#F5F4FF;border:2px solid #7F77DD;border-radius:10px;padding:16px 20px;margin-top:4px">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#3C3489;margin-bottom:12px">The $47K bridge — both motions vs. $70K goal</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;text-align:center;margin-bottom:12px">
+      <div style="padding:12px;background:#FFF8ED;border-radius:8px"><div style="font-size:22px;font-weight:700;color:#BA7517">$29,140</div><div style="font-size:11px;color:#633806;margin-top:2px">Expansion motion</div><div style="font-size:11px;color:#888">+78 products · 9 named accounts</div></div>
+      <div style="padding:12px;background:#EAF7F2;border-radius:8px"><div style="font-size:22px;font-weight:700;color:#1D9E75">$18,000</div><div style="font-size:11px;color:#085041;margin-top:2px">Net new customers</div><div style="font-size:11px;color:#888">30 operators · 3 platforms</div></div>
+      <div style="padding:12px;background:#EEEDFE;border-radius:8px"><div style="font-size:22px;font-weight:700;color:#7F77DD">$47,140</div><div style="font-size:11px;color:#3C3489;margin-top:2px">Total net new MRR</div><div style="font-size:11px;color:#1D9E75;font-weight:600">✓ $23K + $47K = $70K exit</div></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SECTION 3: EXPANSION PLAYBOOK -->
+<div class="section">
+  <div class="sec-hdr">
+    <div class="sec-num">3</div>
+    <div class="sec-title">Expansion playbook — 30/60/90 cadence</div>
+  </div>
+
+  <div class="sub-hdr">Month 1 — Activate: Build trust, get to 100% autopilot</div>
+  <div class="callout" style="background:#F5F4FF;border-left:3px solid #7F77DD;margin-bottom:16px">
+    New accounts starting with 1–3 products. The Day 30 check-in is not just a data review — it is where the expansion proposal happens. Don't wait for Month 2.
+  </div>
+  <div class="month-cards">
+    <div class="month-card">
+      <div class="month-tag" style="background:#1D9E75">Month 1</div>
+      <div class="month-title">Build trust + propose</div>
+      <div class="month-target">Target: All starting products on autopilot by Day 7</div>
+      <div class="month-item"><span>→</span><span>Day 0–7: WAAP active on all starting products</span></div>
+      <div class="month-item"><span>→</span><span>Day 14: First data review call — price movements + competitor context</span></div>
+      <div class="month-item"><span>→</span><span><strong>Day 30: Revenue lift review + expansion proposal presented in same meeting</strong></span></div>
+      <div class="month-kpis">
+        <div class="month-kpi-title">KPIs</div>
+        <div class="month-kpi-item">✓ 100% WAAP on starting products</div>
+        <div class="month-kpi-item">✓ Day 14 call done</div>
+        <div class="month-kpi-item">✓ Expansion proposal on table by Day 30</div>
+      </div>
+      <div class="flag-box" style="background:#FEEFEF;color:#9B2121">⚠ No WAAP by Day 7 → escalate to PA immediately. Churn signal.</div>
+    </div>
+    <div class="month-card">
+      <div class="month-tag" style="background:#BA7517">Month 2</div>
+      <div class="month-title">Close + go live</div>
+      <div class="month-target">Target: Next batch signed AND live by end of Month 2</div>
+      <div class="month-item"><span>→</span><span>Week 5: Close verbal commit — proposal was made at Day 30</span></div>
+      <div class="month-item"><span>→</span><span>Week 6: Order form signed. Onboarding scheduled.</span></div>
+      <div class="month-item"><span>→</span><span><strong>End of Month 2: New batch LIVE on WAAP</strong></span></div>
+      <div class="month-kpis">
+        <div class="month-kpi-title">KPIs</div>
+        <div class="month-kpi-item">✓ Verbal commit by Week 5</div>
+        <div class="month-kpi-item">✓ Order form signed Week 6</div>
+        <div class="month-kpi-item">✓ Batch live by end of Month 2</div>
+      </div>
+      <div class="flag-box" style="background:#FFF8ED;color:#7A4500">⚠ No verbal by Week 6 → escalate to Alegria immediately</div>
+    </div>
+    <div class="month-card">
+      <div class="month-tag" style="background:#7F77DD">Month 3</div>
+      <div class="month-title">Expand again + ROI</div>
+      <div class="month-target" style="color:#7F77DD;font-weight:600">Target: 6–8 products on WAAP, next batch proposed</div>
+      <div class="month-item"><span>→</span><span>Week 9: Batch 2 already live — comparative data ready</span></div>
+      <div class="month-item"><span>→</span><span>Mid-month: Month 1 vs. Month 3 lift report shared</span></div>
+      <div class="month-item"><span>→</span><span>End of month: Case study quote · next batch proposed · loop repeats</span></div>
+      <div class="month-kpis">
+        <div class="month-kpi-title">KPIs</div>
+        <div class="month-kpi-item">✓ 6–8 products on WAAP</div>
+        <div class="month-kpi-item">✓ Revenue lift documented</div>
+        <div class="month-kpi-item">✓ Case study quote obtained</div>
+      </div>
+      <div class="flag-box" style="background:#F5F4FF;color:#3C3489">⚡ The expansion flywheel starts here — repeat every month</div>
+    </div>
+  </div>
+
+  <div class="sub-hdr">Phase 2 — Mature accounts (4+ months, already expanded once)</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EAF7F2"><th style="color:#085041">Monthly metric</th><th style="color:#085041">Target</th><th style="color:#085041">Why</th></tr></thead>
+      <tbody>
+        <tr><td>New products activated</td><td style="color:#1D9E75;font-weight:600">+10–15/month</td><td>Batch → close → live → repeat every month without gaps</td></tr>
+        <tr><td>WAAP rate</td><td style="font-weight:600">100% of live products</td><td>Any drop triggers a 48h investigation</td></tr>
+        <tr><td>Monthly data review call</td><td style="font-weight:600">1 per account</td><td>Always bring new competitive data + cumulative lift vs. baseline</td></tr>
+        <tr><td>NRR</td><td style="color:#1D9E75;font-weight:600">≥130%</td><td>Expansion revenue must outpace any potential churn</td></tr>
+        <tr><td>Next batch proposal</td><td style="font-weight:600">Sent by Day 25</td><td>Never let an account go a full month without a proposal in front of them</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+<!-- SECTION 4: SALES BY PLATFORM -->
+<div class="section">
+  <div class="sec-hdr">
+    <div class="sec-num">4</div>
+    <div class="sec-title">Sales strategy by platform</div>
+  </div>
+
+  <div class="sub-hdr">Surface area — sourced operator counts</div>
+  <div class="tbl-wrap" style="margin-bottom:24px">
+    <table>
+      <thead><tr style="background:#EEEDFE"><th style="color:#3C3489">Platform</th><th style="color:#3C3489">Operator count</th><th style="color:#3C3489">Source</th><th style="color:#3C3489">In HubSpot</th><th style="color:#3C3489">Penetration</th><th style="color:#3C3489">Q3 status</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Ventrata</strong></td><td>158 parent accounts<br><span style="font-size:11px;color:#888">Source: Ventrata connectivity partner list, Mar 2026 — deduplicated by parent account</span></td><td style="font-size:12px;color:#888">Ventrata client list (March 2026)</td><td>111 deals · 70 unique operators</td><td style="color:#1D9E75;font-weight:600">44%</td><td style="color:#1D9E75">Full push</td></tr>
+        <tr><td><strong>Xola</strong></td><td>1,263 companies</td><td style="font-size:12px;color:#888">Landbase + BuiltWith</td><td>163 · 152 never contacted</td><td style="color:#1D9E75;font-weight:600">13%</td><td style="color:#BA7517">Activate 152 unworked</td></tr>
+        <tr><td><strong>Bokun</strong></td><td>4,516 live websites</td><td style="font-size:12px;color:#888">BuiltWith</td><td>15</td><td style="color:#E24B4A;font-weight:600">0.3%</td><td style="color:#E24B4A">Ensuring API stability</td></tr>
+        <tr><td><strong>PrioTicket</strong></td><td>50K+ experiences · 98 countries</td><td style="font-size:12px;color:#888">PrioTicket about page</td><td>3</td><td style="color:#888">—</td><td style="color:#7F77DD">Pilot launching June</td></tr>
+        <tr style="background:#F7F6F4"><td><strong>Active TAM total</strong></td><td><strong>~6,037 operators</strong><br><span style="font-size:11px;color:#888">Ventrata 158 + Xola 1,263 + Bokun 4,516 + Prio n/a</span></td><td style="font-size:12px;color:#888">Product team sourced</td><td><strong>310 named</strong></td><td style="color:#7F77DD;font-weight:600"><strong>~5%</strong></td><td><strong>Q3 target = ~1% of TAM</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-hdr">Strategy per platform</div>
+  <div class="plat-grid">
+    <div class="plat-card">
+      <div class="plat-hdr"><div class="plat-name">Ventrata</div><span class="bdg" style="background:#EAF7F2;color:#085041">Full push</span></div>
+      <div class="plat-stats">
+        <div class="plat-stat"><div class="plat-stat-val">46</div><div class="plat-stat-lbl">Active deals</div></div>
+        <div class="plat-stat"><div class="plat-stat-val">111</div><div class="plat-stat-lbl">In HubSpot</div></div>
+        <div class="plat-stat"><div class="plat-stat-val">5/week</div><div class="plat-stat-lbl">Demo target</div></div>
+      </div>
+      <div class="plat-desc">Gold standard integration. 100% push success rate. Primary Q3 engine — warm co-sell with Terry, partner sends the intro.</div>
+      <div class="stuck-box"><strong>If a deal is stuck:</strong> Lead with the 1-month free offer — Terry is running this campaign across Ventrata accounts. "How about we get you started for a month, no cost, so you can see the data before committing?"</div>
+    </div>
+    <div class="plat-card">
+      <div class="plat-hdr"><div class="plat-name">Xola</div><span class="bdg" style="background:#FFF8ED;color:#633806">Activate the list</span></div>
+      <div class="plat-stats">
+        <div class="plat-stat"><div class="plat-stat-val">7</div><div class="plat-stat-lbl">Active deals</div></div>
+        <div class="plat-stat"><div class="plat-stat-val">152</div><div class="plat-stat-lbl">Never contacted</div></div>
+        <div class="plat-stat"><div class="plat-stat-val">3/week</div><div class="plat-stat-lbl">Demo target</div></div>
+      </div>
+      <div class="plat-desc">Stable integration. 152 operators in HubSpot with zero outreach — the most immediately executable pipeline move in Q3. Cold outreach with city-specific competitor data as the hook.</div>
+      <div class="stuck-box"><strong>If a deal is stuck:</strong> Use Everyday California or Empire Tours data as social proof. Same platform, proven results — concrete and specific.</div>
+    </div>
+    <div class="plat-card">
+      <div class="plat-hdr"><div class="plat-name">Bokun</div><span class="bdg" style="background:#FEEFEF;color:#9B2121">Ensuring stability</span></div>
+      <div class="plat-stats">
+        <div class="plat-stat"><div class="plat-stat-val">5</div><div class="plat-stat-lbl">Active deals</div></div>
+        <div class="plat-stat"><div class="plat-stat-val">15</div><div class="plat-stat-lbl">In HubSpot</div></div>
+        <div class="plat-stat"><div class="plat-stat-val">0</div><div class="plat-stat-lbl">Demo target</div></div>
+      </div>
+      <div class="plat-desc">Integration quality issues — push failure rate too high for commercial launch. Largest TAM of any platform (4,516 operators). Build the prospect list now, launch Q4 once the fix ships.</div>
+      <div class="stuck-box"><strong>For active deals:</strong> Redirect to CI-only while fixes land. Keep the relationship warm. No autopilot commitments until reliability is confirmed.</div>
+    </div>
+    <div class="plat-card">
+      <div class="plat-hdr"><div class="plat-name">PrioTicket</div><span class="bdg" style="background:#EEEDFE;color:#3C3489">Pilot launching June</span></div>
+      <div class="plat-stats">
+        <div class="plat-stat"><div class="plat-stat-val">2</div><div class="plat-stat-lbl">Active deals</div></div>
+        <div class="plat-stat"><div class="plat-stat-val">3</div><div class="plat-stat-lbl">In HubSpot</div></div>
+        <div class="plat-stat"><div class="plat-stat-val">1–2/wk</div><div class="plat-stat-lbl">Demo target</div></div>
+      </div>
+      <div class="plat-desc">Pilot launching June. Evan Evans ($600) in proposal, Blue Boat ($400) in demo. Partner-led motion — co-sell drives warm intros to their operator base.</div>
+      <div class="stuck-box"><strong>If a deal is stuck:</strong> Offer 3 months free instead of 1. "Take 3 months, no pressure — we want you to see the full value before committing."</div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="sec-hdr">
+    <div class="sec-num">5</div>
+    <div class="sec-title">Customer success motion</div>
+  </div>
+
+  <div class="callout" style="background:#F5F4FF;border-left:3px solid #7F77DD">
+    <strong>CS owns everything from Contract Signed onward.</strong> Sales closes at Contract Signed and hands off. CS runs onboarding, go-live, and the full motion. Two separate clocks: the <strong>onboarding clock</strong> (sign → go live, target 7–10 days) and the <strong>motion clock</strong> (starts at first live price push — all data, calls, and KPIs measured from here, not from sign date). See Section 7 for full pipeline stage breakdown.
+  </div>
+
+  <div class="sub-hdr">Phase 1 — Onboarding (CS owns · sign → GO LIVE · target: 7–10 days)</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EEEDFE"><th style="color:#3C3489">Day (from sign)</th><th style="color:#3C3489">What happens</th><th style="color:#3C3489">Owner</th><th style="color:#3C3489">If missed</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#7F77DD;font-weight:600">Day 0 — Sign</td><td>Contract signed. API token request sent + onboarding guide shared within 2 hours.</td><td>Alegria / CSM</td><td>Do not wait — same-day action required</td></tr>
+        <tr><td style="color:#7F77DD;font-weight:600">Day 1–3</td><td>API token received. Products identified and mapped in Walkway. Configuration complete. No prices pushed yet.</td><td>PA / Engineering</td><td>Escalate to PA immediately if token not received by Day 2</td></tr>
+        <tr><td style="color:#7F77DD;font-weight:600">Day 5</td><td>Testing — first price push triggered manually. PA verifies all products mapped correctly. Operator notified prices are in test.</td><td>PA + CSM</td><td>Bug flag → hold go-live until resolved</td></tr>
+        <tr><td style="color:#1D9E75;font-weight:600">Day 7–10</td><td style="background:#EAF7F2;font-weight:600">✅ GO LIVE — First live price push. Autopilot active. Motion clock starts here.</td><td>CSM</td><td>Escalate to Alegria. Delay = motion delay = churn risk.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-hdr" style="margin-top:20px">Phase 2 — CS motion (clock starts at GO LIVE)</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EAF7F2"><th style="color:#085041">Motion day</th><th style="color:#085041">Action</th><th style="color:#085041">Data to show</th><th style="color:#085041">Owner</th><th style="color:#085041">If missed</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#1D9E75;font-weight:600">Day 1</td><td>Confirm first live push with operator — brief message</td><td>Screenshot of first price change: which product, by how much, vs. competitor.</td><td>CSM</td><td>Send async same day</td></tr>
+        <tr><td style="color:#1D9E75;font-weight:600">Day 7</td><td>Autopilot health check — prices moving, no errors</td><td>Number of price updates in first week. Any competitor movement worth flagging.</td><td>CSM</td><td>Technical escalation if autopilot not running</td></tr>
+        <tr><td style="color:#1D9E75;font-weight:600">Day 14</td><td>First data review call</td><td>Price delta vs. competitors. Booking pace trends. Early revenue vs. same period prior year.</td><td>CSM</td><td>Send async report + reschedule within 48h</td></tr>
+        <tr><td style="color:#1D9E75;font-weight:600;background:#EAF7F2">Day 30 ★</td><td style="background:#EAF7F2"><strong>Revenue lift review + expansion proposal in same meeting</strong></td><td style="background:#EAF7F2">Revenue premium captured. % above baseline. Competitor gap closed. Lead into: "Here's what the next batch could do."</td><td style="background:#EAF7F2">CSM + Alegria</td><td style="background:#EAF7F2">Investigation if no lift. Delay expansion proposal if account is at risk.</td></tr>
+        <tr><td style="color:#BA7517;font-weight:600">Day ~35</td><td>Close expansion verbal — batch onboarding begins</td><td>Proposal was made at Day 30. Follow up within 5 days. Book onboarding call.</td><td>Alegria</td><td>If no verbal by Day 42 → amber flag</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-hdr" style="margin-top:20px">Account health</div>
+  <div class="cards-3">
+    <div class="card" style="border-left:3px solid #1D9E75;border-radius:0 10px 10px 0">
+      <div class="card-lbl" style="color:#1D9E75">Green — Healthy</div>
+      <div style="font-size:12px;color:#555;margin-top:4px;line-height:1.5">WAAP active weekly, attending calls, price pushes running, engagement on data</div>
+      <div style="font-size:11px;background:#EAF7F2;color:#085041;padding:5px 8px;border-radius:5px;margin-top:8px">Action: Expansion proposal at Day 30. Keep cadence running.</div>
+    </div>
+    <div class="card" style="border-left:3px solid #BA7517;border-radius:0 10px 10px 0">
+      <div class="card-lbl" style="color:#BA7517">Amber — At risk</div>
+      <div style="font-size:12px;color:#555;margin-top:4px;line-height:1.5">WAAP not active 7+ days · missed 2+ motion calls · no expansion verbal by Day 42</div>
+      <div style="font-size:11px;background:#FFF8ED;color:#7A4500;padding:5px 8px;border-radius:5px;margin-top:8px">Action: CSM intervention call within 48h. Find the blocker.</div>
+    </div>
+    <div class="card" style="border-left:3px solid #E24B4A;border-radius:0 10px 10px 0">
+      <div class="card-lbl" style="color:#E24B4A">Red — Churn risk</div>
+      <div style="font-size:12px;color:#555;margin-top:4px;line-height:1.5">No WAAP 14+ days · unresolved pricing failure · no D30 call · renewal within 30 days</div>
+      <div style="font-size:11px;background:#FEEFEF;color:#9B2121;padding:5px 8px;border-radius:5px;margin-top:8px">Action: Alegria direct call within 24h. Do not delegate.</div>
+    </div>
+  </div>
+
+  <div class="sub-hdr" style="margin-top:20px">Capacity — how the CSM hire solves the constraint</div>
+  <div class="callout" style="background:#EAF7F2;border-left:3px solid #1D9E75;margin-bottom:16px">
+    <strong>The fix:</strong> CSM hired June 30 owns all EU account motion calls, D14/D30 reviews, and onboarding coordination. That frees ~40% of Alegria's time — shifting from 1 demo/week to 4–5. At 30% conversion that's 1–2 new customers per week instead of 1 every 3 weeks. <strong>August becomes executable. Without the hire, it isn't.</strong>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EEEDFE"><th style="color:#3C3489">Metric</th><th style="color:#3C3489">Today (Alegria only)</th><th style="color:#3C3489">With CSM hired Jun 30</th><th style="color:#3C3489">What it enables</th></tr></thead>
+      <tbody>
+        <tr><td>Demos per week</td><td style="color:#E24B4A">~1</td><td style="color:#1D9E75;font-weight:600">4–5</td><td>Ventrata warm pipeline closes in July · Xola outreach starts Aug</td></tr>
+        <tr><td>New customers/month</td><td style="color:#E24B4A">~1 every 3 weeks</td><td style="color:#1D9E75;font-weight:600">1–2 per week</td><td>30 new customers over Q3 becomes achievable</td></tr>
+        <tr><td>Expansion calls/week</td><td style="color:#E24B4A">1 or fewer</td><td style="color:#1D9E75;font-weight:600">4–5</td><td>Day 30 proposal lands on time for all accounts</td></tr>
+        <tr><td>D14/D30 motion calls</td><td style="color:#E24B4A">1 max — often skipped</td><td style="color:#1D9E75;font-weight:600">All accounts covered</td><td>WAAP doesn't leak · expansion triggers fire on time</td></tr>
+        <tr><td><strong>Aug MRR ceiling</strong></td><td style="color:#E24B4A;font-weight:600">~$32–35K</td><td style="color:#1D9E75;font-weight:600">~$50K</td><td style="color:#1D9E75;font-weight:600">+$15–18K vs. no-hire scenario</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECTION 7: HUBSPOT STAGES -->
+<div class="section">
+  <div class="sec-hdr">
+    <div class="sec-num">7</div>
+    <div class="sec-title">Proposed HubSpot pipeline stages</div>
+  </div>
+  <div class="callout" style="background:#F5F4FF;border-left:3px solid #7F77DD">
+    From the June 8 Commercial LT meeting: the current pipeline conflates the sales motion and the expansion motion. These need to be separate pipelines in HubSpot — different stages, different owners, different velocity metrics.
+  </div>
+
+  <div class="sub-hdr">Sales pipeline — proposed changes</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EEEDFE"><th style="color:#3C3489">Stage</th><th style="color:#3C3489">Probability</th><th style="color:#3C3489">Action</th><th style="color:#3C3489">Keep / Add / Remove</th></tr></thead>
+      <tbody>
+        <tr><td>Prospecting</td><td>10%</td><td>Named in system, no outreach yet</td><td style="color:#1D9E75;font-weight:600">Keep</td></tr>
+        <tr><td>Engaged</td><td>40%</td><td>Replied, meeting interest confirmed</td><td style="color:#1D9E75;font-weight:600">Keep</td></tr>
+        <tr><td>Win-back / Re-engage</td><td>25%</td><td>Previously stalled — reactivation in progress</td><td style="color:#1D9E75;font-weight:600">Keep</td></tr>
+        <tr><td>Demo Scheduled</td><td>20%</td><td>Demo booked or complete</td><td style="color:#1D9E75;font-weight:600">Keep</td></tr>
+        <tr><td>Proposal / Negotiation</td><td>65%</td><td>Proposal sent, in discussion</td><td style="color:#1D9E75;font-weight:600">Keep</td></tr>
+        <tr><td>Verbal Commit</td><td>85%</td><td>Verbal yes received</td><td style="color:#1D9E75;font-weight:600">Keep</td></tr>
+        <tr><td style="color:#7F77DD;font-weight:600">Contract Signed</td><td>90%</td><td>Signature received — onboarding begins</td><td style="color:#7F77DD;font-weight:600">ADD — separates verbal from legally committed</td></tr>
+        <tr><td>Onboarding</td><td>95%</td><td>Technical setup in progress (up to 10 days)</td><td style="color:#BA7517;font-weight:600">Move to CS dashboard — not a sales stage</td></tr>
+        <tr><td style="color:#7F77DD;font-weight:600">Go Live</td><td>98%</td><td>First price push confirmed — motion clock starts</td><td style="color:#7F77DD;font-weight:600">ADD — critical milestone, currently invisible</td></tr>
+        <tr><td>Live &amp; Active (was Closed Won)</td><td>100%</td><td>WAAP running, motion active</td><td style="color:#BA7517;font-weight:600">Rename + move to CS dashboard</td></tr>
+        <tr><td>Closed Lost</td><td>0%</td><td>Lost or disqualified</td><td style="color:#1D9E75;font-weight:600">Keep</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-hdr" style="margin-top:20px">Expansion pipeline — new (separate from sales pipeline)</div>
+  <div class="callout" style="background:#EAF7F2;border-left:3px solid #1D9E75;font-size:12px">
+    Expansion deals should live in a separate pipeline. This separates the commercial incentive structure, keeps sales velocity metrics clean, and allows Terry + Alegria to own different motions.
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EAF7F2"><th style="color:#085041">Stage</th><th style="color:#085041">Probability</th><th style="color:#085041">What it means</th><th style="color:#085041">Owner</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#1D9E75;font-weight:600">Expansion Candidate</td><td>0%</td><td>Live account with identified untapped product TAM. Expansion surface > 0.</td><td>CSM</td></tr>
+        <tr><td style="color:#1D9E75;font-weight:600">Expansion Proposal Sent</td><td>20%</td><td>Proposal for next product batch delivered to operator</td><td>CSM → Alegria</td></tr>
+        <tr><td style="color:#1D9E75;font-weight:600">Expansion Verbal</td><td>60%</td><td>Operator verbally committed to next batch</td><td>Alegria</td></tr>
+        <tr><td style="color:#1D9E75;font-weight:600">Expansion Signed</td><td>85%</td><td>Contract / order form signed for new batch</td><td>Alegria</td></tr>
+        <tr><td style="color:#1D9E75;font-weight:600">Expansion Onboarding</td><td>95%</td><td>New batch in technical setup</td><td>CSM + PA</td></tr>
+        <tr><td style="color:#1D9E75;font-weight:600">Expansion Live</td><td>100%</td><td>New batch on WAAP — counted toward expansion MRR</td><td>CSM</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-hdr" style="margin-top:20px">Key principles</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EEEDFE"><th style="color:#3C3489">Principle</th><th style="color:#3C3489">Detail</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Track contracted MRR separately from live MRR</strong></td><td>Signed ≠ WAAP. Report both: contracted MRR (what's signed) and active MRR (what's live on autopilot). The gap between the two is the onboarding backlog.</td></tr>
+        <tr><td><strong>WAAP is the north star metric</strong></td><td>Weekly Active Autopilot Products — captures activation, retention, and expansion in a single number. All sales + CS activity should trace back to moving this number.</td></tr>
+        <tr><td><strong>Comp on net new MRR, not % thresholds</strong></td><td>Commission structure based on net new MRR generated. Include minimum product threshold per deal to prevent cherry-picking tiny accounts.</td></tr>
+        <tr><td><strong>Handoff at Contract Signed, not Closed Won</strong></td><td>Sales hands to CS at Contract Signed stage. CS owns onboarding → go live → motion. Sales pipeline closes at Contract Signed.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECTION 8: DEPENDENCIES PER LOOP STAGE -->
+<div class="section">
+  <div class="sec-hdr">
+    <div class="sec-num">8</div>
+    <div class="sec-title">Dependencies — what needs to ship for the motion to work</div>
+  </div>
+  <div class="callout" style="background:#F5F4FF;border-left:3px solid #7F77DD">
+    These are problems blocking specific loop stages — not feature requests. Listed by team and motion stage. <strong>DS-1 and CS-2 are the top two:</strong> without them, Activate and Expand run manually and won't hold at scale.
+  </div>
+  <div class="sub-hdr">Data Science / Engineering</div>
+  <div class="tbl-wrap" style="margin-bottom:16px">
+    <table>
+      <thead><tr style="background:#EEEDFE">
+        <th style="color:#3C3489">Stage blocked</th>
+        <th style="color:#3C3489">Problem</th>
+        <th style="color:#3C3489">Why it blocks the motion</th>
+        <th style="color:#3C3489;text-align:center">Target cycle</th>
+      </tr></thead>
+      <tbody>
+        <tr style="background:#FFF8ED">
+          <td><span style="background:#BA7517;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Activate</span></td>
+          <td><strong>DS-1 ★</strong> No alert when algorithm fires but prices don't push</td>
+          <td>Mi Bikes was on autopilot with zero pushes for 30 days — caught manually. Trust erosion delays expansion every time this happens.</td>
+          <td style="text-align:center;background:#EAF7F2;color:#085041;font-weight:600">Cycle 8</td>
+        </tr>
+        <tr>
+          <td><span style="background:#BA7517;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Activate</span></td>
+          <td><strong>DS-2</strong> No WAAP leak detection (autopilot reversion)</td>
+          <td>Operator turns off autopilot — we don't know. WAAP drops silently. CSM is unprepared at the D30 call.</td>
+          <td style="text-align:center;background:#EAF7F2;color:#085041;font-weight:600">Cycle 8</td>
+        </tr>
+        <tr style="background:#FFF8ED">
+          <td><span style="background:#1D9E75;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Expand</span></td>
+          <td><strong>DS-3</strong> No automated lift report at D14 and D30</td>
+          <td>CSM prepares every data report manually. Not scalable past 20 accounts. Expansion argument weakens when data is delayed or incomplete.</td>
+          <td style="text-align:center;background:#EAF7F2;color:#085041;font-weight:600">Cycle 8</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-hdr">Customer Success</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EAF7F2">
+        <th style="color:#085041">Stage blocked</th>
+        <th style="color:#085041">Problem</th>
+        <th style="color:#085041">Why it blocks the motion</th>
+        <th style="color:#085041;text-align:center">Target cycle</th>
+      </tr></thead>
+      <tbody>
+        <tr style="background:#FFF8ED">
+          <td><span style="background:#BA7517;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Activate</span></td>
+          <td><strong>CS-2 ★</strong> No automated 30-day at-risk alert</td>
+          <td>100% autopilot by D30 is our top OKR. Without this alert, accounts fall through the cracks as volume grows past 20.</td>
+          <td style="text-align:center;background:#EAF7F2;color:#085041;font-weight:600">Cycle 8</td>
+        </tr>
+        <tr>
+          <td><span style="background:#1D9E75;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Expand</span></td>
+          <td><strong>CS-1 ★</strong> No automated expansion trigger when lift threshold is hit</td>
+          <td>CSM manually monitors expansion readiness. Misses optimal timing. $29K expansion MRR requires catching every window.</td>
+          <td style="text-align:center;background:#EAF7F2;color:#085041;font-weight:600">Cycle 8</td>
+        </tr>
+        <tr style="background:#FFF8ED">
+          <td><span style="background:#085041;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Refer</span></td>
+          <td><strong>CS-3</strong> Case study creation is manual and slow</td>
+          <td>Fire rate well below 100%. Terry can't publish what Alegria hasn't created. Reference pipeline (2→8) depends on this being automated.</td>
+          <td style="text-align:center;background:#EAF7F2;color:#085041;font-weight:600">Cycle 8</td>
+        </tr>
+        <tr>
+          <td><span style="background:#888;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Scale</span></td>
+          <td><strong>CS-5</strong> Onboarding requires manual PA setup per operator</td>
+          <td>PA manually configures every new operator. Hard ceiling at ~50 accounts — beyond that, onboarding becomes the constraint, not sales.</td>
+          <td style="text-align:center;background:#FFF8ED;color:#633806;font-weight:600">Cycle 9</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECTION 9: KPIs + HIRING -->
+<div class="section">
+  <div class="sec-hdr">
+    <div class="sec-num">9</div>
+    <div class="sec-title">Capacity &amp; hiring — July &amp; August</div>
+  </div>
+
+  <!-- July math -->
+  <div class="sub-hdr">July — $30,200 target (+$9,200 from June)</div>
+  <div class="callout" style="background:#F5F4FF;border-left:3px solid #7F77DD">
+    July is achievable — but <strong>not because of new demo activity</strong>. At ~1 demo/week, new pipeline takes months to close. July works because almost all of it is already warm: verbals are signed, onboarding is in progress, expansion accounts are identified. The capacity constraint hits in August when we need to build fresh pipeline simultaneously.
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EEEDFE"><th style="color:#3C3489">What closes the gap</th><th style="color:#3C3489">MRR</th><th style="color:#3C3489">Conversations needed</th><th style="color:#3C3489">At current capacity</th></tr></thead>
+      <tbody>
+        <tr><td>HubSpot onboarding pipeline (already committed)</td><td style="color:#1D9E75;font-weight:600">$5,700</td><td>0 — just need to go live</td><td style="color:#1D9E75">✓ Done</td></tr>
+        <tr><td>June verbal commits</td><td style="color:#1D9E75;font-weight:600">$2,000</td><td>Signatures only — no new demos needed</td><td style="color:#1D9E75">✓ Done</td></tr>
+        <tr><td>Expansion push (HTA, Amigo, Ciao, Boost)</td><td style="color:#1D9E75;font-weight:600">~$4,900</td><td>Expansion calls — existing accounts, no demos</td><td style="color:#1D9E75">✓ Manageable</td></tr>
+        <tr><td><strong>Net new demos for July</strong></td><td style="color:#7F77DD;font-weight:600">limited</td><td>~1 demo/week = ~4 demos in July → 1–2 closes</td><td style="color:#E24B4A;font-weight:600">⚠ Low — new pipeline contribution minimal</td></tr>
+        <tr style="background:#F7F6F4"><td><strong>July verdict</strong></td><td style="color:#1D9E75;font-weight:600"><strong>$30.2K reachable</strong></td><td colspan="2">Achievable on warm pipeline alone. Zero room for slippage. <strong>Not because demo capacity is strong — because the pipeline was built before.</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- August math -->
+  <div class="sub-hdr" style="margin-top:24px">August — $40,724 target (+$10,524 from July)</div>
+  <div class="callout" style="background:#FEEFEF;border-left:3px solid #E24B4A">
+    August is where the capacity wall hits. July worked on warm pipeline. August requires <strong>building new pipeline from scratch</strong> while managing 50+ live CS accounts simultaneously. At ~1 demo/week, that math doesn't close.
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EEEDFE"><th style="color:#3C3489">What closes the gap</th><th style="color:#3C3489">MRR needed</th><th style="color:#3C3489">Activity required</th><th style="color:#3C3489">Calls/week</th></tr></thead>
+      <tbody>
+        <tr><td>Expansion: ~40-45 new products at ~$155 avg</td><td style="color:#7F77DD;font-weight:600">~$6,750</td><td>12–15 expansion conversations</td><td style="font-weight:600">3–4/week</td></tr>
+        <tr><td>Net new: ~13 CI products from 4–5 new operators</td><td style="color:#7F77DD;font-weight:600">~$3,120</td><td>~17 demos at 30% conversion</td><td style="font-weight:600">4+/week</td></tr>
+        <tr><td>CS: manage 50–60 live accounts</td><td style="color:#888">retention</td><td>Weekly/biweekly touchpoints, escalations</td><td style="font-weight:600">5–6/week</td></tr>
+        <tr style="background:#FEEFEF"><td><strong>Total active calls needed</strong></td><td style="color:#E24B4A;font-weight:600">$40.7K</td><td colspan="2" style="color:#9B2121;font-weight:600">12–14 calls/week — impossible at ~1 demo/week + 80% CS capacity</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- With vs without CSM -->
+  <div class="sub-hdr" style="margin-top:24px">The CSM hire is specifically a July → August unlock</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EEEDFE"><th style="color:#3C3489">Metric</th><th style="color:#3C3489">Without CSM</th><th style="color:#3C3489">CSM hired Jun 30 (productive ~Jul 15)</th></tr></thead>
+      <tbody>
+        <tr><td>Demos/week (actual)</td><td style="color:#E24B4A;font-weight:600">~1 (emails + proposals eat the rest)</td><td style="color:#1D9E75;font-weight:600">4–5</td></tr>
+        <tr><td>Expansion calls/week</td><td style="color:#E24B4A">1 or fewer</td><td style="color:#1D9E75;font-weight:600">4–5</td></tr>
+        <tr><td>CS time (Alegria)</td><td style="color:#E24B4A">~80% — absorbs all slack time</td><td style="color:#1D9E75;font-weight:600">~40% — CSM owns EU accounts</td></tr>
+        <tr><td><strong>July DP MRR ceiling</strong></td><td style="color:#BA7517;font-weight:600">~$28–30K ⚠ tight</td><td style="color:#1D9E75;font-weight:600">$30.2K ✓</td></tr>
+        <tr><td><strong>August DP MRR ceiling</strong></td><td style="color:#E24B4A;font-weight:600">~$32–35K — misses by $6–9K</td><td style="color:#1D9E75;font-weight:600">$40.7K ✓ reachable</td></tr>
+        <tr style="background:#EAF7F2"><td><strong>Revenue unlocked in August alone</strong></td><td style="color:#888">—</td><td style="color:#1D9E75;font-weight:600">+~$6–9K MRR vs. no-CSM scenario</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout" style="background:#EAF7F2;border-left:3px solid #1D9E75">
+    CSM cost: ~€5,150/month. Revenue gap in August if not hired: $6–9K MRR (~$7,200–10,800/month annualized). <strong>The CSM pays for itself in the first month it matters — which is August.</strong> Every week the hire slips past June 30 pushes the ramp into August and risks that milestone.
+  </div>
+
+  <!-- July-August KPI targets -->
+  <div class="sub-hdr" style="margin-top:24px">KPI targets: July &amp; August</div>
+  <div class="kpi-scroll">
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr style="background:#EEEDFE">
+          <th style="color:#3C3489">Metric</th>
+          <th style="color:#3C3489">June (now)</th>
+          <th style="color:#3C3489">July (target)</th>
+          <th style="color:#3C3489">August (target)</th>
+          <th style="color:#3C3489">What unlocks it</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><strong>DP MRR</strong></td><td style="color:#7F77DD;font-weight:600">$21K</td><td style="color:#7F77DD;font-weight:600">$30.2K</td><td style="color:#1D9E75;font-weight:600">$40.7K</td><td>CSM productive by Jul 15</td></tr>
+          <tr><td>WAAP (live products)</td><td>60</td><td>90</td><td>130</td><td>Expansion calls running at 4–5/week</td></tr>
+          <tr><td>Demos/week</td><td style="color:#BA7517">3–4</td><td>8–9</td><td>9–10</td><td>CSM takes over EU CS → frees Alegria</td></tr>
+          <tr><td>Demo→verbal rate</td><td>30%</td><td>30%</td><td>35%</td><td>Tighter ICP targeting on Xola list</td></tr>
+          <tr><td>Expansion products added</td><td>30–40</td><td>50+</td><td>80–90</td><td>Amigo Mexico + HTA batches activating</td></tr>
+          <tr><td>New CI operators/month</td><td>8</td><td>13</td><td>13</td><td>Demo pipeline from proposals + Xola list</td></tr>
+          <tr><td>NRR</td><td>100%</td><td>110%</td><td>115%</td><td>Expansion motion converting on schedule</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout" style="background:#F9F9F9;border-left:3px solid #CCCCCC;font-size:12px;color:#777">
+    <strong>H2 context:</strong> The same capacity logic continues through December — each milestone builds on the previous one. The December $101K target requires the AE hire in Aug–Sep and Bokun coming online in October. But those decisions can be made in real-time as July and August land. The immediate decision is the CSM by June 30.
+  </div>
+</div>
+
+<div class="doc-footer">
+  <span>Walkway &nbsp;·&nbsp; H2 2026 &nbsp;·&nbsp; Confidential</span>
+  <span>Updated June 8, 2026 &nbsp;·&nbsp; Finalize by Tuesday June 10</span>
+</div>
+
+</div>
+<!-- SECTION 10: OKRs -->
+<div class="section">
+  <div class="sec-hdr">
+    <div class="sec-num">10</div>
+    <div class="sec-title">OKRs — how we measure success</div>
+  </div>
+  <div class="callout" style="background:#F5F4FF;border-left:3px solid #7F77DD">
+    Two north stars set by Brent. Everything Alegria owns maps to one of these. Tracked weekly in the Evidence Dashboard and HubSpot.
+  </div>
+
+  <!-- North stars -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+    <div style="background:#EEEDFE;border-radius:10px;padding:16px 20px;border-left:4px solid #7F77DD">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#3C3489;margin-bottom:6px">★ North Star 1 — WAAP</div>
+      <div style="font-size:28px;font-weight:700;color:#7F77DD">49 → 200</div>
+      <div style="font-size:12px;color:#534AB7;margin-top:4px">Weekly Active Autopilot Products · +151 net new</div>
+      <div style="font-size:11px;color:#888;margin-top:8px;line-height:1.5">Captures activation + retention + expansion in one number. All Sales + CS activity traces back to this.</div>
+    </div>
+    <div style="background:#EAF7F2;border-radius:10px;padding:16px 20px;border-left:4px solid #1D9E75">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#085041;margin-bottom:6px">★ North Star 2 — NRR</div>
+      <div style="font-size:28px;font-weight:700;color:#1D9E75">100% → 130%</div>
+      <div style="font-size:12px;color:#085041;margin-top:4px">Net Revenue Retention · Q3 exit target</div>
+      <div style="font-size:11px;color:#888;margin-top:8px;line-height:1.5">Every account must expand within 90 days of go-live. Zero churn + expansion = 130%.</div>
+    </div>
+  </div>
+
+  <!-- Sub-metrics by loop stage -->
+  <div class="sub-hdr">Leading indicators by loop stage — Alegria owns</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr style="background:#EEEDFE">
+        <th style="color:#3C3489">Loop stage</th>
+        <th style="color:#3C3489">Metric</th>
+        <th style="color:#3C3489">Baseline</th>
+        <th style="color:#3C3489">Q3 Target</th>
+        <th style="color:#3C3489">July checkpoint</th>
+        <th style="color:#3C3489">Tracked in</th>
+      </tr></thead>
+      <tbody>
+        <tr style="background:#FFF8ED">
+          <td rowspan="2"><span style="background:#BA7517;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Activate</span></td>
+          <td>% new customers on autopilot by D30</td>
+          <td>~50%</td>
+          <td style="color:#1D9E75;font-weight:600">100%</td>
+          <td>All June go-lives on autopilot</td>
+          <td>Evidence Dashboard</td>
+        </tr>
+        <tr style="background:#FFF8ED">
+          <td>Sign → first push (median)</td>
+          <td>5–7 days</td>
+          <td style="color:#1D9E75;font-weight:600">≤3 days</td>
+          <td>BofS, ToT, Carrani ≤3 days</td>
+          <td>Dashboard</td>
+        </tr>
+        <tr>
+          <td><span style="background:#BA7517;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Activate</span></td>
+          <td>Autopilot reversion rate (WAAP leaks)</td>
+          <td>Unknown</td>
+          <td style="color:#1D9E75;font-weight:600">Minimize · alert within 24h</td>
+          <td>First reversion caught proactively</td>
+          <td>DS-2 alert (Cycle 8)</td>
+        </tr>
+        <tr style="background:#FFF8ED">
+          <td rowspan="2"><span style="background:#1D9E75;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Expand</span></td>
+          <td>Expansion MRR added</td>
+          <td>$0</td>
+          <td style="color:#1D9E75;font-weight:600">$29,140</td>
+          <td>~$7,790 by Jul 31</td>
+          <td>HubSpot expansion pipeline</td>
+        </tr>
+        <tr style="background:#FFF8ED">
+          <td>% accounts with expansion proposal at D30</td>
+          <td>~0%</td>
+          <td style="color:#1D9E75;font-weight:600">100%</td>
+          <td>HTA, BofS, ToT proposals in July</td>
+          <td>HubSpot motion stage</td>
+        </tr>
+        <tr>
+          <td><span style="background:#7F77DD;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Acquire</span></td>
+          <td>Demos per week</td>
+          <td>~1</td>
+          <td style="color:#1D9E75;font-weight:600">4–5 (with CSM)</td>
+          <td>3+ demos/week by Jul 15</td>
+          <td>HubSpot activity log</td>
+        </tr>
+        <tr style="background:#FFF8ED">
+          <td><span style="background:#7F77DD;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Acquire</span></td>
+          <td>Net new customers closed</td>
+          <td>10 live</td>
+          <td style="color:#1D9E75;font-weight:600">40 total (+30)</td>
+          <td>~18 total by Jul 31</td>
+          <td>HubSpot · Contract Signed stage</td>
+        </tr>
+        <tr>
+          <td><span style="background:#7F77DD;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Acquire</span></td>
+          <td>Net new customer MRR</td>
+          <td>$0</td>
+          <td style="color:#1D9E75;font-weight:600">$18,900</td>
+          <td>~$5,000 by Jul 31</td>
+          <td>HubSpot · revenue bridge</td>
+        </tr>
+        <tr style="background:#FFF8ED">
+          <td><span style="background:#085041;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Refer</span></td>
+          <td>Reference-willing customers</td>
+          <td>2</td>
+          <td style="color:#1D9E75;font-weight:600">6</td>
+          <td>4 by Jul 31 (Boost, Empire, Airboat, HTA)</td>
+          <td>Alegria · CS tracker</td>
+        </tr>
+        <tr>
+          <td><span style="background:#085041;color:#FFF;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600">Refer</span></td>
+          <td>Case study fire rate at lift milestone</td>
+          <td>&lt;50%</td>
+          <td style="color:#1D9E75;font-weight:600">100% within 7 days of milestone</td>
+          <td>Boost Portugal case study published</td>
+          <td>Terry · Marketing tracker</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Decisions needed -->
+  <div style="margin-top:20px;background:#FFF8ED;border:1px solid #F0D9B0;border-radius:10px;padding:16px 20px">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#633806;margin-bottom:12px">Three decisions needed from Brent to make this plan executable</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <div style="background:#FFF;border-radius:6px;padding:10px 12px">
+        <div style="font-size:12px;font-weight:600;color:#633806;margin-bottom:4px">1. CSM hire by June 30</div>
+        <div style="font-size:11px;color:#555">August is not executable without it. $15–18K MRR gap vs. no-hire scenario. Can we post this week?</div>
+      </div>
+      <div style="background:#FFF;border-radius:6px;padding:10px 12px">
+        <div style="font-size:12px;font-weight:600;color:#633806;margin-bottom:4px">2. DS-1 + CS-2 in Cycle 8</div>
+        <div style="font-size:11px;color:#555">Push failure alert and 30-day at-risk alert. Without them, Activate runs manually. Confirmed for Cycle 8?</div>
+      </div>
+      <div style="background:#FFF;border-radius:6px;padding:10px 12px">
+        <div style="font-size:12px;font-weight:600;color:#633806;margin-bottom:4px">3. HubSpot 3-pipeline restructure</div>
+        <div style="font-size:11px;color:#555">Sales → CS Motion → Expansion. Need 30 min with sales ops. Can we greenlight and schedule?</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
