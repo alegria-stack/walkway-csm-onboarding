@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walkway Q3 2026 — GTM Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #1a1a1a; background: #FAFAF9; line-height: 1.5; -webkit-print-color-adjust:exact; }
+.page { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+
+/* Header */
+.hdr { margin-bottom: 28px; padding-bottom: 14px; border-bottom: 3px solid #7F77DD; display:flex; justify-content:space-between; align-items:flex-end; }
+.hdr h1 { font-size: 22px; color: #3C3489; font-weight: 600; }
+.hdr p { font-size: 12px; color: #888; margin-top: 3px; }
+
+/* Section */
+.sec { margin-bottom: 36px; }
+.sec-title { font-size: 14px; font-weight: 600; color: #3C3489; padding: 9px 14px; background: #EEEDFE; border-radius: 6px; margin-bottom: 14px; }
+
+/* Equation */
+.eq { display:grid; grid-template-columns:1fr 36px 1fr 36px 1fr; align-items:center; margin-bottom:14px; }
+.eq-card { background:#fff; border-radius:8px; padding:16px; text-align:center; border:1px solid #EEE; }
+.eq-card.amber { background:#FFF8ED; border-color:#F0D9B0; }
+.eq-card.teal  { background:#EAF7F2; border-color:#A8E6CE; }
+.eq-card.purple{ background:#EEEDFE; border-color:#C4C0F5; }
+.eq-num { font-size:26px; font-weight:600; color:#3C3489; }
+.eq-card.amber .eq-num { color:#BA7517; }
+.eq-card.teal  .eq-num { color:#1D9E75; }
+.eq-lbl { font-size:11px; color:#555; margin-top:2px; font-weight:500; }
+.eq-sub { font-size:10px; color:#888; margin-top:2px; }
+.eq-op  { font-size:22px; color:#CCC; text-align:center; }
+
+/* Tables */
+.tbl { background:#fff; border-radius:8px; overflow:hidden; border:1px solid #E8E8E8; margin-bottom:14px; }
+.tbl-lbl { font-size:11px; font-weight:600; color:#888; text-transform:uppercase; letter-spacing:.05em; padding:7px 12px; background:#F7F6F4; border-bottom:1px solid #EEE; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { background:#EEEDFE; color:#3C3489; font-weight:600; padding:7px 11px; text-align:left; border-bottom:2px solid #D8D6F7; font-size:11px; }
+td { padding:7px 11px; border-bottom:1px solid #F0F0F0; vertical-align:top; }
+tr:last-child td { border-bottom:none; }
+.stripe td { background:#FAFAFA; }
+.total td  { background:#EEEDFE; font-weight:600; color:#3C3489; border-top:2px solid #D8D6F7; }
+.nr { text-align:right; }
+.green  { color:#1D9E75; font-weight:600; }
+.amber  { color:#BA7517; font-weight:600; }
+.red    { color:#E24B4A; font-weight:600; }
+.purple { color:#3C3489; font-weight:600; }
+.grey   { color:#888; }
+
+/* Notes */
+.note { padding:9px 13px; border-radius:6px; margin-bottom:12px; font-size:12px; line-height:1.6; }
+.note.grey   { background:#F7F6F4; border-left:3px solid #CCC; }
+.note.amber  { background:#FFF8ED; border-left:3px solid #BA7517; color:#633806; }
+.note.purple { background:#F5F4FF; border-left:3px solid #7F77DD; color:#3C3489; }
+.note.red    { background:#FEEFEF; border-left:3px solid #E24B4A; color:#9B2121; }
+.note.teal   { background:#EAF7F2; border-left:3px solid #1D9E75; color:#085041; }
+
+/* Platform cards */
+.plat-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+.plat-card { background:#fff; border-radius:10px; border:1px solid #E8E8E8; overflow:hidden; }
+.plat-hdr  { padding:12px 16px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #F0F0F0; }
+.plat-name { font-size:16px; font-weight:600; color:#1a1a1a; }
+.badge { font-size:10px; font-weight:600; padding:3px 9px; border-radius:12px; }
+.badge-teal   { background:#EAF7F2; color:#085041; }
+.badge-purple { background:#EEEDFE; color:#3C3489; }
+.badge-amber  { background:#FFF8ED; color:#633806; }
+.badge-grey   { background:#F0F0F0; color:#666; }
+.plat-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-bottom:1px solid #F0F0F0; }
+.plat-stat { padding:10px 14px; border-right:1px solid #F0F0F0; }
+.plat-stat:last-child { border-right:none; }
+.plat-stat-val { font-size:20px; font-weight:600; color:#1a1a1a; }
+.plat-stat-lbl { font-size:10px; color:#888; margin-top:1px; }
+.plat-body { padding:12px 16px; font-size:12px; color:#444; line-height:1.6; }
+.when-what-how { margin-top:10px; display:grid; grid-template-columns:1fr; gap:6px; }
+.wwh-row { display:grid; grid-template-columns:44px 1fr; gap:8px; align-items:start; }
+.wwh-tag { font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.05em; padding:2px 6px; border-radius:3px; text-align:center; margin-top:1px; }
+.wwh-when { background:#EEEDFE; color:#3C3489; }
+.wwh-what { background:#FFF8ED; color:#633806; }
+.wwh-how  { background:#EAF7F2; color:#085041; }
+.wwh-dep  { background:#F0F0F0; color:#555; }
+.wwh-text { font-size:11px; color:#444; }
+.plat-callout { margin-top:10px; padding:8px 10px; background:#F5F4FF; border-radius:5px; font-size:11px; color:#3C3489; }
+.plat-callout.amber { background:#FFF8ED; color:#633806; }
+
+/* Badges */
+.ph { display:inline-block; font-size:10px; font-weight:600; padding:1px 6px; border-radius:3px; }
+.ph-p2  { background:#FFF8ED; color:#633806; }
+.ph-ob  { background:#EEEDFE; color:#3C3489; }
+.ph-new { background:#EAF7F2; color:#085041; }
+.conf { display:inline-block; font-size:10px; font-weight:600; padding:1px 6px; border-radius:3px; }
+.conf-h { background:#EAF7F2; color:#085041; }
+.conf-m { background:#FFF8ED; color:#633806; }
+
+/* Account action cards */
+.account-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px; }
+.acc-card { background:#fff; border-radius:8px; border:1px solid #E8E8E8; overflow:hidden; }
+.acc-hdr { padding:9px 14px; display:flex; justify-content:space-between; align-items:center; }
+.acc-hdr.p2 { background:#FFF8ED; }
+.acc-hdr.ob { background:#F5F4FF; }
+.acc-name { font-size:13px; font-weight:600; }
+.acc-body { padding:10px 14px; font-size:11px; color:#444; line-height:1.7; }
+.acc-row { display:grid; grid-template-columns:80px 1fr; gap:6px; margin-bottom:4px; align-items:start; }
+.acc-lbl { font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:#888; padding-top:1px; }
+.acc-val { font-size:11px; color:#444; }
+
+/* Motions */
+.motions { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+.mbox { background:#fff; border-radius:8px; border:1px solid #EEE; overflow:hidden; }
+.mhdr { padding:10px 14px; font-size:12px; font-weight:600; }
+.mhdr.a { background:#EAF7F2; color:#085041; }
+.mhdr.b { background:#FFF8ED; color:#633806; }
+.mbody { padding:10px 14px; font-size:11px; color:#444; line-height:1.7; }
+.ph-row { margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #F0F0F0; }
+.ph-row:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.ptag { display:inline-block; font-size:10px; font-weight:600; padding:1px 7px; border-radius:3px; margin-bottom:4px; }
+.ptag-g { background:#EAF7F2; color:#085041; }
+.ptag-a { background:#FFF8ED; color:#633806; }
+.ptag-p { background:#EEEDFE; color:#3C3489; }
+.push { font-style:italic; color:#555; padding:5px 8px; background:#F7F6F4; border-radius:4px; margin-top:4px; font-size:11px; }
+
+/* GTM cards */
+.gtm-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:14px; }
+.gtm-card { background:#fff; border-radius:8px; padding:12px; border:1px solid #EEE; }
+.gtm-card h4 { font-size:12px; font-weight:600; color:#3C3489; margin-bottom:6px; }
+.gtm-card p  { font-size:11px; color:#444; line-height:1.6; }
+.promo-tag { font-size:11px; color:#BA7517; font-weight:600; margin-top:6px; background:#FFF8ED; padding:4px 8px; border-radius:4px; display:block; }
+
+/* Blockers */
+.blk-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:14px; }
+.blk { background:#fff; border-radius:7px; padding:11px; border:1px solid #EEE; }
+.blk-tag { font-size:10px; font-weight:600; text-transform:uppercase; margin-bottom:5px; display:block; }
+.blk h4 { font-size:11px; font-weight:600; color:#1a1a1a; margin-bottom:3px; }
+.blk p   { font-size:11px; color:#555; }
+.blk-act { font-size:11px; color:#1D9E75; font-weight:600; margin-top:5px; display:block; }
+
+/* Treasure map */
+.tmap { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin-bottom:14px; }
+.bkt { background:#fff; border:1px solid #E8E8E8; border-radius:8px; padding:10px; text-align:center; position:relative; }
+.bkt:not(:last-child)::after { content:'→'; position:absolute; right:-10px; top:50%; transform:translateY(-50%); color:#CCC; font-size:14px; z-index:2; }
+.bkt-num { font-size:20px; font-weight:600; margin-bottom:2px; }
+.bkt-lbl { font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; }
+.bkt-sig { font-size:10px; color:#888; margin-top:4px; }
+.b1 .bkt-num { color:#7F77DD; } .b2 .bkt-num { color:#BA7517; } .b3 .bkt-num { color:#1D9E75; }
+.b4 .bkt-num { color:#E24B4A; } .b5 .bkt-num { color:#085041; }
+
+/* Decisions */
+.decs { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.dec { background:#fff; border-radius:8px; padding:13px; border:1px solid #F0D9B0; }
+.dec-n { font-size:22px; font-weight:600; color:#BA7517; margin-bottom:5px; }
+.dec h4 { font-size:12px; font-weight:600; color:#1a1a1a; margin-bottom:3px; }
+.dec p  { font-size:11px; color:#555; }
+
+.footer { margin-top:32px; padding-top:12px; border-top:1px solid #EEE; font-size:11px; color:#AAA; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div>
+    <h1>Walkway Q3 2026 — GTM Plan</h1>
+    <p>Alegria Mora · Sales & CS · June 15, 2026</p>
+  </div>
+  <div style="font-size:11px;color:#AAA;text-align:right">
+    <a href="index.html" style="color:#7F77DD;text-decoration:none">Full operating document →</a>
+  </div>
+</div>
+
+<!-- ── 1. THE MATH ──────────────────────────────────────── -->
+<div class="sec">
+  <div class="sec-title">1 · The math — how we get to $47K</div>
+  <div class="eq">
+    <div class="eq-card amber"><div class="eq-num">$18,900</div><div class="eq-lbl">Net new operators</div><div class="eq-sub">30 operators × 2 prods × $315</div></div>
+    <div class="eq-op">+</div>
+    <div class="eq-card teal"><div class="eq-num">$28,100</div><div class="eq-lbl">Expansion</div><div class="eq-sub">~112 products from existing accounts × $250 avg</div></div>
+    <div class="eq-op">=</div>
+    <div class="eq-card purple"><div class="eq-num">$47,000</div><div class="eq-lbl">Total net new MRR</div><div class="eq-sub">$23K today + $47K = $70K exit ✓</div></div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Motion</th><th>Who owns</th><th>Volume</th><th>Rate</th><th class="nr">MRR</th><th class="nr">% of $47K</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Net new operators</strong></td><td>Terry sources · Alegria closes</td><td>30 operators · 2 prods avg</td><td>$315/product</td><td class="nr amber">$18,900</td><td class="nr amber">40%</td></tr>
+      <tr class="stripe"><td><strong>Expansion — existing accounts</strong></td><td>Alegria + CSM</td><td>~112 products</td><td>$250/product avg</td><td class="nr green">$28,100</td><td class="nr green">60%</td></tr>
+      <tr class="total"><td>Total</td><td></td><td>~172 net new products</td><td></td><td class="nr">$47,000</td><td class="nr">100%</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ── 2. NET NEW: WHEN / WHAT / HOW ──────────────────── -->
+<div class="sec">
+  <div class="sec-title">2 · Net new — When, What, How (30 operators · 100 demos)</div>
+
+  <div class="note purple"><strong>Demo-to-live = ~2 months.</strong> Any demo after July 31 risks a Q4 live date. Ventrata and PrioTicket must be front-loaded in July. 100 demos → 30 live operators at 30% yield.</div>
+
+  <div class="plat-grid">
+
+    <!-- VENTRATA -->
+    <div class="plat-card">
+      <div class="plat-hdr">
+        <span class="plat-name">Ventrata</span>
+        <span class="badge badge-teal">Ongoing focus</span>
+      </div>
+      <div class="plat-stats">
+        <div class="plat-stat"><div class="plat-stat-val purple">15</div><div class="plat-stat-lbl">Target operators</div></div>
+        <div class="plat-stat"><div class="plat-stat-val">50</div><div class="plat-stat-lbl">Demos needed</div></div>
+        <div class="plat-stat"><div class="plat-stat-val amber">5–6/wk</div><div class="plat-stat-lbl">Demo target</div></div>
+      </div>
+      <div class="plat-body">
+        Gold standard integration. 100% push success rate. Warm co-sell — Dominic amplifies, partner sends the intro.
+        <div class="when-what-how">
+          <div class="wwh-row"><span class="wwh-tag wwh-when">When</span><span class="wwh-text"><strong>Re-launch Jul 6.</strong> Demo window Jul 6 → Aug 15. Ventrata Partner Event sprint Sep 7 for late pipeline. Any demo after Aug 1 = Q4 live risk.</span></div>
+          <div class="wwh-row"><span class="wwh-tag wwh-what">What</span><span class="wwh-text">Warm co-sell via Dominic. 1-month free trial offer extended through July. Ventrata-skinned standardized demo deck. Partner intro email from Dominic's domain.</span></div>
+          <div class="wwh-row"><span class="wwh-tag wwh-how">How</span><span class="wwh-text">Dominic LinkedIn amplification → partner intro email → Alegria books demo within 48h → demo + proposal same day → onboarding within 7 days of close.</span></div>
+        </div>
+        <div class="plat-callout">If a deal is stuck: "How about we get you started for a month, no cost, so you can see the data before committing?"</div>
+      </div>
+    </div>
+
+    <!-- PRIOTICKET -->
+    <div class="plat-card">
+      <div class="plat-hdr">
+        <span class="plat-name">PrioTicket</span>
+        <span class="badge badge-purple">Pilot launching Jul 6</span>
+      </div>
+      <div class="plat-stats">
+        <div class="plat-stat"><div class="plat-stat-val purple">10</div><div class="plat-stat-lbl">Target operators</div></div>
+        <div class="plat-stat"><div class="plat-stat-val">33</div><div class="plat-stat-lbl">Demos needed</div></div>
+        <div class="plat-stat"><div class="plat-stat-val amber">4/wk</div><div class="plat-stat-lbl">Demo target</div></div>
+      </div>
+      <div class="plat-body">
+        Launch Jul 6. Pilot live: Evan Evans ($600 in proposal) + Blue Boat ($400 in demo). Partner co-sell drives warm intros from the Prio operator base.
+        <div class="when-what-how">
+          <div class="wwh-row"><span class="wwh-tag wwh-when">When</span><span class="wwh-text"><strong>Launch Jul 6.</strong> Demo window Jul 6 → Aug 31. Prio list received by Jun 29. Creative locked by Jul 4.</span></div>
+          <div class="wwh-row"><span class="wwh-tag wwh-what">What</span><span class="wwh-text">Partner co-sell. Prio sends warm intro from their AM. Offer TBD at kickoff: free 90-day pilot or locked pricing. Prio-skinned demo deck.</span></div>
+          <div class="wwh-row"><span class="wwh-tag wwh-how">How</span><span class="wwh-text">Prio AM sends intro email → Alegria books demo → 30-min demo with city data → proposal + onboarding in the same week.</span></div>
+        </div>
+        <div class="plat-callout">If a deal is stuck: "Take 3 months, no pressure — we want you to see the full value before committing."</div>
+      </div>
+    </div>
+
+    <!-- XOLA -->
+    <div class="plat-card">
+      <div class="plat-hdr">
+        <span class="plat-name">Xola</span>
+        <span class="badge badge-amber">Activate the list</span>
+      </div>
+      <div class="plat-stats">
+        <div class="plat-stat"><div class="plat-stat-val purple">7</div><div class="plat-stat-lbl">Target operators</div></div>
+        <div class="plat-stat"><div class="plat-stat-val">23</div><div class="plat-stat-lbl">Demos needed</div></div>
+        <div class="plat-stat"><div class="plat-stat-val amber">3/wk</div><div class="plat-stat-lbl">Demo target</div></div>
+      </div>
+      <div class="plat-body">
+        Stable integration. 152 operators in HubSpot with zero outreach. Cold outreach with city-specific competitor data as the hook.
+        <div class="when-what-how">
+          <div class="wwh-row"><span class="wwh-tag wwh-when">When</span><span class="wwh-text"><strong>Launch Jul 20</strong> (kickoff Jul 6). Demo window Jul 20 → Sep 14. CSM hire enables 3 Xola demos/week from August.</span></div>
+          <div class="wwh-row"><span class="wwh-tag wwh-what">What</span><span class="wwh-text">2-email cold sequence: Day 0 city competitor data hook → Day 5 social proof (Everyday California + Empire Tours). US cities: NYC, LA, SF, Chicago, Denver first.</span></div>
+          <div class="wwh-row"><span class="wwh-tag wwh-how">How</span><span class="wwh-text">Email sequence → reply or demo booking → 30-min demo with their city data pulled in advance → proposal same day → onboarding start within 7 days.</span></div>
+        </div>
+        <div class="plat-callout">Social proof: Everyday California (San Diego) + Empire Tours (NYC). Same platform, proven results.</div>
+      </div>
+    </div>
+
+    <!-- BOKUN -->
+    <div class="plat-card">
+      <div class="plat-hdr">
+        <span class="plat-name">Bokun</span>
+        <span class="badge badge-grey">Ensuring stability</span>
+      </div>
+      <div class="plat-stats">
+        <div class="plat-stat"><div class="plat-stat-val grey">5</div><div class="plat-stat-lbl">Target operators</div></div>
+        <div class="plat-stat"><div class="plat-stat-val grey">17</div><div class="plat-stat-lbl">Demos needed</div></div>
+        <div class="plat-stat"><div class="plat-stat-val grey">0 now</div><div class="plat-stat-lbl">Demo target</div></div>
+      </div>
+      <div class="plat-body">
+        Largest TAM of any platform (4,500+ operators). Commercial launch Aug 3 once stability confirmed. Build the prospect list now.
+        <div class="when-what-how">
+          <div class="wwh-row"><span class="wwh-tag wwh-when">When</span><span class="wwh-text"><strong>Launch Aug 3</strong> (kickoff Jul 20). Demo window Aug 3 → Sep 28. September closes only — Q3 live dates tight.</span></div>
+          <div class="wwh-row"><span class="wwh-tag wwh-what">What</span><span class="wwh-text">Build top 50 prospect list by product count now. Hold outreach until API stability confirmed. Same warm co-sell playbook as Ventrata.</span></div>
+          <div class="wwh-row"><span class="wwh-tag wwh-how">How</span><span class="wwh-text">Engineering confirms fix → partner kickoff Aug 3 → outreach starts same week → 4 demos/week in September. For existing Bokun deals: redirect to CI-only while stability resolves.</span></div>
+        </div>
+        <div class="plat-callout amber">Dependency: API stability confirmed by engineering before Aug 3 launch. 4,500+ operator upside in Q4 if launch lands clean.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note grey"><strong>Capacity note:</strong> Scaling to 4–5 demos/week from August requires the CSM hire to be in place by June 30 so CS motion calls can be handed off. See Section 6 for the full hiring plan and ROI case.</div>
+</div>
+
+<!-- ── 3. EXPANSION ─────────────────────────────────────── -->
+<div class="sec">
+  <div class="sec-title">3 · Expansion — 112 products · $28,100</div>
+
+  <div class="tbl">
+    <div class="tbl-lbl">Products needed per account · $250/product (HTA $100 · Everyday California $315)</div>
+    <table>
+      <thead><tr>
+        <th>Account</th><th>Phase</th><th class="nr">Live now</th><th class="nr">Add Q3</th><th>Rate</th><th class="nr">MRR</th>
+        <th>Current pace → Q3 target</th><th>Confidence</th>
+      </tr></thead>
+      <tbody>
+        <tr><td><strong>Amigo Tours</strong></td><td><span class="ph ph-p2">Phase 2 · Mature</span></td><td class="nr">16</td><td class="nr purple">30</td><td>$250</td><td class="nr green">$7,500</td><td class="grey">8/mo → 10/mo</td><td><span class="conf conf-m">Medium</span></td></tr>
+        <tr class="stripe"><td><strong>Boost Portugal</strong></td><td><span class="ph ph-p2">Phase 2 · Mature</span></td><td class="nr">3</td><td class="nr purple">15</td><td>$250</td><td class="nr green">$3,750</td><td class="grey">~1/mo → 5/mo</td><td><span class="conf conf-m">Medium</span></td></tr>
+        <tr><td><strong>Ciao Florence</strong></td><td><span class="ph ph-p2">Phase 2 · Mature</span></td><td class="nr">4</td><td class="nr purple">14</td><td>$250</td><td class="nr green">$3,500</td><td class="grey">New this week → 3/mo</td><td><span class="conf conf-h">High</span></td></tr>
+        <tr class="stripe"><td><strong>Best of Switzerland</strong></td><td><span class="ph ph-ob">Onboarding</span></td><td class="nr">3</td><td class="nr purple">18</td><td>$250</td><td class="nr green">$4,500</td><td class="grey">New → full portfolio</td><td><span class="conf conf-h">High</span></td></tr>
+        <tr><td><strong>Venice City Tours</strong></td><td><span class="ph ph-p2">Phase 2 · Mature</span></td><td class="nr">4</td><td class="nr purple">10</td><td>$250</td><td class="nr green">$2,500</td><td class="grey">~0/mo → 2/mo</td><td><span class="conf conf-m">Medium</span></td></tr>
+        <tr class="stripe"><td><strong>HTA</strong></td><td><span class="ph ph-ob">Onboarding</span></td><td class="nr">17</td><td class="nr purple">9</td><td>$100</td><td class="nr green">$900</td><td class="grey">Expansion 3 in progress</td><td><span class="conf conf-h">High</span></td></tr>
+        <tr><td><strong>Empire Tours</strong></td><td><span class="ph ph-ob">Phase 1</span></td><td class="nr">Live</td><td class="nr purple">5</td><td>$250</td><td class="nr green">$1,250</td><td class="grey">Day 30 pending → expansion</td><td><span class="conf conf-h">High</span></td></tr>
+        <tr class="stripe"><td><strong>Everyday California</strong></td><td><span class="ph ph-p2">Phase 2</span></td><td class="nr">Live</td><td class="nr purple">2</td><td>$100</td><td class="nr green">$200</td><td class="grey">Next batch not yet confirmed</td><td><span class="conf conf-m">Medium</span></td></tr>
+        <tr><td><strong>Tours for Today</strong></td><td><span class="ph ph-ob">Onboarding</span></td><td class="nr">1</td><td class="nr purple">1</td><td>$250</td><td class="nr green">$250</td><td class="grey">Going live this week</td><td><span class="conf conf-m">Medium</span></td></tr>
+        <tr><td><strong>Buffer / other existing</strong><br><span class="grey" style="font-size:10px">Carrani · Urban Saunters · Mi Bike Tours · others</span></td><td></td><td class="nr grey">—</td><td class="nr purple">12</td><td>$250</td><td class="nr green">$3,000</td><td class="grey">CSM-driven Day 30 proposals · Carrani + Urban MRR in May baseline</td><td><span class="conf conf-m">Medium</span></td></tr>
+        <tr class="stripe"><td><strong>Vivicos International</strong></td><td><span class="ph ph-ob">Onboarding</span></td><td class="nr">Onboarding</td><td class="nr purple">3</td><td>$250</td><td class="nr green">$750</td><td class="grey">Post go-live expansion</td><td><span class="conf conf-m">Medium</span></td></tr>
+        <tr class="total"><td><strong>Total</strong></td><td></td><td></td><td class="nr">119 products</td><td></td><td class="nr">$28,100</td><td colspan="2"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note teal" style="font-size:11px">Buffer row includes Carrani + Urban Saunters (MRR counted in May baseline — WAAP still to be logged) plus Mi Bike Tours and other existing accounts. If Boost commits to full portfolio, the gap closes entirely.</div>
+
+  <!-- HOW WE GET THERE — per account strategy -->
+  <div style="font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:10px;margin-top:4px">How we get to $28,100 — per account</div>
+
+  <div class="account-grid">
+    <div class="acc-card">
+      <div class="acc-hdr p2"><span class="acc-name">Amigo Tours — 30 products · $7,500</span><span class="ph ph-p2">Phase 2</span></div>
+      <div class="acc-body">
+        <div class="acc-row"><span class="acc-lbl">This month</span><span class="acc-val">Prepare Cancun + CDMX data pack by Jun 20. Book call with Abraham + Angela. Confirm PA can handle July batch size.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Strategy</span><span class="acc-val">Batch by city. Each city team approves their own products — don't ask for all cities at once. July = Cancun + CDMX, August = Guadalajara + Spain mix.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Data to show</span><span class="acc-val">Weekend competitor premium in Cancun (30-40% gap). July peak season demand spike. Lift data from existing Madrid products.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Lever</span><span class="acc-val">Batch commitment. If July data is strong, August becomes an easy yes. Momentum builds city by city.</span></div>
+      </div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-hdr p2"><span class="acc-name">Boost Portugal — 15+ products · $3,750+</span><span class="ph ph-p2">Phase 2</span></div>
+      <div class="acc-body">
+        <div class="acc-row"><span class="acc-lbl">This month</span><span class="acc-val">Full portfolio proposal at next check-in. 3-month cumulative ROI report. Sofia + Miguel + Tiago are all aligned — push for full commit.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Strategy</span><span class="acc-val">Centralized decisions = push for full portfolio (~35 products) in one ask. Don't batch — this is the one account where we go all in immediately.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Data to show</span><span class="acc-val">24% lift confirmed. Revenue premium per product this month. Competitive position in Lisbon + Porto. Annual premium estimate for full portfolio.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Lever</span><span class="acc-val">Portfolio commitment offer: 30 days free on incremental products above 10. Makes the big ask feel low-risk.</span></div>
+      </div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-hdr p2"><span class="acc-name">Ciao Florence — 14 products · $3,500</span><span class="ph ph-p2">Phase 2</span></div>
+      <div class="acc-body">
+        <div class="acc-row"><span class="acc-lbl">This month</span><span class="acc-val">Expansion call this week (hit Day 30 on June 10). Show lift data from first 4 products. Propose 14 more in two batches.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Strategy</span><span class="acc-val">Single decision-maker (Livia). Strong early data makes this a momentum close. Batch 2 in August locks in Q3 revenue.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Data to show</span><span class="acc-val">Revenue premium since June go-live. Florence competitor movement since Day 14. Projected lift if they add 14 more products now.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Lever</span><span class="acc-val">Speed. If they commit this week, Batch 2 is live in August before peak summer season closes.</span></div>
+      </div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-hdr ob"><span class="acc-name">Best of Switzerland — 18 products · $4,500</span><span class="ph ph-ob">Onboarding</span></div>
+      <div class="acc-body">
+        <div class="acc-row"><span class="acc-lbl">This month</span><span class="acc-val">Full portfolio commitment target by end of June. 3 products signed, going live this week. Amanda, Demian, Alberto all engaged.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Strategy</span><span class="acc-val">Propose 15–20 total products (full portfolio) at go-live kickoff. Show what the algorithm can do for their Swiss tour catalog specifically.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Data to show</span><span class="acc-val">Switzerland competitor weekend pricing gaps. Summer peak season demand signal. Walkway's track record on similar multi-product operators.</span></div>
+        <div class="acc-row"><span class="acc-lbl">Lever</span><span class="acc-val">Rate lock offer: commit to full portfolio in June, lock in $250/product rate before any future pricing changes.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 4. TWO CS MOTIONS ────────────────────────────────── -->
+<div class="sec">
+  <div class="sec-title">4 · Two CS motions — new operators vs. mature accounts</div>
+  <div class="note grey">New operators follow the standard 30/60/90. Mature accounts — already live and expanding — follow a different motion. The conversation starts where they are, not at onboarding.</div>
+
+  <div class="motions">
+    <div class="mbox">
+      <div class="mhdr a">Motion A — New operators (just signed)</div>
+      <div class="mbody">
+        <div class="ph-row"><div class="ptag ptag-g">Day 0 → 7</div><div>Contract signed · kickoff call · first push live within 7 days. Gate: 100% autopilot on starting products. If not → PA escalation immediately.</div></div>
+        <div class="ph-row"><div class="ptag ptag-a">Day 14</div><div>First data review call. What moved, why, early competitor signal. CSM-led.</div></div>
+        <div class="ph-row"><div class="ptag ptag-a">Day 30 ★</div><div>Revenue lift confirmed + expansion proposal in same meeting.<div class="push">"You made $X more this month. Here are the next products with the same pattern."</div></div></div>
+        <div class="ph-row"><div class="ptag ptag-p">Day 45</div><div>Verbal commit · batch 2 onboarding · live by end of Month 2.</div></div>
+      </div>
+    </div>
+    <div class="mbox">
+      <div class="mhdr b">Motion B — Mature accounts (Amigo, Boost, Ciao, Venice)</div>
+      <div class="mbody">
+        <div class="ph-row"><div class="ptag ptag-a">Phase 2 Start</div><div>These accounts are already expanding. Pick up fresh — not an onboarding. Monthly data call to build momentum. Quarterly portfolio review to close the bigger ask.</div></div>
+        <div class="ph-row"><div class="ptag ptag-a">Monthly (30 min)</div><div>Lead with data: revenue premium this month, competitor moves, new opportunities. No hard ask — teach them to see pricing as a revenue lever.</div></div>
+        <div class="ph-row"><div class="ptag ptag-p">Quarterly (60 min)</div><div>3-month cumulative lift. Benchmark vs. similar operators. Full portfolio proposal with ROI math per product.<div class="push">"Your remaining [N] products match this pattern. Here's what that's worth annually."</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GTM partnership strengthening -->
+  <div style="font-size:12px;font-weight:600;color:#1a1a1a;margin-bottom:10px">Partnership plays that accelerate expansion</div>
+  <div class="gtm-grid">
+    <div class="gtm-card">
+      <h4>📊 Monthly data review</h4>
+      <p>30-min call. Lead with revenue premium vs. baseline, competitor movement since last call, and new market opportunities. Every month they see value, the next expansion ask gets easier.</p>
+    </div>
+    <div class="gtm-card">
+      <h4>📋 Quarterly portfolio review</h4>
+      <p>60-min strategic session at the decision-maker level. 3-month cumulative lift. Competitive benchmark. TAM remaining: "Here are your X products not yet on autopilot and what they're leaving on the table."</p>
+      <span class="promo-tag">→ This is when the full portfolio proposal goes in</span>
+    </div>
+    <div class="gtm-card">
+      <h4>🎁 Portfolio commitment offer</h4>
+      <p>For operators committing to 50%+ of their portfolio: 30 days free on incremental products above their current count. Reduces the financial risk of the big commitment.</p>
+      <span class="promo-tag">→ Use for Boost and BofS in June/July</span>
+    </div>
+  </div>
+
+  <!-- Why not full portfolio at once -->
+  <div style="font-size:12px;font-weight:600;color:#1a1a1a;margin-bottom:10px">Why full portfolio expansion doesn't happen immediately — and what removes each blocker</div>
+  <div class="blk-grid">
+    <div class="blk"><span class="blk-tag" style="color:#3C3489">Product</span><h4>Onboarding capacity</h4><p>Max products per day from one account is unconfirmed. Must ask engineering before committing to any large batch.</p><span class="blk-act">→ Confirm with engineering before Amigo July batch</span></div>
+    <div class="blk"><span class="blk-tag" style="color:#3C3489">Algorithm</span><h4>No signal on new products</h4><p>New products have no booking history. Algorithm needs data to make strong recommendations. First batch builds that signal.</p><span class="blk-act">→ Show richer data after 30 days as the expansion proof</span></div>
+    <div class="blk"><span class="blk-tag" style="color:#BA7517">Trust</span><h4>Value needs to be demonstrated first</h4><p>Operators commit their full catalog after seeing the algorithm work — not before. Each batch earns the right to the next ask.</p><span class="blk-act">→ Day 30 lift data is the unlock</span></div>
+    <div class="blk"><span class="blk-tag" style="color:#BA7517">Cost</span><h4>Full portfolio = significant commitment</h4><p>Amigo's full portfolio at $250 = $50K/month. That commitment requires demonstrated ROI per product first.</p><span class="blk-act">→ Show ROI per product · offer portfolio commitment promo</span></div>
+    <div class="blk"><span class="blk-tag" style="color:#BA7517">Approval</span><h4>Multi-team sign-off (Amigo)</h4><p>Each city has its own team and approval chain. Full portfolio = multiple simultaneous approvals. Batching by city is the path.</p><span class="blk-act">→ Map champion per city · commit city by city</span></div>
+    <div class="blk"><span class="blk-tag" style="color:#555">Internal</span><h4>PA manual setup per product</h4><p>PA configures every product manually. Large batches queue behind other accounts and slow onboarding for everyone.</p><span class="blk-act">→ Agree max batch size with PA before committing to timeline</span></div>
+  </div>
+</div>
+
+<!-- ── 5. HOW WE KNOW WE'RE MOVING ──────────────────────── -->
+<div class="sec">
+  <div class="sec-title">5 · How we know we're moving — weekly signal per bucket</div>
+  <div class="tmap">
+    <div class="bkt b1"><div class="bkt-num">→</div><div class="bkt-lbl">Acquired</div><div class="bkt-sig">Contracts signed this week</div></div>
+    <div class="bkt b2"><div class="bkt-num">⚡</div><div class="bkt-lbl">Activating</div><div class="bkt-sig">Red flag: &lt;50% autopilot at Day 14</div></div>
+    <div class="bkt b3"><div class="bkt-num">📈</div><div class="bkt-lbl">Expanding</div><div class="bkt-sig"># expansion deals created · MRR added</div></div>
+    <div class="bkt b4"><div class="bkt-num">❓</div><div class="bkt-lbl">Why not more?</div><div class="bkt-sig">Expanding below potential — what's the blocker?</div></div>
+    <div class="bkt b5"><div class="bkt-num">✓</div><div class="bkt-lbl">What's working</div><div class="bkt-sig">Which platform / action drove MRR this week</div></div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Metric</th><th>July / week</th><th>August / week</th><th>September / week</th><th>Q3 total</th></tr></thead>
+    <tbody>
+      <tr><td>Demos delivered</td><td class="amber">5–6 (Ventrata + Prio)</td><td class="amber">9–10 (all platforms)</td><td class="amber">6–7</td><td class="purple">~100</td></tr>
+      <tr class="stripe"><td>New contracts signed</td><td class="green">2–3</td><td class="green">3–4</td><td class="green">2–3</td><td class="purple">30</td></tr>
+      <tr><td>Expansion proposals sent</td><td class="green">2–3</td><td class="green">4–5</td><td class="green">3–4</td><td class="purple">~40+</td></tr>
+      <tr class="stripe"><td>Expansion MRR added</td><td class="green">~$2,000</td><td class="green">~$4,500</td><td class="green">~$1,600</td><td class="purple">~$28,100</td></tr>
+      <tr><td>WAAP products added</td><td class="green">~10</td><td class="green">~18</td><td class="green">~8</td><td class="purple">~151</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="footer">
+  <span>Walkway · Q3 2026 · Alegria Mora · Sales & CS</span>
+  <a href="index.html" style="color:#7F77DD;text-decoration:none">Full operating document →</a>
+</div>
+
+</div>
+</body>
+</html>
