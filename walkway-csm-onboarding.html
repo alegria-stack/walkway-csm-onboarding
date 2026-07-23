@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walkway CSM — Friday &amp; Monday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A1726; --ink-2:#4C4763; --ink-3:#847EA0;
+    --plum:#6B4FE0; --plum-d:#4A32B4; --plum-l:#F0ECFE; --plum-b:#DCD3FA;
+    --moss:#0E8F7E; --moss-l:#E1F4F1; --moss-b:#B4E3DC;
+    --clay-l:#FBEDE4; --clay-b:#F0D2BC;
+    --rose-l:#FCEAEF; --rose-b:#F2C4D1;
+    --paper:#FBFAF7; --card:#FFFFFF; --rule:#E8E4F0;
+    --sh:0 1px 2px rgba(26,23,38,.03), 0 8px 24px rgba(26,23,38,.05);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:15px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;margin:0 0 8px;letter-spacing:-.005em;font-weight:600;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  :focus-visible{outline:2.5px solid var(--plum);outline-offset:2px;border-radius:4px;}
+
+  .hero{max-width:1200px;margin:0 auto;padding:56px 34px 26px;}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--plum-d);background:var(--plum-l);border:1px solid var(--plum-b);padding:5px 12px;border-radius:999px;margin-bottom:18px;}
+  .kicker i{width:6px;height:6px;border-radius:50%;background:var(--moss);display:block;}
+  .hero h1{font-size:clamp(30px,4.4vw,46px);line-height:1.1;max-width:16ch;}
+  .hero .lede{font-size:16.5px;color:var(--ink-2);max-width:60ch;margin:14px 0 24px;}
+  .facts{display:flex;flex-wrap:wrap;gap:9px;}
+  .fact{background:var(--card);border:1px solid var(--rule);border-radius:11px;padding:9px 14px;font-size:13.5px;box-shadow:var(--sh);}
+  .fact b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:1px;font-family:'JetBrains Mono',monospace;}
+
+  .daybar-w{position:sticky;top:0;z-index:40;background:rgba(251,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);padding:11px 34px;}
+  .daybar{max-width:1200px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;}
+  .daybar::-webkit-scrollbar{display:none;}
+  .stop{flex:1 1 0;min-width:150px;background:none;border:none;cursor:pointer;text-align:left;padding:0 16px 0 0;font-family:inherit;}
+  .stop .tr{height:2px;background:var(--plum-b);position:relative;margin-bottom:9px;}
+  .stop .nd{width:10px;height:10px;border-radius:50%;background:var(--card);border:2.5px solid var(--plum-b);position:absolute;left:0;top:50%;transform:translate(-50%,-50%);transition:.16s;}
+  .stop.on .tr{background:var(--plum);}
+  .stop.on .nd{background:var(--plum);border-color:var(--plum);transform:translate(-50%,-50%) scale(1.2);}
+  .stop .d{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);}
+  .stop.on .d{color:var(--plum-d);}
+  .stop .t{font-size:13.5px;font-weight:600;color:var(--ink);font-family:'Fraunces',serif;}
+
+  .wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:198px 1fr;gap:36px;padding:26px 34px 90px;align-items:start;}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr;padding:18px 16px 60px;}.rail{display:none;}.hero{padding:36px 16px 18px;}.daybar-w{padding:10px 14px;}}
+  .rail{position:sticky;top:72px;display:flex;flex-direction:column;gap:1px;font-size:13px;max-height:calc(100vh - 96px);overflow-y:auto;}
+  .rail .gl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:14px 9px 4px;}
+  .rail a{color:var(--ink-2);text-decoration:none;padding:6px 9px;border-radius:7px;border-left:2px solid transparent;line-height:1.35;}
+  .rail a:hover{background:var(--plum-l);color:var(--plum-d);}
+  .rail a.on{color:var(--plum-d);border-left-color:var(--plum);background:var(--plum-l);font-weight:600;}
+
+  .col{display:flex;flex-direction:column;gap:20px;}
+  .card{background:var(--card);border:1px solid var(--rule);border-radius:15px;padding:26px 28px;box-shadow:var(--sh);scroll-margin-top:80px;}
+  .card>h2{font-size:22px;line-height:1.25;}
+  .card h3{font-size:16.5px;margin-top:24px;}
+  .card h3:first-of-type{margin-top:14px;}
+  .card p{color:var(--ink-2);margin:9px 0;}
+  .card p strong,li strong,td strong{color:var(--ink);font-weight:600;}
+  .card a{color:var(--plum-d);text-decoration:none;border-bottom:1px solid var(--plum-b);}
+  .card a:hover{border-bottom-color:var(--plum-d);}
+  .hd{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;}
+  .num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--plum);background:var(--plum-l);border:1px solid var(--plum-b);padding:2px 7px;border-radius:5px;margin-right:8px;vertical-align:2px;}
+  .sub{font-size:13.5px;color:var(--ink-3);margin-top:-2px;}
+
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.3px;}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink-2);}
+  th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);background:#FAF9FE;font-weight:500;}
+  tr:last-child td{border-bottom:none;}
+  td.n{font-family:'JetBrains Mono',monospace;font-size:12.5px;white-space:nowrap;}
+  td.i{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-3);}
+
+  .box{border-radius:11px;padding:13px 16px;margin:13px 0;border:1px solid;font-size:14px;}
+  .box.p{background:var(--plum-l);border-color:var(--plum-b);color:var(--plum-d);}
+  .box.c{background:var(--clay-l);border-color:var(--clay-b);color:#7E4118;}
+  .box.m{background:var(--moss-l);border-color:var(--moss-b);color:#075F53;}
+  .box.r{background:var(--rose-l);border-color:var(--rose-b);color:#8C1E3D;}
+  .box strong{color:inherit;}
+  .box .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.07em;text-transform:uppercase;display:block;margin-bottom:5px;opacity:.75;}
+
+  .pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:1px 6px;border-radius:5px;border:1px solid;white-space:nowrap;}
+  .pill.p{background:var(--plum-l);color:var(--plum-d);border-color:var(--plum-b);}
+  .pill.m{background:var(--moss-l);color:#075F53;border-color:var(--moss-b);}
+  .pill.c{background:var(--clay-l);color:#7E4118;border-color:var(--clay-b);}
+  .pill.r{background:var(--rose-l);color:#8C1E3D;border-color:var(--rose-b);}
+
+  .sched{margin:14px 0;}
+  .blk{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:13px 0;border-top:1px solid var(--rule);}
+  .blk:first-child{border-top:none;}
+  .blk .when{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--plum-d);line-height:1.45;}
+  .blk .when span{display:block;color:var(--ink-3);font-size:10.5px;}
+  .blk .what h4{margin:0 0 4px;font-size:14.5px;}
+  .blk .what p{margin:4px 0;font-size:13.8px;}
+  @media(max-width:600px){.blk{grid-template-columns:1fr;gap:4px;}}
+
+  .prog{display:flex;align-items:center;gap:10px;margin:10px 0 12px;}
+  .bar{flex:1;height:6px;background:var(--plum-l);border-radius:99px;overflow:hidden;}
+  .fill{height:100%;width:0;background:var(--moss);transition:width .3s;}
+  .plb{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);}
+  ul.ck{list-style:none;margin:0;padding:0;}
+  ul.ck li{display:flex;gap:9px;padding:6px 8px;border-radius:7px;align-items:flex-start;}
+  ul.ck li:hover{background:var(--plum-l);}
+  ul.ck input{margin-top:4px;width:15px;height:15px;accent-color:var(--moss);cursor:pointer;flex-shrink:0;}
+  ul.ck label{font-size:13.8px;color:var(--ink);cursor:pointer;line-height:1.5;}
+  ul.ck li.dn label{color:var(--ink-3);text-decoration:line-through;text-decoration-color:var(--moss);}
+
+  ul.pl,ol.pl{padding-left:19px;margin:8px 0;}
+  ul.pl li,ol.pl li{margin-bottom:6px;color:var(--ink-2);}
+
+  .flow{margin:14px 0;}
+  .step{display:grid;grid-template-columns:30px 1fr;gap:13px;padding:11px 0;border-top:1px dashed var(--rule);}
+  .step:first-child{border-top:none;}
+  .step .i{width:26px;height:26px;border-radius:50%;background:var(--plum-l);border:1px solid var(--plum-b);color:var(--plum-d);font-family:'JetBrains Mono',monospace;font-size:12px;display:flex;align-items:center;justify-content:center;}
+  .step .b h4{margin:1px 0 3px;font-size:14.5px;}
+  .step .b p{margin:3px 0;font-size:13.6px;}
+  .step .ev{font-size:12.9px;color:var(--ink-3);margin-top:4px;}
+
+  .scn{border-top:1px solid var(--rule);padding:14px 0;}
+  .scn:first-of-type{border-top:none;}
+  .scn h4{margin:0 0 6px;font-size:15.5px;}
+  .scn>p{margin:6px 0 10px;font-size:14.2px;color:var(--ink-2);}
+  details{background:var(--plum-l);border:1px solid var(--plum-b);border-radius:10px;padding:0 14px;}
+  details[open]{padding-bottom:10px;}
+  summary{cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--plum-d);padding:10px 0;list-style:none;}
+  summary::-webkit-details-marker{display:none;}
+  summary::before{content:"\25B8";display:inline-block;margin-right:7px;transition:transform .15s;}
+  details[open] summary::before{transform:rotate(90deg);}
+  details p{margin:8px 0;font-size:13.8px;color:var(--ink-2);}
+  details p strong{color:var(--ink);}
+
+  .tpl{background:var(--paper);border:1px solid var(--rule);border-left:3px solid var(--plum);border-radius:0 10px 10px 0;padding:12px 16px;margin:10px 0 6px;}
+  .tpl p{margin:7px 0;font-size:13.9px;color:var(--ink);}
+  .ev{font-size:12.9px;color:var(--ink-3);margin:4px 0 14px;}
+
+  .ctg{display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font-size:12.5px;color:var(--ink-2);cursor:pointer;font-weight:500;flex-shrink:0;}
+  .ctg:hover{border-color:var(--plum-b);color:var(--plum-d);}
+  .cp{margin-top:16px;padding-top:14px;border-top:1px dashed var(--rule);display:none;flex-direction:column;gap:11px;}
+  .cp.open{display:flex;}
+  .cp .hint{font-size:12px;color:var(--ink-3);margin:0;}
+  .cl{display:flex;flex-direction:column;gap:9px;}
+  .cm{background:var(--paper);border:1px solid var(--rule);border-radius:9px;padding:9px 12px;}
+  .cm .mt{font-size:11px;color:var(--ink-3);margin-bottom:2px;display:flex;gap:8px;font-family:'JetBrains Mono',monospace;}
+  .cm .mt b{color:var(--ink);}
+  .cm .tx{font-size:13.6px;color:var(--ink);}
+  .ce{font-size:12.8px;color:var(--ink-3);font-style:italic;}
+  .cf{display:flex;flex-direction:column;gap:8px;}
+  .cf .rw{display:flex;gap:8px;flex-wrap:wrap;}
+  .cf input,.cf textarea{font-family:'Inter';font-size:13.3px;border:1px solid var(--rule);border-radius:8px;padding:8px 10px;background:var(--card);color:var(--ink);resize:vertical;}
+  .cf input{width:170px;}
+  .cf textarea{flex:1;min-width:220px;min-height:38px;}
+  .cf button{align-self:flex-end;background:var(--plum);color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:13.3px;font-weight:600;cursor:pointer;}
+  .cf button:hover{background:var(--plum-d);}
+  .cf button:disabled{opacity:.5;cursor:default;}
+
+  .ft{max-width:1200px;margin:0 auto;padding:0 34px 50px;font-size:12.3px;color:var(--ink-3);}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="kicker"><i></i>Walkway &middot; Customer Success</span>
+  <h1>Friday and Monday.</h1>
+  <p class="lede">Week 1 was the role and the product. This is the job. Friday you get hands on the tools. Monday I start introducing you to accounts. By the end of next week you should be running a smaller portfolio on your own, and I'll join calls where it helps.</p>
+  <div class="facts">
+    <div class="fact"><b>For</b>Brayan Ortiz</div>
+    <div class="fact"><b>Covers</b>Fri 24 &amp; Mon 27 July</div>
+    <div class="fact"><b>Live accounts</b>28</div>
+    <div class="fact"><b>Intros</b>Gradual, from next week</div>
+  </div>
+</header>
+
+<div class="daybar-w">
+  <nav class="daybar" id="daybar" aria-label="Sections">
+    <button class="stop" data-t="book"><div class="tr"><span class="nd"></span></div><div class="d">First</div><div class="t">The account list</div></button>
+    <button class="stop" data-t="fri"><div class="tr"><span class="nd"></span></div><div class="d">Fri &middot; Jul 24</div><div class="t">Hands on the tools</div></button>
+    <button class="stop" data-t="mon"><div class="tr"><span class="nd"></span></div><div class="d">Mon &middot; Jul 27</div><div class="t">Intros start</div></button>
+    <button class="stop" data-t="ahead"><div class="tr"><span class="nd"></span></div><div class="d">Tue &rarr; Fri</div><div class="t">Into the rhythm</div></button>
+  </nav>
+</div>
+
+<div class="wrap">
+  <aside class="rail" id="rail">
+    <div class="gl">The book</div>
+    <a href="#book">1 &middot; All 28 accounts</a>
+    <div class="gl">Orientation</div>
+    <a href="#themes">2 &middot; What operators report</a>
+    <a href="#triage">3 &middot; Real fault, or not?</a>
+    <div class="gl">The two days</div>
+    <a href="#fri">4 &middot; Friday</a>
+    <a href="#mon">5 &middot; Monday</a>
+    <a href="#ahead">6 &middot; The week ahead</a>
+    <div class="gl">Friday's workbench</div>
+    <a href="#scenarios">7 &middot; Nine scenarios</a>
+    <a href="#templates">8 &middot; Email templates</a>
+    <a href="#reports">9 &middot; Reading a report</a>
+    <div class="gl">Reference</div>
+    <a href="#rhythm">10 &middot; The rhythm</a>
+    <a href="#open">11 &middot; What's open now</a>
+  </aside>
+
+  <main class="col">
+
+  <!-- 1 BOOK -->
+  <section class="card" id="book">
+    <div class="hd">
+      <div>
+        <h2><span class="num">01</span>All 28 accounts</h2>
+        <p class="sub">Your book as it stands on 22 July.</p>
+      </div>
+      <button class="ctg" data-s="book">&#128172; <span class="ct">0</span></button>
+    </div>
+
+    <p>Twenty-eight live accounts. I'll introduce you a few at a time rather than in one big email &mdash; the smaller CI accounts early next week, then all the Dynamic Pricing accounts at the end of the week, and the biggest ones next month.</p>
+
+    <table>
+      <tr><th>#</th><th>Account</th><th class="n">MRR</th><th>System</th><th>Motion</th><th>Intro</th></tr>
+      <tr><td class="i">1</td><td><strong>Amigo Tours</strong></td><td class="n">$7,800</td><td>Ventrata</td><td>DP + CI &middot; strategic expansion</td><td><span class="pill c">next month</span></td></tr>
+      <tr><td class="i">2</td><td><strong>Rabbie's Tours</strong></td><td class="n">$3,525</td><td>TourCMS</td><td>CI &middot; expansion in flight</td><td><span class="pill c">next month</span></td></tr>
+      <tr><td class="i">3</td><td><strong>Best of Switzerland</strong></td><td class="n">$3,400</td><td>Ventrata</td><td>DP &middot; strategic expansion</td><td><span class="pill c">next month</span></td></tr>
+      <tr><td class="i">4</td><td><strong>Historic Tours of America</strong></td><td class="n">$2,600</td><td>Ventrata</td><td>DP &middot; repeat expansion</td><td><span class="pill c">next month</span></td></tr>
+      <tr><td class="i">5</td><td><strong>Ciao Florence</strong></td><td class="n">$2,400</td><td>B&oacute;kun</td><td>DP &middot; expansion</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">6</td><td><strong>Empire Tours</strong></td><td class="n">$2,333</td><td>Xola</td><td>CI + DP &middot; expansion-ready</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">7</td><td><strong>Tours for Today</strong></td><td class="n">$1,800&ndash;2,500</td><td>Ventrata</td><td>DP &middot; trust window</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">8</td><td><strong>Venice Tours</strong></td><td class="n">$1,572</td><td>B&oacute;kun</td><td>CI + DP &middot; recovery</td><td><span class="pill c">next month</span></td></tr>
+      <tr><td class="i">9</td><td><strong>Boost Portugal</strong></td><td class="n">$1,465</td><td>Ventrata</td><td>DP &middot; repeat expansion</td><td><span class="pill c">next month</span></td></tr>
+      <tr><td class="i">10</td><td><strong>Airboat Adventures</strong></td><td class="n">$1,075</td><td>Ventrata</td><td>DP + CI &middot; maintain</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">11</td><td><strong>Crown Tours</strong></td><td class="n">$1,000</td><td>Ventrata</td><td>CI &middot; DP opportunity</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">12</td><td><strong>Grupo Julia</strong></td><td class="n">$1,000</td><td>TourCMS</td><td>DP &middot; new, signed 21 July</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">13</td><td><strong>Carrani Tours</strong></td><td class="n">$800</td><td>B&oacute;kun</td><td>DP onboarding &middot; blocked</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">14</td><td><strong>Evan Evans Tours</strong></td><td class="n">$800</td><td>PrioTicket</td><td>CI live &middot; DP expansion</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">15</td><td><strong>Walks</strong></td><td class="n">$795</td><td>Ventrata</td><td>CI &middot; maintain</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">16</td><td><strong>GoNexus Group</strong></td><td class="n">$750</td><td>Custom</td><td>DP &middot; custom workflow</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">17</td><td><strong>Everyday California</strong></td><td class="n">$650</td><td>Xola</td><td>DP &middot; expansion</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">18</td><td><strong>Mountain Goat Tours</strong></td><td class="n">$500</td><td>Ventrata</td><td>CI live &middot; DP expansion</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">19</td><td><strong>Urban Saunters</strong></td><td class="n">$450</td><td>Ventrata</td><td>DP &middot; trust window</td><td><span class="pill p">end of next week</span></td></tr>
+      <tr><td class="i">20</td><td><strong>Ocean Tours</strong></td><td class="n">$200</td><td>Other</td><td>CI &middot; maintain</td><td><span class="pill m">next week</span></td></tr>
+      <tr><td class="i">21</td><td><strong>Kurban Tours / Grayline Dubai</strong></td><td class="n">$200</td><td>TourCMS</td><td>CI &middot; maintain</td><td><span class="pill m">next week</span></td></tr>
+      <tr><td class="i">22</td><td><strong>Mi Bike Tours</strong></td><td class="n">$150&ndash;200</td><td>Xola</td><td>DP &middot; new client</td><td><span class="pill c">next month</span></td></tr>
+      <tr><td class="i">23</td><td><strong>Eat Walk Tours</strong></td><td class="n">$160</td><td>Other</td><td>CI &middot; maintain</td><td><span class="pill m">next week</span></td></tr>
+      <tr><td class="i">24</td><td><strong>Santorini Yatchs</strong></td><td class="n">$150</td><td>Other</td><td>CI &middot; maintain</td><td><span class="pill m">next week</span></td></tr>
+      <tr><td class="i">25</td><td><strong>Friends Guides CDMX</strong></td><td class="n">$120&ndash;160</td><td>B&oacute;kun</td><td>CI live &middot; DP history</td><td><span class="pill m">next week</span></td></tr>
+      <tr><td class="i">26</td><td><strong>Tours and the City</strong></td><td class="n">$120</td><td>&mdash;</td><td>CI &middot; maintain</td><td><span class="pill m">next week</span></td></tr>
+      <tr><td class="i">27</td><td><strong>Grand Canyon Group (Papillon)</strong></td><td class="n">$80</td><td>Ventrata</td><td>CI live &middot; DP opportunity</td><td><span class="pill c">next month</span></td></tr>
+      <tr><td class="i">28</td><td><strong>Tuk Tuk Spain</strong></td><td class="n">$35</td><td>Other</td><td>CI &middot; maintain</td><td><span class="pill m">next week</span></td></tr>
+    </table>
+
+    <h3>What each one will teach you</h3>
+    <table>
+      <tr><th>Account</th><th>Why it's worth your attention</th></tr>
+      <tr><td><strong>Amigo Tours</strong></td><td>Biggest expansion surface we have. Mexico, Spain, Japan. Contacts split by job &mdash; Angela and Abraham on pricing, Jos&eacute; and Oscar on results, Ana and Ainoha on systems. The Go City reseller problem lives here and doesn't have a fix yet.</td></tr>
+      <tr><td><strong>Rabbie's Tours</strong></td><td>Biggest account after Amigo. TourCMS, so nothing about it looks like the standard playbook. Open CI expansion sitting at verbal commit.</td></tr>
+      <tr><td><strong>Best of Switzerland</strong></td><td>Premium operator, flagship products, cold-start history. Zurich and Grindelwald going live now, Pilatus on hold until the autumn options ingest. Demian checks his own side before escalating, so when he says he can't find it, look at ours.</td></tr>
+      <tr><td><strong>Historic Tours of America</strong></td><td>The busiest account in the book by a distance, and the best example of expansion done properly. $717K captured above flat pricing. Several users across depots, which is its own skill.</td></tr>
+      <tr><td><strong>Ciao Florence</strong></td><td>&euro;527K in gross booking value managed. Livia just sent B&oacute;kun booking data back after the performance review, which is an opening. She isn't ready to expand yet, so build B&oacute;kun fluency first.</td></tr>
+      <tr><td><strong>Empire Tours</strong></td><td>Cleanest CI&rarr;DP conversion we have. NY, DC, Chicago, London. Chicago running about 6% uplift with guest volume up, not down.</td></tr>
+      <tr><td><strong>Tours for Today</strong></td><td>Inside the trust window. Sagrada Familia live since 29 June. New PAX typologies on Select need a refresh before rules can be set. Spanish throughout &mdash; Tom&aacute;s reports fast and narrows things himself.</td></tr>
+      <tr><td><strong>Venice Tours</strong></td><td>Sensitive. Auto-apply stop and ceiling pinning in the history. You'll own the relationship and the update cadence, not the technical outcome.</td></tr>
+      <tr><td><strong>Boost Portugal</strong></td><td>Repeat expansion template, plus discount layers and net/gross logic. Mid-catalogue restructure with an August 1 target. Sofia checks everything, so don't close anything until she confirms.</td></tr>
+      <tr><td><strong>Airboat Adventures</strong></td><td>Best account to learn value storytelling on &mdash; strong ROI story even with softer booking volume. Also July's LinkedIn announcement, so we need a quote and approval.</td></tr>
+      <tr><td><strong>Crown Tours</strong></td><td>Big catalogue potential, but a CI expansion was lost. Understand why before any outreach.</td></tr>
+      <tr><td><strong>Grupo Julia</strong></td><td>Signed 21 July. Needs historical and pace data before the algorithm prices well. Scope and activation plan still to define.</td></tr>
+      <tr><td><strong>Carrani Tours</strong></td><td>Blocked on price-rule errors, currency defaults and missing unit prices. Engineering leads while it's blocked, you own the communication.</td></tr>
+      <tr><td><strong>Evan Evans Tours</strong></td><td>DP pilot blocked on Prio's &pound;37.25 discrepancy and prices bleeding into live distributor accounts. Tom wants Prio and his whole team copied on everything.</td></tr>
+      <tr><td><strong>Walks</strong></td><td>Three related records in HubSpot. Confirm which entity is live before you contact anyone.</td></tr>
+      <tr><td><strong>GoNexus Group</strong></td><td>Custom workflow, outside all four playbooks. Needs a technical briefing before anything else.</td></tr>
+      <tr><td><strong>Everyday California</strong></td><td>Uplift climbing from $7,912. Expansion call being scheduled. Our strongest Xola proof point.</td></tr>
+      <tr><td><strong>Mountain Goat Tours</strong></td><td>Open DP proposal, but the CI subscription lapsed in April so the commercial position needs sorting first. Kate is the contact, Asia is on maternity leave.</td></tr>
+      <tr><td><strong>Urban Saunters</strong></td><td>Live, but sitting under "Unassigned" in HubSpot with no company record. Fix that first.</td></tr>
+      <tr><td><strong>Friends Guides CDMX</strong></td><td>Spanish-language. A B&oacute;kun DP setup was queued at some point &mdash; check where that landed before raising activation.</td></tr>
+      <tr><td><strong>Grand Canyon Group</strong></td><td>CI live with a DP opportunity. Had missing OTA availability dates before, so confirm the data is clean before positioning a pilot.</td></tr>
+      <tr><td><strong>Mi Bike Tours</strong></td><td>New client on Xola. Units and the auto-apply pattern &mdash; a safe place to learn Xola once it's settled.</td></tr>
+      <tr><td><strong>Ocean &middot; Kurban &middot; Eat Walk &middot; Tuk Tuk &middot; Santorini &middot; Tours and the City</strong></td><td>Small CI accounts, low touch. These come to you first, so they're where you build the habit of a clean next step and date on every record.</td></tr>
+    </table>
+
+    <h3>Also coming</h3>
+    <p>Signed or committed, and they'll land in your book as they close. Worth knowing now so activation isn't a surprise.</p>
+    <table>
+      <tr><th>Account</th><th class="n">MRR</th><th>Stage</th><th>Expected</th></tr>
+      <tr><td>Key Tours</td><td class="n">$450</td><td>Verbal commit</td><td>27 July</td></tr>
+      <tr><td>Blue Boat Company</td><td class="n">$300</td><td>Verbal commit</td><td>29 July &mdash; Linda is out until 6 August</td></tr>
+      <tr><td>Show Me Italy</td><td class="n">$350</td><td>Verbal commit</td><td>30 July</td></tr>
+      <tr><td>Vivico Travel</td><td class="n">$600</td><td>Contract sent</td><td>31 July</td></tr>
+      <tr><td>Woopa Travel</td><td class="n">$300</td><td>Contract sent</td><td>Signed 21 July, no company record yet</td></tr>
+      <tr><td>Jasper SkyTram (Pursuit)</td><td class="n">$1,000</td><td>Verbal commit</td><td>14 August</td></tr>
+      <tr><td>Babylon Tours</td><td class="n">$800</td><td>Verbal commit</td><td>14 September</td></tr>
+    </table>
+
+    <div class="cp" data-p="book">
+      <p class="hint">Comments are visible to anyone with this file.</p>
+      <div class="cl" data-l="book"></div>
+      <div class="cf" data-f="book"><div class="rw"><input type="text" placeholder="Your name" data-nm><textarea placeholder="Add a note&hellip;" data-tx></textarea></div><button data-sb>Add comment</button></div>
+    </div>
+  </section>
+
+  <!-- 2 THEMES -->
+  <section class="card" id="themes">
+    <div class="hd">
+      <div>
+        <h2><span class="num">02</span>What operators actually report</h2>
+        <p class="sub">Every example here is a real thread from the last three weeks.</p>
+      </div>
+      <button class="ctg" data-s="themes">&#128172; <span class="ct">0</span></button>
+    </div>
+
+    <p>Six patterns cover nearly everything that comes in. Knowing them saves you a lot of time.</p>
+
+    <h3>1. "This looks wrong" &mdash; and about half the time nothing is</h3>
+    <p>This is most of what you'll get. It's also where you can do damage in both directions: file a ticket for something that isn't broken and you burn Engineering's time, wave off something real and you burn the operator's trust. Section 3 is how to tell. The raw material:</p>
+    <table>
+      <tr><th>Thread</th><th>What it turned out to be</th></tr>
+      <tr><td><strong>HTA</strong> &mdash; "pricing confusion" video, 15 July</td><td><span class="pill r">real fault</span> We were showing the discounted price instead of the base price. Fixed same day.</td></tr>
+      <tr><td><strong>HTA</strong> &mdash; capacity toggle won't re-enable, 14 July</td><td><span class="pill m">not a fault</span> The setting isn't saved until you save it. Answered in nine minutes.</td></tr>
+      <tr><td><strong>HTA</strong> &mdash; phantom override on St. Augustine Old Jail, 16 July</td><td><span class="pill r">real fault</span> ENG-1208. Fixed next day.</td></tr>
+      <tr><td><strong>HTA Boston</strong> &mdash; Tim sees $65&rarr;$71, Jason sees $58 base, 22 July</td><td><span class="pill c">account issue, open</span> Tim's account is pulling a different base price. Not a platform bug.</td></tr>
+      <tr><td><strong>HTA</strong> &mdash; calendar shows $58 for $57.51</td><td><span class="pill m">display only</span> The column is too narrow for full precision. Nothing is wrong.</td></tr>
+      <tr><td><strong>Boost</strong> &mdash; Tuk Tuk backoffice prices wrong, 16 July</td><td><span class="pill c">partly real</span> The two-hour option got fixed. The other three still show different prices per time slot.</td></tr>
+      <tr><td><strong>Evan Evans</strong> &mdash; pushed &pound;164, site shows ~&pound;200, 20 July</td><td><span class="pill c">partner-side</span> Same &pound;37.25 gap every time. Prio's issue.</td></tr>
+      <tr><td><strong>Tours for Today</strong> &mdash; new PAX typologies unusable, 22 July</td><td><span class="pill r">real</span> Ventrata-side change. We need a refresh to read the new units.</td></tr>
+    </table>
+
+    <h3>2. Data ingestion is what blocks go-lives, not the algorithm</h3>
+    <p>Every activation that stalled in the last three weeks stalled on data. Not once on pricing logic.</p>
+    <ul class="pl">
+      <li><strong>Best of Switzerland:</strong> the Pilatus autumn options are bookable in Ventrata and on GetYourGuide, but nothing is ingesting into Walkway. So Pilatus stays off while Zurich and Grindelwald go live.</li>
+      <li><strong>Boost Portugal:</strong> product names and IDs were restructured, several products consolidated into fewer with options. History only reaches back to January and 3&ndash;6 months is the minimum. Miguel and Sofia have to agree which history maps to which new ID before anything gets sent.</li>
+      <li><strong>Boost again:</strong> the Porto products sit under "Blue Dragon," not "Porto," because of how Ventrata pulls them. Nobody would guess that.</li>
+      <li><strong>Tours for Today:</strong> new PAX typologies on Select need a refresh before rules can be set.</li>
+    </ul>
+    <div class="box p"><span class="lbl">Habit worth building</span>When an operator says "it's live in my system," that's the start of the check, not the end. Live in the reservation system isn't the same as ingesting into Walkway, which isn't the same as mapped, which isn't the same as pushing.</div>
+
+    <h3>3. Access, permissions and users are a real chunk of the job</h3>
+    <p>Not interesting, but constant. In three weeks: three Boston department heads needed platform access, Key West Ghosts &amp; Gravestones permissions, Michael Long couldn't reset his password, Tim Carr's account was missing the edit option entirely. All of it blocks someone, and all of it is quick once you know where to look.</p>
+
+    <h3>4. "The price" is genuinely ambiguous, and that causes most of the confusion</h3>
+    <p>HTA Boston runs a 15% advance discount and a 5% same-day discount, plus tax. One product, four defensible prices. The only number that matters to the operator is the pre-tax dollar amount, with the after-tax price second because that's what sells at terminals. Jason's own workaround is the "New Order" view, which shows the clean pushed price without the discount maths on top. That same ambiguity is what caused the 15 July bug.</p>
+    <div class="box m"><span class="lbl">Useful to know &mdash; the OTA "from price"</span>Viator and GetYourGuide build their "from" price off the lowest price in the next 20&ndash;30 days. So keep at least one date in that window at base or minimum, otherwise the listing shows an inflated "from" price and loses clicks to cheaper competitors. Critical for hop-on-hop-off, still relevant elsewhere.</div>
+
+    <h3>5. We can't always scope a push as narrowly as the operator expects</h3>
+    <ul class="pl">
+      <li><strong>Amigo:</strong> everything arriving through Ventrata's direct API is tagged with the same source. Ventrata gives us a source-level ID, not a reseller-level one. Go City works on a flat negotiated rate and should never be dynamically priced, but there's no way to filter it out. Escalated, no fix yet.</li>
+      <li><strong>Evan Evans:</strong> the test push landed across all live distributor accounts, not just the test account. Go-live is blocked on that, not on our pricing.</li>
+    </ul>
+
+    <h3>6. Where the value is proving out &mdash; this is your expansion fuel</h3>
+    <table>
+      <tr><th>Account</th><th>What's on record</th></tr>
+      <tr><td>Historic Tours of America</td><td>$717K captured above flat pricing across 18 actively managed products</td></tr>
+      <tr><td>Ciao Florence</td><td>&euro;527,562 in gross booking value managed since activation</td></tr>
+      <tr><td>Boost Portugal</td><td>&euro;461,401 in gross booking value managed since activation</td></tr>
+      <tr><td>Empire Tours (Chicago)</td><td>~$2,000 uplift on a $32K base over six weeks. Price per guest up 10% on Secret Interiors, 3% on Gangsters &amp; Ghosts. Guest volume <em>up</em> 2.1 a day. Memorial Day weekend +19%.</td></tr>
+      <tr><td>Everyday California</td><td>Revenue above base climbing, from $7,912 and rising</td></tr>
+      <tr><td>Amigo &mdash; Frida Kahlo</td><td>Strong enough that Jos&eacute;'s answer was to ask us to <em>raise</em> the ceiling</td></tr>
+    </table>
+    <div class="box c"><span class="lbl">Notice the shape of that last one</span>The best expansion signal isn't a compliment. It's the operator asking for more headroom without being prompted.</div>
+
+    <div class="cp" data-p="themes">
+      <div class="cl" data-l="themes"></div>
+      <div class="cf" data-f="themes"><div class="rw"><input type="text" placeholder="Your name" data-nm><textarea placeholder="Add a note&hellip;" data-tx></textarea></div><button data-sb>Add comment</button></div>
+    </div>
+  </section>
+
+  <!-- 3 TRIAGE -->
+  <section class="card" id="triage">
+    <div class="hd">
+      <div>
+        <h2><span class="num">03</span>Real fault, or does it just look broken?</h2>
+        <p class="sub">Probably the most useful half hour in here.</p>
+      </div>
+      <button class="ctg" data-s="triage">&#128172; <span class="ct">0</span></button>
+    </div>
+    <p>Work these in order. Most reports resolve before step 5. Every example names the operator, the person and the date, so you can go and read the original.</p>
+
+    <div class="flow">
+      <div class="step"><div class="i">1</div><div class="b">
+        <h4>Get the specifics first</h4>
+        <p>Product name and ID, option or unit, the exact date and time slot, a screenshot or short video, and which screen they're on. Without those you can't tell any of the cases below apart.</p>
+        <p class="ev">Jason Renault at HTA is the model. On 15 July he sent a video, then followed up 35 seconds later with "Sorry this is Boston Old Town Trolley &ndash; 1-Day, but same is occurring on all products." He scoped it himself. Juan had a fix out within two hours.</p>
+      </div></div>
+
+      <div class="step"><div class="i">2</div><div class="b">
+        <h4>Is it a <em>displayed</em> price or a <em>pushed</em> price?</h4>
+        <p>Different systems, different failures. Check what we pushed, then what the reservation system holds, then what the real selling channel shows. All three can disagree.</p>
+        <p class="ev">Evan Evans, 20 July. We pushed &pound;164, Prio accepted it, the website showed about &pound;200. Three layers, one broken, and it wasn't ours. The reversion had the same fingerprint &mdash; &pound;149.25 instead of &pound;149.</p>
+      </div></div>
+
+      <div class="step"><div class="i">3</div><div class="b">
+        <h4>Is there a discount or tax layer in between?</h4>
+        <p>If the gap is the same amount or the same percentage every time, it's a layer, not a pricing fault. Ask what discounts are configured and get to the pre-tax number before concluding anything.</p>
+        <p class="ev">HTA on 15 July: we were showing discounted, not base. Evan Evans: &pound;37.25 every single time, across every unit. Consistency is the tell.</p>
+      </div></div>
+
+      <div class="step"><div class="i">4</div><div class="b">
+        <h4>Did the setting actually save?</h4>
+        <p>Toggles in the algorithm settings don't stick until saved. Before escalating any "I changed it and it reverted," ask them to walk you through the exact clicks.</p>
+        <p class="ev">HTA, 14 July, Boston Old Town Trolley 1-Day. PA answered in nine minutes. Jason's reply: "Doh! That worked!" Eleven minutes end to end.</p>
+      </div></div>
+
+      <div class="step"><div class="i">5</div><div class="b">
+        <h4>Do two people at the same operator see different numbers?</h4>
+        <p>Then it's an account or permissions problem, not a platform one. Check which base price each account is pulling and what role each user has.</p>
+        <p class="ev">HTA Boston, 22 July, still open. Tim Carr saw a recommendation to move $65&rarr;$71. Jason saw a $58 base on the same product. Mackenzie and Michael both matched Jason, so Tim was the only outlier &mdash; which is what told us it was his account, not the product. His account was also missing the edit option.</p>
+      </div></div>
+
+      <div class="step"><div class="i">6</div><div class="b">
+        <h4>Is the number just rounded?</h4>
+        <p>The calendar rounds. Check somewhere with full precision before treating a few cents as a defect.</p>
+        <p class="ev">A cell reading $58 could be $57.51 or $58.49. Harmless by itself, but it makes people doubt every other number on the screen, so name it before they have to.</p>
+      </div></div>
+
+      <div class="step"><div class="i">7</div><div class="b">
+        <h4>Nothing pushed at all?</h4>
+        <p>Different problem. Check in this order: auto-apply on, active dates in range, credentials valid <em>with write access</em>, mapping intact, and whether the target channel and catalogue accept writes.</p>
+        <p class="ev">Read-only API keys are the sneaky one &mdash; they look completely valid and fail silently. And a push can succeed into the wrong catalogue, so it shows as applied and verified on our side while the operator sees nothing change.</p>
+      </div></div>
+    </div>
+
+    <h3>Know your reporters</h3>
+    <p>Who raises what, and how, tells you how much to trust a report at face value and how fast to move.</p>
+    <table>
+      <tr><th>Operator</th><th>Who</th><th>How they report</th><th>How to work with them</th></tr>
+      <tr><td><strong>Historic Tours of America</strong></td><td>Jason Renault on revenue, plus Tim Carr, Mackenzie Kegans, Michael Long, Steven Johnson and Brent Lyons across the depots</td><td>By far the highest volume in the book. Video, product codes, exact screens. Often copies tech@ and Terry too.</td><td>Take him literally and move fast, he's usually right. But he's one of several users, so "HTA says X" might mean one depot. Check whether the others see it too.</td></tr>
+      <tr><td><strong>Boost Portugal</strong></td><td>Sofia Mira, plus Miguel on data</td><td>Precise and persistent. Will tell you plainly when a fix is only partial.</td><td>Don't close anything until she confirms. She checks.</td></tr>
+      <tr><td><strong>Evan Evans</strong></td><td>Tom Macklin (MD), Alexis Peppis, plus Prio and TTC</td><td>Formal, structured, multi-party.</td><td>He asked specifically to keep Prio and his whole team copied. Dropping someone is a visible mistake.</td></tr>
+      <tr><td><strong>Best of Switzerland</strong></td><td>Demian Schmid, with Alberto, Christian, Anja and Amanda</td><td>Investigates his own side before escalating.</td><td>When Demian says he can't find it, believe him and look at ours first.</td></tr>
+      <tr><td><strong>Tours for Today</strong></td><td>Tom&aacute;s, with direcci&oacute;n@ on strategy</td><td>Spanish, quick, sequential &mdash; sent a second message eleven minutes after the first, having narrowed it himself.</td><td>Reply in Spanish. He's in the trust window, so how fast you acknowledge matters more than how fast you fix.</td></tr>
+      <tr><td><strong>Ciao Florence</strong></td><td>Livia</td><td>Considered, less frequent, attaches source data.</td><td>When she sends data that's an opening, not admin. Respond properly.</td></tr>
+      <tr><td><strong>Amigo Tours</strong></td><td>Angela and Abraham Pi&ntilde;a on pricing, Jos&eacute; Arozarena and Oscar on results, Ana Navarrete and Ainoha on systems</td><td>Spanish, split by job.</td><td>Route by topic. Angela or Abraham for min/max and price rules, Ana or Ainoha for Ventrata and systems questions, Jos&eacute; or Oscar for anything commercial.</td></tr>
+      <tr><td><strong>Airboat Adventures</strong></td><td>Brittany Perrin</td><td>Warm and informal, reschedules easily.</td><td>Low friction, US Central time. Good account to learn value storytelling on.</td></tr>
+    </table>
+
+    <div class="box c">
+      <span class="lbl">What to say while you're still working it out</span>
+      "Thanks for flagging &mdash; I'm reviewing the exact product, dates and price path with the team now. We haven't confirmed the cause yet so I don't want to speculate, but I'll come back to you by <em>[specific time]</em>."<br><br>
+      Never guess at a cause on a live pricing issue, and never give an engineering fix date you don't control. "Still investigating" always beats silence.
+    </div>
+
+    <h3>Filing it, if it's real</h3>
+    <p>A good ticket lets Engineering start straight away. A weak one hands the discovery work back to them and slows the operator's answer.</p>
+    <ul class="pl">
+      <li><strong>Title:</strong> [Customer] [System] &mdash; symptom and business impact</li>
+      <li><strong>Context:</strong> user, product/option/unit IDs, reservation system, onboarding phase, auto-apply status</li>
+      <li><strong>Expected vs actual:</strong> one clear sentence each. Never "does not work."</li>
+      <li><strong>Timeline:</strong> when it started, last known good, timezone, affected dates, still happening?</li>
+      <li><strong>Evidence:</strong> screenshots or recording, error text, price values, currency, channel, bounds</li>
+      <li><strong>Impact:</strong> live price risk, activation delay, products affected, how the operator is feeling about it</li>
+      <li><strong>Containment:</strong> autopilot paused? rule changed? operator informed?</li>
+      <li><strong>Comms:</strong> last message sent and the next update you promised</li>
+    </ul>
+
+    <div class="cp" data-p="triage">
+      <div class="cl" data-l="triage"></div>
+      <div class="cf" data-f="triage"><div class="rw"><input type="text" placeholder="Your name" data-nm><textarea placeholder="Add a note&hellip;" data-tx></textarea></div><button data-sb>Add comment</button></div>
+    </div>
+  </section>
+
+  <!-- 4 FRIDAY -->
+  <section class="card" id="fri">
+    <div class="hd">
+      <div>
+        <h2><span class="num">04</span>Friday 24 July</h2>
+        <p class="sub">Hands on the tools. Not reading.</p>
+      </div>
+      <button class="ctg" data-s="fri">&#128172; <span class="ct">0</span></button>
+    </div>
+
+    <div class="box p">
+      <span class="lbl">How to use this</span>
+      This is a plan for <em>this</em> Friday specifically &mdash; finish onboarding yourself and get set up for next week, when accounts start coming your way. It isn't a template for how every Friday should look.<br><br>
+      Use the time however works. If you'd rather go back over something from earlier in the week, or spend longer on one block than another, do that. What matters is that by the end of the day you have four things you keep: a report, your scenario answers, four email templates and a Linear ticket you've filed.
+    </div>
+
+    <div class="sched">
+      <div class="blk">
+        <div class="when">morning<span>reports</span></div>
+        <div class="what">
+          <h4>Read three real reports against a fixed structure</h4>
+          <p>Pull the HTA portfolio report, the Ciao Florence performance review and the Empire Chicago review from the shared Drive folder. Read each one against the five layers in <a href="#reports">Section 9</a> and write down, for each: what's the health signal, what did the system actually do, what did it produce, what's uncertain, and what's the ask.</p>
+          <p>Two of them have a clean ask and one doesn't. Work out which, and what the ask should have been.</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="when">morning<span>nao</span></div>
+        <div class="what">
+          <h4>Build a client-facing report in <a href="https://nao.walkway.ai/">nao.walkway.ai</a></h4>
+          <p>Pick an account and build a report you'd actually be happy to send. The test: would someone who has never seen Walkway understand what happened to their revenue and what you want them to do next? Strip anything internal &mdash; our field names, our query language, anything you couldn't explain out loud on a call.</p>
+          <p>Then prepare for the call that goes with it. Where do you open? Which two or three numbers do you lead with? What will they push back on? What's the ask, and what's the date? Write that up as a one-page brief and we'll run it as a role-play.</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="when">midday<span>scenarios</span></div>
+        <div class="what">
+          <h4>Work the nine scenarios</h4>
+          <p><a href="#scenarios">Section 7</a>. Each one is a real situation from the last few weeks with the answer hidden. Before you open the reveal, write two things: <strong>what you'd check, in order</strong>, and <strong>what you'd actually send</strong>.</p>
+          <p>Write the reply out in full. "I'd acknowledge and investigate" isn't an answer &mdash; the words are the skill.</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="when">afternoon<span>templates</span></div>
+        <div class="what">
+          <h4>Draft four email templates</h4>
+          <p><a href="#templates">Section 8</a> lists ten you'll want eventually. Do four now, starting with the hardest two: the acknowledgement when you don't know the cause yet, and the "this isn't actually a fault, here's what to do" &mdash; the one where you correct someone without making them feel stupid.</p>
+          <p>There are two worked examples to calibrate against. Then write yours. They should sound like you.</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="when">afternoon<span>systems</span></div>
+        <div class="what">
+          <h4>Linear, the platform, HubSpot</h4>
+          <p><strong>Linear:</strong> open the Customer Onboarding project and read five closed tickets end to end. Look for the difference between one Engineering could act on immediately and one that needed a second round of questions. Then file a real ticket for something genuinely open, using the full template.</p>
+          <p><strong>Platform, via back-office impersonation:</strong> find a product, open its calendar, find an active recommendation, open Recent Activity, find a past pushed price and edit it. Then deliberately reproduce two things &mdash; a rounded calendar figure, and the difference between a discounted price and a base price. Better to have seen both yourself before an operator describes one to you.</p>
+          <p><strong>HubSpot:</strong> open five accounts from <a href="#book">Section 1</a> and just read them &mdash; the deal, the contacts, the notes, what the last activity was. Get a feel for how much context a record actually carries before a call.</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="when">overlap<span>together</span></div>
+        <div class="what">
+          <h4>Friday review</h4>
+          <p>Walk me through the report and we'll run the call as a role-play. Then a couple of the scenario answers and the Linear ticket you filed. After that: what moved this week, anything you're stuck on, and what next week looks like.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Friday done when</h3>
+    <div class="prog"><div class="bar"><div class="fill" data-fl="fri"></div></div><span class="plb" data-lb="fri">0/7</span></div>
+    <ul class="ck" data-ls="fri">
+      <li data-id="f1"><input type="checkbox" id="f1"><label for="f1">Three reports read and annotated against the five layers</label></li>
+      <li data-id="f2"><input type="checkbox" id="f2"><label for="f2">Client-facing report built in nao.walkway.ai</label></li>
+      <li data-id="f3"><input type="checkbox" id="f3"><label for="f3">One-page call brief written to go with it</label></li>
+      <li data-id="f4"><input type="checkbox" id="f4"><label for="f4">All nine scenarios answered in writing before opening the reveals</label></li>
+      <li data-id="f5"><input type="checkbox" id="f5"><label for="f5">Four email templates drafted in my own words</label></li>
+      <li data-id="f6"><input type="checkbox" id="f6"><label for="f6">Five Linear tickets read, one real ticket filed</label></li>
+      <li data-id="f7"><input type="checkbox" id="f7"><label for="f7">Reproduced a rounded calendar price and a discount-vs-base difference myself</label></li>
+    </ul>
+
+    <div class="cp" data-p="fri">
+      <div class="cl" data-l="fri"></div>
+      <div class="cf" data-f="fri"><div class="rw"><input type="text" placeholder="Your name" data-nm><textarea placeholder="Add a note&hellip;" data-tx></textarea></div><button data-sb>Add comment</button></div>
+    </div>
+  </section>
+
+  <!-- 5 MONDAY -->
+  <section class="card" id="mon">
+    <div class="hd">
+      <div>
+        <h2><span class="num">05</span>Monday 27 July</h2>
+        <p class="sub">Intros start. Gradually, not all at once.</p>
+      </div>
+      <button class="ctg" data-s="mon">&#128172; <span class="ct">0</span></button>
+    </div>
+
+    <div class="box m">
+      <span class="lbl">How this works</span>
+      I'll introduce you to accounts through next week, a few at a time rather than one big email. The biggest ones stay with me until next month. The goal is that by the end of next week you're managing a smaller portfolio on your own, and I'll join calls where it helps.
+    </div>
+
+    <div class="sched">
+      <div class="blk">
+        <div class="when">morning<span>on your own</span></div>
+        <div class="what">
+          <h4>Be ready for the first intros</h4>
+          <p>Some operators will reply the same day. Have a plan for the first few and know what you'd say if they ask what changes.</p>
+          <p>For most of them the honest answer is: nothing, except who you email. That's reassuring, and it's true.</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="when">midday<span>on your own</span></div>
+        <div class="what">
+          <h4>Get comfortable in HubSpot</h4>
+          <p>Open the accounts you've been introduced to and have a proper look at how the records are set up &mdash; the deal, the contacts, what's been logged, what the last note says, whether there's a next step and a date on it.</p>
+          <p>You're not fixing anything, just learning where things live and getting a feel for the difference between a well-kept record and a thin one. Some of ours are thin. I'll sort the cleanup.</p>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="when">overlap<span>together</span></div>
+        <div class="what">
+          <h4>Walk the accounts &mdash; the stories, not the records</h4>
+          <p>Most of them transfer fine on the record. These need me to explain them:</p>
+          <table>
+            <tr><td class="n">Venice Tours</td><td>The trust history. What happened, what was said, what's still fragile.</td></tr>
+            <tr><td class="n">Ciao Florence</td><td>Performance review is done and Livia has sent B&oacute;kun booking data back. B&oacute;kun channel validation is the live risk, and she isn't ready to expand yet.</td></tr>
+            <tr><td class="n">Evan Evans</td><td>Blocked on Prio. Tom wants Prio and his whole team on every thread.</td></tr>
+            <tr><td class="n">Crown Tours</td><td>Why the CI expansion was lost. No outreach until you know.</td></tr>
+            <tr><td class="n">Grupo Julia</td><td>Signed 21 July and not in the portfolio list yet. Contact, scope, activation plan.</td></tr>
+            <tr><td class="n">Walks</td><td>Three related records. Confirm the live entity before contacting anyone.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <h3>Monday done when</h3>
+    <div class="prog"><div class="bar"><div class="fill" data-fl="mon"></div></div><span class="plb" data-lb="mon">0/5</span></div>
+    <ul class="ck" data-ls="mon">
+      <li data-id="m1"><input type="checkbox" id="m1"><label for="m1">First intros out, every reply acknowledged same day</label></li>
+      <li data-id="m2"><input type="checkbox" id="m2"><label for="m2">Context accounts walked through together</label></li>
+      <li data-id="m3"><input type="checkbox" id="m3"><label for="m3">Spent proper time in HubSpot on the accounts I've been introduced to</label></li>
+      <li data-id="m4"><input type="checkbox" id="m4"><label for="m4">Know who my contact is on each one, and what the last conversation was about</label></li>
+      <li data-id="m5"><input type="checkbox" id="m5"><label for="m5">Agreed which accounts come next and roughly when</label></li>
+    </ul>
+
+    <div class="cp" data-p="mon">
+      <div class="cl" data-l="mon"></div>
+      <div class="cf" data-f="mon"><div class="rw"><input type="text" placeholder="Your name" data-nm><textarea placeholder="Add a note&hellip;" data-tx></textarea></div><button data-sb>Add comment</button></div>
+    </div>
+  </section>
+
+  <!-- 6 AHEAD -->
+  <section class="card" id="ahead">
+    <div class="hd">
+      <div>
+        <h2><span class="num">06</span>The week ahead</h2>
+        <p class="sub">Running a smaller portfolio on your own by Friday.</p>
+      </div>
+      <button class="ctg" data-s="ahead">&#128172; <span class="ct">0</span></button>
+    </div>
+
+    <div class="box p">
+      <span class="lbl">Start every day here, from Tuesday</span>
+      <strong>The morning check, 30&ndash;45 minutes.</strong> Any operator replies waiting? Any account you haven't heard from in a while? Any follow-up you promised that's now due? Any Linear ticket that's moved, or one that's been sitting too long?<br><br>
+      We don't have alerting on autopilot status or pricing behaviour yet, so this isn't a systems check &mdash; it's a relationship and commitments check. Problems mostly surface when an operator tells us, or when one of us pulls the data during a review. Which is exactly why staying on top of replies and follow-ups matters more here than it would somewhere with proper monitoring.
+    </div>
+
+    <table>
+      <tr><th>Day</th><th>Focus</th><th>What it looks like</th></tr>
+      <tr><td><strong>Tuesday</strong></td><td>First check-ins on your own</td><td>Two or three calls, Europe-based so they fit your day. Each with a prepared brief, each logged the same day with a decision and a date.</td></tr>
+      <tr><td><strong>Wednesday</strong></td><td>Own something end to end</td><td>An activation or an expansion batch &mdash; intake, Linear ticket, chase, operator update. I'll review it, not run it.</td></tr>
+      <tr><td><strong>Thursday</strong></td><td>First expansion motion</td><td>Pick whichever account has the strongest documented lift and build the case: evidence, next product cluster, a date. We'll look at it together before it goes anywhere.</td></tr>
+      <tr><td><strong>Friday</strong></td><td>Weekly review</td><td>WAAP movement, account health, expansion paths, whatever project you're on, next week. This is the rhythm from here.</td></tr>
+    </table>
+
+    <div class="box c">
+      <span class="lbl">The role won't only be CS, and that's by design</span>
+      A decent share of your week will sit outside core customer success, and that's expected rather than a gap. Lead research and outbound, following up on the marketing-engaged leads, supporting or preparing demos, proactive support calls, and usually a side project out of the LT meeting.<br><br>
+      The order doesn't change though: anything with live pricing risk comes first, then activations inside the trust window, then anything you've committed to a customer. Prospecting and projects fit around those.
+    </div>
+
+    <div class="box c">
+      <span class="lbl">One thing to plan around rather than discover</span>
+      Seville is nine hours ahead of San Francisco, so a US operator's 2pm is your 11pm. A good chunk of the book is North American &mdash; Airboat, Everyday California, Empire, Grand Canyon, Mi Bike, plus HTA and Amigo. Decide account by account whether it's an evening call or an async relationship, rather than finding out by missing calls.
+    </div>
+
+    <div class="cp" data-p="ahead">
+      <div class="cl" data-l="ahead"></div>
+      <div class="cf" data-f="ahead"><div class="rw"><input type="text" placeholder="Your name" data-nm><textarea placeholder="Add a note&hellip;" data-tx></textarea></div><button data-sb>Add comment</button></div>
+    </div>
+  </section>
+
+  <!-- 7 SCENARIOS -->
+  <section class="card" id="scenarios">
+    <div class="hd">
+      <div>
+        <h2><span class="num">07</span>Nine scenarios</h2>
+        <p class="sub">All real. Write your answer before you open the reveal.</p>
+      </div>
+      <button class="ctg" data-s="scen">&#128172; <span class="ct">0</span></button>
+    </div>
+
+    <p>For each one: <strong>what do you check, in what order</strong>, and <strong>what exactly do you send</strong>. Write the reply out in full.</p>
+
+    <div class="scn">
+      <h4>1. The toggle that won't stick</h4>
+      <p>An operator's revenue manager emails with a video: he was testing the algorithm settings on a hop-on-hop-off product, turned the capacity factor off, and now can't turn it back on.</p>
+      <details><summary>Reveal</summary>
+        <p><strong>Not a fault.</strong> The setting isn't saved until it's saved. Ask him to walk you through the exact clicks before escalating anything.</p>
+        <p>HTA, 14 July. PA answered in nine minutes and Jason's reply was "Doh! That worked!" Eleven minutes start to finish.</p>
+        <p><strong>The bit that takes care:</strong> telling a competent operator he missed a button is delicate. Put it on the product, not on him &mdash; "that save step isn't obvious enough, you're not the first" &mdash; and actually log the friction rather than just closing the thread.</p>
+      </details>
+    </div>
+
+    <div class="scn">
+      <h4>2. Two people, two numbers</h4>
+      <p>A depot GM says his calendar shows a recommendation to move $65 &rarr; $71 on the 27th. The revenue manager at the same operator, same product, sees a $58 base. Two other users match the revenue manager.</p>
+      <details><summary>Reveal</summary>
+        <p><strong>An account problem, not a platform one.</strong> What tells you is that two of the four are correct. Check which base price the outlier's account is pulling, and his permissions while you're in there.</p>
+        <p>HTA Boston, 22 July. Tim Carr was the outlier, Mackenzie and Michael both matched Jason. Tim's account also only showed "disable autopilot" with no edit option. Still open.</p>
+        <p><strong>The bit that takes care:</strong> don't tell either of them the other is wrong. "You're seeing different data because your account is pulling a different base price &mdash; that's ours to fix, not yours."</p>
+      </details>
+    </div>
+
+    <div class="scn">
+      <h4>3. The consistent gap</h4>
+      <p>You push &pound;164. The partner system confirms it. The operator's website shows about &pound;200. Every product, every unit, always the same &pound;37.25 difference. A reversion lands at &pound;149.25 instead of &pound;149.</p>
+      <details><summary>Reveal</summary>
+        <p><strong>A consistent gap is a layer, not a pricing fault</strong> &mdash; and this one sits downstream of us. Don't file it against our pricing engine. Escalate to the partner with the evidence and hold further pushes until they explain it.</p>
+        <p>Evan Evans through Prio, 20 July. Worth noting 28 August pushed fine while September dates failed, which points at Prio season-mapping. Go-live is blocked on this, not on our pricing.</p>
+        <p><strong>The bit that takes care:</strong> the operator doesn't care whose system is at fault. "We've traced it to the price path between Prio and your site, we're working it with them, I'll update you Thursday" is better than explaining the architecture.</p>
+      </details>
+    </div>
+
+    <div class="scn">
+      <h4>4. The partial fix</h4>
+      <p>An operator reports backoffice prices are wrong across four tour-length options. Engineering fixes it. You tell her it's sorted. She replies: only the two-hour option was corrected, the other three still show different prices depending on the time slot.</p>
+      <details><summary>Reveal</summary>
+        <p><strong>Never close on your own verification.</strong> Ask for specific examples &mdash; product, option, date, time slot, what she sees versus what she expects &mdash; and re-open with those attached.</p>
+        <p>Boost Portugal, Sofia Mira, 16&ndash;17 July. She checks. She'll always check.</p>
+        <p><strong>The bit that takes care:</strong> a partial fix costs more goodwill than no fix, because it spends the operator's patience twice. Before you say "resolved," check the scope of what was actually fixed against the scope of what was reported.</p>
+      </details>
+    </div>
+
+    <div class="scn">
+      <h4>5. Applied, verified, and nothing happened</h4>
+      <p>A new B&oacute;kun activation. Walkway logs the push as applied and verified. The reservation system accepted and confirmed the base-price change. The operator says nothing has changed on his side.</p>
+      <details><summary>Reveal</summary>
+        <p><strong>Two candidates, and ask about them one at a time.</strong> First: do the API keys have <em>edit</em> access, not just read? Read-only keys look completely valid and fail silently. Second: which catalogue is the price landing in? A push can succeed into the wrong catalogue and be invisible where the operator is looking.</p>
+        <p><strong>The bit that takes care:</strong> some contacts answer a specific question and ignore an open-ended one. If you're not getting answers, try asking for exactly one thing.</p>
+      </details>
+    </div>
+
+    <div class="scn">
+      <h4>6. "Now let's raise the ceiling"</h4>
+      <p>After a strong first month on one product, the operator's CEO replies to your report: great results, let's raise the ceiling, we can sell these even higher.</p>
+      <details><summary>Reveal</summary>
+        <p><strong>That's the believer threshold, and it's the strongest expansion signal you'll get.</strong> Someone asking for more headroom unprompted has stopped needing convincing.</p>
+        <p>Amigo, Jos&eacute; Arozarena, 15 July, on Frida Kahlo: <em>"ahora vamos a subir el techo, podemos venderlos m&aacute;s caros todav&iacute;a."</em></p>
+        <p><strong>The bit that takes care:</strong> don't just action the ceiling change, that's the customer service answer. Action it <em>and</em> put the next cluster of products in front of him with a date. The moment they're pulling is the moment to ask.</p>
+      </details>
+    </div>
+
+    <div class="scn">
+      <h4>7. Live everywhere except here</h4>
+      <p>An operator confirms a set of seasonal options are bookable in their reservation system and on GetYourGuide. In Walkway they generate nothing, because no price or availability data is coming in.</p>
+      <details><summary>Reveal</summary>
+        <p><strong>Live in the reservation system doesn't mean ingesting into Walkway.</strong> Trigger a refresh, and ask the operator to check whether those options are configured differently on their side &mdash; seasonal products often are.</p>
+        <p>Best of Switzerland, Pilatus autumn options, 21 July. The call we made was to hold Pilatus off entirely and go live with Zurich and Grindelwald, which were clean.</p>
+        <p><strong>The bit that takes care:</strong> don't give a go-live date for the blocked product. Split the activation and say clearly which products are going live now and which are waiting on what. A partial go-live with a clear reason builds more trust than a full date you miss.</p>
+      </details>
+    </div>
+
+    <div class="scn">
+      <h4>8. The catalogue moved under you</h4>
+      <p>Mid-activation, an operator restructures their catalogue &mdash; several separate products consolidated into fewer products with options. Historical data only reaches back to January and no longer maps to the new IDs. Go-live is a week out.</p>
+      <details><summary>Reveal</summary>
+        <p><strong>This is a data problem they have to solve with you, and it needs named owners or it drifts.</strong> Someone on their side maps old products to new IDs before anything is sent. Someone else confirms which options are active on which OTA.</p>
+        <p>Boost Portugal, 21 July. Miguel owns the data file, Sofia owns the mapping and OTA confirmation, August 1 target. Also worth knowing: their Porto products sit under "Blue Dragon," which is exactly the kind of detail that costs a week if it surfaces late.</p>
+        <p><strong>The bit that takes care:</strong> when the blocker is on their side, be explicit about who does what by when. Vagueness reads as patience and behaves as delay.</p>
+      </details>
+    </div>
+
+    <div class="scn">
+      <h4>9. The reseller that shouldn't be priced</h4>
+      <p>An operator tells you one of their resellers works on a flat negotiated rate and must never be dynamically priced &mdash; but it is, and it's showing up at reconciliation. They want it excluded.</p>
+      <details><summary>Reveal</summary>
+        <p><strong>You can't yet, and you should say so plainly.</strong> Ventrata gives us a source-level identifier only &mdash; everything through the direct API is tagged the same way, with no reseller-level ID to filter on. It's a real limitation we've escalated, not a misconfiguration.</p>
+        <p>Amigo and Go City, 21 July. Ana raised it and there's no fix on their side either.</p>
+        <p><strong>The bit that takes care:</strong> this is the hardest kind of answer &mdash; a real limitation with no workaround and no date. Name it honestly, say what's being done, and don't invent a timeline. "We've asked them for reseller-level IDs, and until that exists we can't filter it. Here's the interim option" beats optimism you can't back up.</p>
+      </details>
+    </div>
+
+    <div class="cp" data-p="scen">
+      <div class="cl" data-l="scen"></div>
+      <div class="cf" data-f="scen"><div class="rw"><input type="text" placeholder="Your name" data-nm><textarea placeholder="Add a note&hellip;" data-tx></textarea></div><button data-sb>Add comment</button></div>
+    </div>
+  </section>
+
+  <!-- 8 TEMPLATES -->
+  <section class="card" id="templates">
+    <div class="hd">
+      <div>
+        <h2><span class="num">08</span>Email templates</h2>
+        <p class="sub">Draft four on Friday. Two worked examples to calibrate against.</p>
+      </div>
+      <button class="ctg" data-s="tpl">&#128172; <span class="ct">0</span></button>
+    </div>
+
+    <h3>Rules, before the words</h3>
+    <ul class="pl">
+      <li><strong>Never promise a fix date you don't control.</strong> Promise an <em>update</em> time instead, and keep it whether or not you have news.</li>
+      <li><strong>Never guess at a cause on a live pricing issue.</strong> "We haven't confirmed the cause yet so I don't want to speculate" is a complete, professional sentence.</li>
+      <li><strong>Open with "How about&hellip;" or "I propose we&hellip;"</strong> rather than "We can get you&hellip;"</li>
+      <li><strong>Don't claim uplift the data doesn't support.</strong> "We captured X above base pricing in this period" is defensible. "We increased your revenue by X%" often isn't.</li>
+      <li><strong>Match the language.</strong> Spanish for Tom&aacute;s, Amigo and Friends Guides.</li>
+      <li><strong>Respect the CC list.</strong> Tom Macklin asked for Prio and his whole team on every thread. Dropping someone is a visible mistake.</li>
+    </ul>
+
+    <h3>The library you're building</h3>
+    <p>You'll end up sending the same handful of emails over and over &mdash; someone reports a problem, something goes live, a report goes out, you ask for the next set of products. Rather than writing each one from scratch every time, build a set you can adapt in a minute and still sound like yourself.</p>
+    <p>These are the ten worth having, roughly in the order you'll need them. Draft the first four on Friday, since those are the ones you'll use soonest and they're the hardest to get right under time pressure. Pick up the rest next week as they come up.</p>
+    <table>
+      <tr><th>#</th><th>Template</th><th>When</th><th>Priority</th></tr>
+      <tr><td class="n">1</td><td>Acknowledgement, cause unknown</td><td>Within the hour on any live pricing report</td><td><span class="pill r">Friday</span></td></tr>
+      <tr><td class="n">2</td><td>"This isn't a fault &mdash; here's what to do"</td><td>The save step, the rounding, the discount layer</td><td><span class="pill r">Friday</span></td></tr>
+      <tr><td class="n">3</td><td>Progress update, still open</td><td>Every checkpoint you promised, news or not</td><td><span class="pill r">Friday</span></td></tr>
+      <tr><td class="n">4</td><td>Resolution and trust recovery</td><td>After anything that reached the operator</td><td><span class="pill r">Friday</span></td></tr>
+      <tr><td class="n">5</td><td>Activation information request</td><td>At handover, varies by reservation system</td><td><span class="pill c">next week</span></td></tr>
+      <tr><td class="n">6</td><td>Go-live confirmation</td><td>First successful automatic push</td><td><span class="pill c">next week</span></td></tr>
+      <tr><td class="n">7</td><td>Partial go-live, some products held</td><td>One product blocked, others aren't</td><td><span class="pill c">next week</span></td></tr>
+      <tr><td class="n">8</td><td>Performance review cover note</td><td>Every report you send</td><td><span class="pill c">next week</span></td></tr>
+      <tr><td class="n">9</td><td>Expansion ask off documented lift</td><td>Monthly review, or when they pull</td><td><span class="pill c">next week</span></td></tr>
+      <tr><td class="n">10</td><td>Blocker sitting on their side</td><td>Data, credentials or mapping you can't do for them</td><td><span class="pill c">next week</span></td></tr>
+    </table>
+
+    <h3>Worked example &mdash; #1, acknowledgement with no known cause</h3>
+    <div class="tpl">
+      <p>Hi [name],</p>
+      <p>Thanks for flagging this, and for the detail &mdash; it helps.</p>
+      <p>I'm reviewing the exact product, dates and price path with the team now. We haven't confirmed the cause yet so I don't want to speculate. What I can tell you is [containment: autopilot is paused on that product / the other N products aren't affected and are running normally].</p>
+      <p>I'll come back to you by [specific day and time] either way, even if we're still looking.</p>
+      <p>[name]</p>
+    </div>
+    <p class="ev">Acknowledges without diagnosing, contains the risk, and commits to a time you control rather than an outcome you don't.</p>
+
+    <h3>Worked example &mdash; #2, "this isn't a fault"</h3>
+    <div class="tpl">
+      <p>Hi [name],</p>
+      <p>Good news &mdash; nothing's broken. [What they're seeing] happens because [plain explanation]. To [do the thing they wanted], you'll need to [specific steps].</p>
+      <p>That said, it isn't obvious enough in the interface and you're not the first person to hit it, so I've logged it so we can make it clearer.</p>
+      <p>Anything else looking odd, send it over.</p>
+      <p>[name]</p>
+    </div>
+    <p class="ev">Corrects without condescension, puts the shortcoming on the product rather than the person, and closes the loop by actually logging it. The middle paragraph is the one that matters &mdash; take it out and it reads as "you did it wrong."</p>
+
+    <div class="cp" data-p="tpl">
+      <div class="cl" data-l="tpl"></div>
+      <div class="cf" data-f="tpl"><div class="rw"><input type="text" placeholder="Your name" data-nm><textarea placeholder="Add a note&hellip;" data-tx></textarea></div><button data-sb>Add comment</button></div>
+    </div>
+  </section>
+
+  <!-- 9 REPORTS -->
+  <section class="card" id="reports">
+    <div class="hd">
+      <div>
+        <h2><span class="num">09</span>Reading &mdash; and writing &mdash; a report</h2>
+        <p class="sub">The thing every expansion conversation runs off.</p>
+      </div>
+      <button class="ctg" data-s="rep">&#128172; <span class="ct">0</span></button>
+    </div>
+
+    <p>Expansion is a selling motion, not a friendly check-in that mentions more products. It has a business case, a proposal, a decision and a date. The report is what makes that possible, and the same five layers work whether you're reading one or building one.</p>
+
+    <table>
+      <tr><th>Layer</th><th>What goes in it</th><th>Read it for</th></tr>
+      <tr><td><strong>1. Health first</strong></td><td>Is it pushing reliably? Any incidents in the period?</td><td>Never lead with revenue on an account with an unresolved technical problem. It reads as not paying attention.</td></tr>
+      <tr><td><strong>2. What the system did</strong></td><td>Price movement, range, frequency, behaviour by lead time</td><td>Empire's Chicago review is the model &mdash; "prices higher 8&ndash;14 days out, holds at the last minute." That's a system you can explain, not a black box.</td></tr>
+      <tr><td><strong>3. What it produced</strong></td><td>Revenue captured above base, gross booking value managed, price per guest &mdash; and <strong>guest volume</strong></td><td>Volume is the one people forget. Empire's "+2.1 guests a day" kills the "you're just raising prices and losing customers" objection before it comes up.</td></tr>
+      <tr><td><strong>4. What's uncertain</strong></td><td>Seasonality you can't isolate, thin data, a product that needs longer</td><td>This is what makes the rest believable. A report with no uncertainty in it reads as marketing.</td></tr>
+      <tr><td><strong>5. The ask</strong></td><td>A named next cluster, a reason, a date</td><td>Not "let us know if you'd like to add more." That's the difference between a report and a proposal.</td></tr>
+    </table>
+
+    <div class="box m">
+      <span class="lbl">The three to read on Friday</span>
+      <strong>HTA portfolio</strong> &mdash; $717K captured above flat pricing across 18 actively managed products. <strong>Ciao Florence</strong> &mdash; &euro;527,562 gross booking value managed since activation. <strong>Empire Chicago</strong> &mdash; about $2,000 uplift on a $32K base over six weeks, price per guest up 10% on Secret Interiors and 3% on Gangsters &amp; Ghosts, Memorial Day weekend at $38.30 against $32 flat.
+    </div>
+
+    <h3>Lines that work, by situation</h3>
+    <table>
+      <tr><th>Situation</th><th>What to say</th></tr>
+      <tr><td>Strong results</td><td>"The current products have given us enough evidence to apply the same approach to the next cluster, rather than keeping this as an isolated pilot."</td></tr>
+      <tr><td>Limited price movement</td><td>"The goal isn't constant movement. First we confirm the system is responding correctly to demand signals inside the boundaries you approved."</td></tr>
+      <tr><td>"We need more time"</td><td>"What specific proof is still missing? Let's agree the metric, the date, and the decision we'll make when it's there."</td></tr>
+      <tr><td>Only one product live</td><td>"One product proves technical fit. A broader cluster gives a representative view across different demand patterns."</td></tr>
+      <tr><td>Worried about control</td><td>"We can widen the scope while keeping your approved guardrails and a structured monitoring period."</td></tr>
+      <tr><td>New destination</td><td>"This account has proved the workflow. The next step is widening into a new market with its own validation plan."</td></tr>
+    </table>
+
+    <div class="cp" data-p="rep">
+      <div class="cl" data-l="rep"></div>
+      <div class="cf" data-f="rep"><div class="rw"><input type="text" placeholder="Your name" data-nm><textarea placeholder="Add a note&hellip;" data-tx></textarea></div><button data-sb>Add comment</button></div>
+    </div>
+  </section>
+
+  <!-- 10 RHYTHM -->
+  <section class="card" id="rhythm">
+    <div class="hd">
+      <div>
+        <h2><span class="num">10</span>The rhythm</h2>
+        <p class="sub">Day, week, and the per-account cycle.</p>
+      </div>
+      <button class="ctg" data-s="rhythm">&#128172; <span class="ct">0</span></button>
+    </div>
+
+    <h3>A day</h3>
+    <table>
+      <tr><th>Block</th><th>What happens</th><th>Hat</th></tr>
+      <tr><td><strong>Morning check</strong></td><td>Replies waiting? Accounts gone quiet? Follow-ups due? Linear tickets moved or stuck? A relationship and commitments check, not a systems one.</td><td>Support</td></tr>
+      <tr><td><strong>Triage</strong></td><td>Work Section 3. Resolve config and education issues yourself, file real defects properly. Never fix code.</td><td>Support</td></tr>
+      <tr><td><strong>Deep work</strong></td><td>Account analysis, reports, call briefs, whatever project you're on. Protect this &mdash; it's where your morning earns its keep.</td><td>Both</td></tr>
+      <tr><td><strong>Expansion block</strong></td><td>Pull lift data, build the case, draft the proposal, chase the open ask. <strong>The block that gets eaten first and matters most.</strong></td><td>Success</td></tr>
+      <tr><td><strong>Calls</strong></td><td>Check-ins, reviews, expansion conversations, internal sessions.</td><td>Success</td></tr>
+      <tr><td><strong>Admin</strong></td><td>HubSpot, same day, always. If it isn't logged it didn't happen.</td><td>Both</td></tr>
+    </table>
+
+    <div class="box c">
+      <span class="lbl">Worth being clear about what we can and can't see</span>
+      We don't have automated monitoring of autopilot status or pricing behaviour yet. Nothing tells us when a product stops pushing, or when a price has been sitting at a ceiling for a week. That's being worked on, but today it means issues reach us in one of two ways: the operator notices and emails, or one of us pulls the data while preparing a review.<br><br>
+      Two practical consequences. First, the check-in cadence below is doing more work than it would somewhere with proper alerting &mdash; it's how we find things. Second, an account going quiet is a genuine signal, not a soft one. If you haven't heard from someone in a few weeks, that's worth a look rather than a relief.
+    </div>
+
+    <div class="box p">
+      <span class="lbl">The thing to watch for in yourself</span>
+      Support work is loud and urgent. Success work is quiet and important. Support wins every day unless you fence it off &mdash; and the quarter isn't carried by ticket resolution, it's carried by expansion. The most common way this job goes wrong is a CSM who's perfectly responsive, liked by every operator, and has no expansion pipeline. The fix is calendar discipline, not working harder.
+    </div>
+
+    <h3>A week</h3>
+    <table>
+      <tr><th>When</th><th>What</th><th>Output</th></tr>
+      <tr><td>Daily</td><td>Trust-window scan</td><td>Priority list and escalations</td></tr>
+      <tr><td>Monday</td><td>Account and pipeline review, Commercial LT</td><td>Weekly account plan</td></tr>
+      <tr><td>Before every call</td><td>Health, evidence, open issues, prior commitments, proposed next step</td><td>One-page call brief</td></tr>
+      <tr><td>After every call</td><td>Decision, next step, issue, commercial movement</td><td>HubSpot updated same day</td></tr>
+      <tr><td>Friday</td><td>Weekly review together</td><td>Scorecard and forecast</td></tr>
+    </table>
+
+    <h3>The per-account cycle</h3>
+    <p>Our cadence is one week, two weeks, three weeks, then monthly:</p>
+    <table>
+      <tr><th>Point</th><th>Purpose</th><th>What you're deciding</th></tr>
+      <tr><td><strong>Week 1</strong></td><td>Is it actually working?</td><td>Prices moving, in the right currency, on the right channel. You'll confirm this by pulling the data yourself or asking the operator directly &mdash; nothing will tell you automatically, so book the check-in rather than assuming no news is good news.</td></tr>
+      <tr><td><strong>Week 2</strong></td><td>Does the behaviour make sense?</td><td>Movement, bounds, booking response. Not sitting at a floor or ceiling without a reason. First proper conversation about what they're seeing on their side.</td></tr>
+      <tr><td><strong>Week 3</strong></td><td>Is the evidence credible?</td><td>Enough signal to build a value story, or do we need longer? Say which honestly.</td></tr>
+      <tr><td><strong>Monthly</strong></td><td>Is it worth expanding?</td><td>Documented value, operator agreement, next cluster, dated ask. <strong>Ask for a decision, not feedback.</strong></td></tr>
+    </table>
+
+    <div class="cp" data-p="rhythm">
+      <div class="cl" data-l="rhythm"></div>
+      <div class="cf" data-f="rhythm"><div class="rw"><input type="text" placeholder="Your name" data-nm><textarea placeholder="Add a note&hellip;" data-tx></textarea></div><button data-sb>Add comment</button></div>
+    </div>
+  </section>
+
+  <!-- 11 OPEN -->
+  <section class="card" id="open">
+    <div class="hd">
+      <div>
+        <h2><span class="num">11</span>What's open right now</h2>
+        <p class="sub">Live as of 22 July. Check each before acting.</p>
+      </div>
+      <button class="ctg" data-s="open">&#128172; <span class="ct">0</span></button>
+    </div>
+    <table>
+      <tr><th>Account</th><th>Open item</th><th>Next move</th></tr>
+      <tr><td><strong>Evan Evans</strong></td><td>&pound;37.25 discrepancy and prices bleeding into live distributor accounts, both Prio-side</td><td>Chase Prio. Tom also owes us the confirmed list of distributor channels to price dynamically. No more pushes until it's resolved.</td></tr>
+      <tr><td><strong>Ciao Florence</strong></td><td>Livia sent B&oacute;kun booking data back after the performance review</td><td>Review and respond properly. That's the opening for the expansion conversation.</td></tr>
+      <tr><td><strong>Tours for Today</strong></td><td>New PAX typologies on Select can't be priced</td><td>Ventrata-side change, needs a refresh on ours. It's with the team &mdash; keep Tom&aacute;s updated in Spanish.</td></tr>
+      <tr><td><strong>Everyday California</strong></td><td>Expansion call being scheduled with Chris</td><td>Monday 12:00&ndash;15:00 or Tuesday 11:00&ndash;13:00 PT offered.</td></tr>
+      <tr><td><strong>Mountain Goat</strong></td><td>DP proposal open, CI subscription lapsed in April</td><td>Kate is the contact. Sort the commercial position before pushing the proposal.</td></tr>
+      <tr><td><strong>Airboat</strong></td><td>LinkedIn quote and approval for July's announcement</td><td>Ask on the next check-in.</td></tr>
+      <tr><td><strong>Grupo Julia</strong></td><td>Signed 21 July, no activation plan yet</td><td>Needs historical and pace data. We'll define scope, contact and timeline together.</td></tr>
+      <tr><td><strong>Best of Switzerland</strong></td><td>Pilatus autumn options not ingesting</td><td>Refresh and check the Ventrata pricing config. Demian owes us the exact autumn start date &mdash; 19 or 26 October.</td></tr>
+      <tr><td><strong>HTA</strong></td><td>Tim Carr's base-price mismatch and missing edit permission</td><td>Align his account with Jason's. Open since 22 July.</td></tr>
+      <tr><td><strong>Boost Portugal</strong></td><td>Booking data file and OTA mapping</td><td>Miguel owes the data, Sofia owes the OTA confirmation. August 1 go-live target.</td></tr>
+    </table>
+
+    <div class="box p">
+      <span class="lbl">Two limitations that aren't yours to fix but are yours to explain</span>
+      <strong>Reseller-level exclusion.</strong> Ventrata gives us source-level IDs only, so a flat-rate reseller like Go City can't be excluded from dynamic pricing. Escalated, no date.<br>
+      <strong>Calendar editing.</strong> Only dates with an active recommendation can be edited directly, everything else goes through Recent Activity. Several operators have asked for full calendar editing.<br><br>
+      When either comes up on a call, the honest answer is that it's a known limitation we're working on &mdash; not a misconfiguration, and not something they've done wrong.
+    </div>
+
+    <div class="cp" data-p="open">
+      <div class="cl" data-l="open"></div>
+      <div class="cf" data-f="open"><div class="rw"><input type="text" placeholder="Your name" data-nm><textarea placeholder="Add a note&hellip;" data-tx></textarea></div><button data-sb>Add comment</button></div>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<p class="ft">Checklist progress and comments are shared &mdash; visible to anyone with this file. Built from operator email threads 1&ndash;22 July 2026, meeting notes 20&ndash;22 July 2026, the July portfolio workbook and HubSpot deal data queried 22 July 2026. Verify MRR and reservation-system fields before external or billing use.</p>
+
+<script>
+(function(){
+  var CK='wk-sprint-checks', CM='wk-sprint-comments', NM='wk-sprint-name';
+  var checks={}, comments={}, who='';
+
+  async function ld(k,sh,fb){try{var r=await window.storage.get(k,sh);if(r&&r.value)return JSON.parse(r.value);}catch(e){}return fb;}
+  async function sv(k,sh,v){try{await window.storage.set(k,JSON.stringify(v),sh);}catch(e){console.error('save failed',k,e);}}
+  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+  function ts(t){try{var d=new Date(t);return d.toLocaleDateString(undefined,{month:'short',day:'numeric'})+' \u00b7 '+d.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'});}catch(e){return '';}}
+
+  function rc(g){
+    var l=document.querySelector('[data-ls="'+g+'"]');if(!l)return;
+    var it=l.querySelectorAll('li'),n=0;
+    it.forEach(function(li){
+      var on=!!(checks[g]&&checks[g][li.dataset.id]);
+      li.querySelector('input').checked=on;li.classList.toggle('dn',on);if(on)n++;
+    });
+    var f=document.querySelector('[data-fl="'+g+'"]'),b=document.querySelector('[data-lb="'+g+'"]');
+    if(f)f.style.width=(it.length?Math.round(n/it.length*100):0)+'%';
+    if(b)b.textContent=n+'/'+it.length;
+  }
+  function wc(g){
+    var l=document.querySelector('[data-ls="'+g+'"]');if(!l)return;
+    l.addEventListener('change',async function(e){
+      var li=e.target.closest('li');if(!li)return;
+      if(!checks[g])checks[g]={};
+      checks[g][li.dataset.id]=e.target.checked;
+      rc(g);await sv(CK,true,checks);
+    });
+  }
+
+  function rm(s){
+    var l=document.querySelector('[data-l="'+s+'"]'),c=document.querySelector('.ctg[data-s="'+s+'"] .ct');
+    var a=comments[s]||[];
+    if(c)c.textContent=a.length;
+    if(!l)return;
+    if(!a.length){l.innerHTML='<div class="ce">No comments yet.</div>';return;}
+    l.innerHTML=a.map(function(x){
+      return '<div class="cm"><div class="mt"><b>'+esc(x.a||'Anon')+'</b><span>'+ts(x.t)+'</span></div><div class="tx">'+esc(x.x)+'</div></div>';
+    }).join('');
+  }
+
+  document.querySelectorAll('.ctg').forEach(function(b){
+    b.addEventListener('click',function(){
+      var p=document.querySelector('[data-p="'+b.dataset.s+'"]');
+      if(p)p.classList.toggle('open');
+    });
+  });
+
+  document.querySelectorAll('.cf').forEach(function(f){
+    var s=f.dataset.f, nm=f.querySelector('[data-nm]'), tx=f.querySelector('[data-tx]'), bt=f.querySelector('[data-sb]');
+    bt.addEventListener('click',async function(){
+      var t=tx.value.trim();if(!t)return;
+      var n=(nm.value||'').trim()||'Anon';
+      bt.disabled=true;
+      if(!comments[s])comments[s]=[];
+      comments[s].push({a:n,x:t,t:Date.now()});
+      rm(s);tx.value='';
+      await sv(CM,true,comments);
+      if(n!==who){who=n;await sv(NM,false,{n:n});document.querySelectorAll('.cf [data-nm]').forEach(function(i){i.value=who;});}
+      bt.disabled=false;
+    });
+  });
+
+  document.querySelectorAll('.stop').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=document.getElementById(b.dataset.t);
+      if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+
+  function spy(){
+    var days=['book','fri','mon','ahead'];
+    var stops=document.querySelectorAll('.stop'), links=document.querySelectorAll('.rail a');
+    var o=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var id=e.target.id;
+        if(days.indexOf(id)>-1)stops.forEach(function(s){s.classList.toggle('on',s.dataset.t===id);});
+        links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+id);});
+      });
+    },{rootMargin:'-38% 0px -52% 0px'});
+    document.querySelectorAll('main .card').forEach(function(c){o.observe(c);});
+  }
+
+  (async function(){
+    var r=await Promise.all([ld(CK,true,{}),ld(CM,true,{}),ld(NM,false,{n:''})]);
+    checks=r[0]||{};comments=r[1]||{};who=(r[2]&&r[2].n)||'';
+    ['fri','mon'].forEach(function(g){rc(g);wc(g);});
+    document.querySelectorAll('.ctg').forEach(function(b){rm(b.dataset.s);});
+    if(who)document.querySelectorAll('.cf [data-nm]').forEach(function(i){i.value=who;});
+    spy();
+  })();
+})();
+</script>
+</body>
+</html>
